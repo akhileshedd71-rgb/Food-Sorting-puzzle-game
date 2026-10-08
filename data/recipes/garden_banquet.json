@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "garden_banquet",
+  "name": "Garden Banquet",
+  "name_key": "recipe.garden_banquet",
+  "chapter": 1,
+  "unlock_level": 28,
+  "requirements": {
+    "tomato": 1,
+    "corn_cob": 1,
+    "button_mushroom": 1,
+    "bell_pepper_ring": 1,
+    "zucchini_round": 1,
+    "eggplant_slice": 1
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "active_ticket_limit": 1.0,
+  "authoring": {
+    "challenge": false,
+    "expected_foods": 3.0,
+    "expected_free_slots": 3.0,
+    "expected_max_rows": 1.0,
+    "expected_trays": 4.0,
+    "human_playtest_status": "pending",
+    "relief": false,
+    "source": "Development brief, Appendix D"
+  },
+  "chapter": 1.0,
+  "content_hash": "3410ad4274554d11e41fd25f81fd01c7565ceed679aaa4b57f49a9de485bfcbe",
+  "content_version": 1.0,
+  "lesson": "Tap a food, then tap an empty space on another tray.",
+  "lesson_key": "level.garden_003.lesson",
+  "level_id": "garden_003",
+  "mode": "campaign",
+  "number": 3.0,
+  "schema_version": 1.0,
+  "solution": [
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      2,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0.0,
+  "title": "Mushroom Morning",
+  "title_key": "level.garden_003.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "tomato",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        "corn_cob"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "button_mushroom",
+        "button_mushroom"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        null,
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "level_id": "fixture_001",
+  "content_version": 1,
+  "mode": "campaign_orders",
+  "active_ticket_limit": 1,
+  "timer_seconds": 0,
+  "trays": [
+    {"id": "t1", "front": ["corn_cob", "corn_cob", null], "queue": [["bell_pepper_ring", "bell_pepper_ring", null]]},
+    {"id": "t2", "front": ["button_mushroom", "corn_cob", "button_mushroom"], "queue": []},
+    {"id": "t3", "front": [null, "button_mushroom", null], "queue": [["bell_pepper_ring", null, null]]}
+  ],
+  "tickets": [
+    {"id": "ticket_1", "requirements": {"corn_cob": 1, "button_mushroom": 1}},
+    {"id": "ticket_2", "requirements": {"bell_pepper_ring": 1}}
+  ],
+  "solution": [[1, 1, 0, 2], [2, 1, 1, 1], [2, 0, 0, 2]],
+  "alternate_solution": [[1, 1, 0, 2], [2, 1, 0, 2], [0, 2, 2, 1], [2, 0, 0, 2], [2, 1, 1, 1]]
+}

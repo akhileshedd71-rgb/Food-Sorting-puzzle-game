@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "ratatouille_grill",
+  "name": "Ratatouille Grill",
+  "name_key": "recipe.ratatouille_grill",
+  "chapter": 1,
+  "unlock_level": 26,
+  "requirements": {
+    "tomato": 1,
+    "bell_pepper_ring": 1,
+    "zucchini_round": 1,
+    "eggplant_slice": 1
+  }
+}

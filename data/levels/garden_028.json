@@ -1,0 +1,164 @@
+{
+  "active_ticket_limit": 1.0,
+  "authoring": {
+    "challenge": false,
+    "expected_foods": 6.0,
+    "expected_free_slots": 6.0,
+    "expected_max_rows": 2.0,
+    "expected_trays": 6.0,
+    "human_playtest_status": "pending",
+    "relief": false,
+    "source": "Development brief, Appendix D"
+  },
+  "chapter": 1.0,
+  "content_hash": "15ee6ae80840494fd0f3424d17a05680ca7ae0ee955fea5a01c9ee59cc25ca79",
+  "content_version": 1.0,
+  "lesson": "Garden Banquet needs exactly one batch of each of the six Garden foods.",
+  "lesson_key": "level.garden_028.lesson",
+  "level_id": "garden_028",
+  "mode": "campaign_orders",
+  "number": 28.0,
+  "schema_version": 1.0,
+  "solution": [
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      2
+    ],
+    [
+      0,
+      2,
+      5,
+      1
+    ],
+    [
+      3,
+      2,
+      5,
+      2
+    ],
+    [
+      3,
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      1,
+      0,
+      2
+    ],
+    [
+      3,
+      0,
+      4,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Garden Banquet",
+      "recipe_id": "garden_banquet",
+      "requirements": {
+        "bell_pepper_ring": 1.0,
+        "button_mushroom": 1.0,
+        "corn_cob": 1.0,
+        "eggplant_slice": 1.0,
+        "tomato": 1.0,
+        "zucchini_round": 1.0
+      }
+    }
+  ],
+  "timer_seconds": 0.0,
+  "title": "A Table for Everyone",
+  "title_key": "level.garden_028.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "tomato",
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "zucchini_round",
+          "eggplant_slice"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        "corn_cob"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "button_mushroom",
+        "button_mushroom"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        null,
+        null
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "zucchini_round",
+          "eggplant_slice"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        null,
+        null
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "garden_sampler",
+  "name": "Garden Sampler",
+  "name_key": "recipe.garden_sampler",
+  "chapter": 1,
+  "unlock_level": 15,
+  "requirements": {
+    "tomato": 1,
+    "corn_cob": 1,
+    "button_mushroom": 1
+  }
+}

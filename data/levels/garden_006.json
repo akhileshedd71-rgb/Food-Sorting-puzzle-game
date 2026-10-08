@@ -1,0 +1,96 @@
+{
+  "active_ticket_limit": 1.0,
+  "authoring": {
+    "challenge": false,
+    "expected_foods": 3.0,
+    "expected_free_slots": 3.0,
+    "expected_max_rows": 1.0,
+    "expected_trays": 4.0,
+    "human_playtest_status": "pending",
+    "relief": false,
+    "source": "Development brief, Appendix D"
+  },
+  "chapter": 1.0,
+  "content_hash": "879a7ead2abf6216b64731efa8642cd07264ef405708c5af888853729f21fde4",
+  "content_version": 1.0,
+  "lesson": "Undo restores your last complete move, including any cleared food.",
+  "lesson_key": "level.garden_006.lesson",
+  "level_id": "garden_006",
+  "mode": "campaign",
+  "number": 6.0,
+  "schema_version": 1.0,
+  "solution": [
+    [
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      1,
+      1
+    ],
+    [
+      3,
+      1,
+      0,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0.0,
+  "title": "Try, Then Undo",
+  "title_key": "level.garden_006.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        "button_mushroom"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        "button_mushroom",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "corn_cob",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        "button_mushroom",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

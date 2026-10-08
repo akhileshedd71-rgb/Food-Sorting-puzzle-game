@@ -1,0 +1,168 @@
+{
+  "active_ticket_limit": 1.0,
+  "authoring": {
+    "challenge": false,
+    "expected_foods": 4.0,
+    "expected_free_slots": 6.0,
+    "expected_max_rows": 2.0,
+    "expected_trays": 6.0,
+    "human_playtest_status": "pending",
+    "relief": false,
+    "source": "Development brief, Appendix D"
+  },
+  "chapter": 1.0,
+  "content_hash": "cda57e4b19af70208218564ff66afc7f3458d31a4ffdc5b6b88d10f369462cea",
+  "content_version": 1.0,
+  "lesson": "Four different batches make Ratatouille Grill. Match each food separately.",
+  "lesson_key": "level.garden_026.lesson",
+  "level_id": "garden_026",
+  "mode": "campaign_orders",
+  "number": 26.0,
+  "schema_version": 1.0,
+  "solution": [
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      1,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      5,
+      2
+    ],
+    [
+      0,
+      1,
+      3,
+      2
+    ],
+    [
+      2,
+      2,
+      4,
+      2
+    ],
+    [
+      3,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      3,
+      1
+    ],
+    [
+      4,
+      0,
+      0,
+      1
+    ],
+    [
+      5,
+      0,
+      4,
+      0
+    ],
+    [
+      2,
+      0,
+      5,
+      0
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Ratatouille Grill",
+      "recipe_id": "ratatouille_grill",
+      "requirements": {
+        "bell_pepper_ring": 1.0,
+        "eggplant_slice": 1.0,
+        "tomato": 1.0,
+        "zucchini_round": 1.0
+      }
+    }
+  ],
+  "timer_seconds": 0.0,
+  "title": "Ratatouille Table",
+  "title_key": "level.garden_026.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "tomato",
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "tomato",
+          "bell_pepper_ring",
+          "zucchini_round"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "tomato",
+        "bell_pepper_ring",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "bell_pepper_ring",
+        null
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "tomato",
+          "bell_pepper_ring",
+          "eggplant_slice"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "eggplant_slice",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        "tomato",
+        null
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

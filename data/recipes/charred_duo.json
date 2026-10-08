@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "charred_duo",
+  "name": "Charred Duo",
+  "name_key": "recipe.charred_duo",
+  "chapter": 1,
+  "unlock_level": 16,
+  "requirements": {
+    "corn_cob": 2,
+    "button_mushroom": 1
+  }
+}

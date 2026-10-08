@@ -1,0 +1,116 @@
+{
+  "active_ticket_limit": 1.0,
+  "authoring": {
+    "challenge": false,
+    "expected_foods": 4.0,
+    "expected_free_slots": 3.0,
+    "expected_max_rows": 2.0,
+    "expected_trays": 5.0,
+    "human_playtest_status": "pending",
+    "relief": false,
+    "source": "Development brief, Appendix D"
+  },
+  "chapter": 1.0,
+  "content_hash": "80b5b07e259d93766f962893ab763691214dfc1dd8aae37bf274ca4a02fc22f1",
+  "content_version": 1.0,
+  "lesson": "When the order is served, clear the remaining food to finish.",
+  "lesson_key": "level.garden_018.lesson",
+  "level_id": "garden_018",
+  "mode": "campaign_orders",
+  "number": 18.0,
+  "schema_version": 1.0,
+  "solution": [
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      2,
+      0
+    ],
+    [
+      4,
+      0,
+      3,
+      0
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Garden Sampler",
+      "recipe_id": "garden_sampler",
+      "requirements": {
+        "button_mushroom": 1.0,
+        "corn_cob": 1.0,
+        "tomato": 1.0
+      }
+    }
+  ],
+  "timer_seconds": 0.0,
+  "title": "The Last Side Dish",
+  "title_key": "level.garden_018.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "tomato",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        "corn_cob"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "button_mushroom",
+        "button_mushroom"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "bell_pepper_ring",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        null,
+        null
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "bell_pepper_ring",
+          "bell_pepper_ring"
+        ]
+      ]
+    }
+  ]
+}

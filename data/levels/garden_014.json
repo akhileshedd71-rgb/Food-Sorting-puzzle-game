@@ -1,0 +1,105 @@
+{
+  "active_ticket_limit": 1.0,
+  "authoring": {
+    "challenge": false,
+    "expected_foods": 4.0,
+    "expected_free_slots": 6.0,
+    "expected_max_rows": 2.0,
+    "expected_trays": 5.0,
+    "human_playtest_status": "pending",
+    "relief": false,
+    "source": "Development brief, Appendix D"
+  },
+  "chapter": 1.0,
+  "content_hash": "e994ddee0a5f4eb17bbfa44b406ba38daab06eef02f78ed44ae47b059e8fa776",
+  "content_version": 1.0,
+  "lesson": "The small row previews show what comes next. Tap a row badge to inspect.",
+  "lesson_key": "level.garden_014.lesson",
+  "level_id": "garden_014",
+  "mode": "campaign",
+  "number": 14.0,
+  "schema_version": 1.0,
+  "solution": [
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      1,
+      2,
+      2
+    ],
+    [
+      2,
+      0,
+      3,
+      2
+    ],
+    [
+      4,
+      0,
+      2,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0.0,
+  "title": "A Peek Ahead",
+  "title_key": "level.garden_014.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "tomato",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "corn_cob",
+        null
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "button_mushroom",
+          "bell_pepper_ring",
+          "bell_pepper_ring"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "button_mushroom",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        null,
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

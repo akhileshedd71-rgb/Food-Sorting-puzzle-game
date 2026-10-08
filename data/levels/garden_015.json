@@ -1,0 +1,128 @@
+{
+  "active_ticket_limit": 1.0,
+  "authoring": {
+    "challenge": false,
+    "expected_foods": 3.0,
+    "expected_free_slots": 6.0,
+    "expected_max_rows": 2.0,
+    "expected_trays": 5.0,
+    "human_playtest_status": "pending",
+    "relief": false,
+    "source": "Development brief, Appendix D"
+  },
+  "chapter": 1.0,
+  "content_hash": "dcef2ce3e88019f44beeef124aa966fd8d1e94786770b21df1bf066fef3b362c",
+  "content_version": 1.0,
+  "lesson": "Match 3 to prepare 1 batch. Serve the order and clear every tray.",
+  "lesson_key": "level.garden_015.lesson",
+  "level_id": "garden_015",
+  "mode": "campaign_orders",
+  "number": 15.0,
+  "schema_version": 1.0,
+  "solution": [
+    [
+      3,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      2,
+      2,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      1,
+      4,
+      1
+    ],
+    [
+      2,
+      0,
+      4,
+      2
+    ],
+    [
+      1,
+      2,
+      2,
+      0
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Garden Sampler",
+      "recipe_id": "garden_sampler",
+      "requirements": {
+        "button_mushroom": 1.0,
+        "corn_cob": 1.0,
+        "tomato": 1.0
+      }
+    }
+  ],
+  "timer_seconds": 0.0,
+  "title": "The Garden Sampler",
+  "title_key": "level.garden_015.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "tomato",
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "tomato",
+          "tomato",
+          "button_mushroom"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        "button_mushroom"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "button_mushroom",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        null,
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        null,
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

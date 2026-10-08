@@ -1,0 +1,75 @@
+{
+  "active_ticket_limit": 1.0,
+  "authoring": {
+    "challenge": false,
+    "expected_foods": 2.0,
+    "expected_free_slots": 3.0,
+    "expected_max_rows": 1.0,
+    "expected_trays": 3.0,
+    "human_playtest_status": "pending",
+    "relief": false,
+    "source": "Development brief, Appendix D"
+  },
+  "chapter": 1.0,
+  "content_hash": "a212fb4fb1f33d72ac5e21294d2254fd0bed0d2a6e593e9fc75e0a2d2970c008",
+  "content_version": 1.0,
+  "lesson": "Only three identical foods clear. Choose an empty space.",
+  "lesson_key": "level.garden_002.lesson",
+  "level_id": "garden_002",
+  "mode": "campaign",
+  "number": 2.0,
+  "schema_version": 1.0,
+  "solution": [
+    [
+      0,
+      1,
+      2,
+      1
+    ],
+    [
+      1,
+      2,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0.0,
+  "title": "Corn on the Counter",
+  "title_key": "level.garden_002.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        "tomato",
+        "corn_cob"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        null,
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "foods": [
+    {"id": "tomato", "display_name": "Tomato", "resource": "res://data/foods/tomato.tres"},
+    {"id": "corn_cob", "display_name": "Corn", "resource": "res://data/foods/corn_cob.tres"},
+    {"id": "button_mushroom", "display_name": "Mushroom", "resource": "res://data/foods/button_mushroom.tres"},
+    {"id": "bell_pepper_ring", "display_name": "Pepper", "resource": "res://data/foods/bell_pepper_ring.tres"},
+    {"id": "zucchini_round", "display_name": "Zucchini", "resource": "res://data/foods/zucchini_round.tres"},
+    {"id": "eggplant_slice", "display_name": "Eggplant", "resource": "res://data/foods/eggplant_slice.tres"}
+  ]
+}

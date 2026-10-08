@@ -1,0 +1,191 @@
+{
+  "active_ticket_limit": 1.0,
+  "authoring": {
+    "challenge": true,
+    "expected_foods": 5.0,
+    "expected_free_slots": 3.0,
+    "expected_max_rows": 3.0,
+    "expected_trays": 6.0,
+    "human_playtest_status": "pending",
+    "relief": false,
+    "source": "Development brief, Appendix D"
+  },
+  "chapter": 1.0,
+  "content_hash": "b495ce47dee2b7dca363b0840637525fad2964f6df9843efdb0a85806ee79704",
+  "content_version": 1.0,
+  "lesson": "Plan your storage through the layers. Undo and Restart are always free.",
+  "lesson_key": "level.garden_029.lesson",
+  "level_id": "garden_029",
+  "mode": "campaign",
+  "number": 29.0,
+  "schema_version": 1.0,
+  "solution": [
+    [
+      2,
+      2,
+      3,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      0,
+      2,
+      4,
+      2
+    ],
+    [
+      2,
+      0,
+      0,
+      1
+    ],
+    [
+      5,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      2,
+      2,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      0
+    ],
+    [
+      0,
+      2,
+      5,
+      1
+    ],
+    [
+      4,
+      2,
+      5,
+      2
+    ],
+    [
+      2,
+      1,
+      4,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0.0,
+  "title": "Garden Challenge",
+  "title_key": "level.garden_029.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "tomato",
+          "corn_cob",
+          "bell_pepper_ring"
+        ],
+        [
+          "button_mushroom",
+          "bell_pepper_ring",
+          "zucchini_round"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "tomato",
+        "tomato",
+        "corn_cob"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "corn_cob",
+        "button_mushroom"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "tomato",
+          "button_mushroom",
+          "bell_pepper_ring"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "button_mushroom",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "bell_pepper_ring",
+        null
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "corn_cob",
+          "button_mushroom",
+          "zucchini_round"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "tomato",
+        null
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}
