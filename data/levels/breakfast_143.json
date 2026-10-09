@@ -1,0 +1,195 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 6,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "0b682708cdbbcc2dbe52d33ddf0179b00bd8a0583e731011a035db8b1a84f0a1",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 15906278,
+    "solver_states": 503,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "d6cbb949cb93bfbf785f380eb3e9650f05cde1506d2140c9355cd8920be744d2"
+  },
+  "chapter": 3,
+  "content_hash": "121d90afc76469edfef2aeb87159eef92d1516c97efb5907b7c8326ef0bb19f2",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.breakfast_143.lesson",
+  "level_id": "breakfast_143",
+  "mode": "campaign",
+  "number": 143,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      1,
+      3,
+      2
+    ],
+    [
+      1,
+      2,
+      2,
+      2
+    ],
+    [
+      2,
+      0,
+      4,
+      2
+    ],
+    [
+      4,
+      0,
+      2,
+      0
+    ],
+    [
+      3,
+      0,
+      4,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      5,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      2,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      2
+    ],
+    [
+      2,
+      0,
+      0,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Honeylight Turnabout",
+  "title_key": "level.breakfast_143.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "croissant",
+        "hash_brown"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "pancake_stack",
+          "fried_egg",
+          "hash_brown"
+        ],
+        [
+          "hash_brown",
+          "hash_brown",
+          "pancake_stack"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "pancake_stack",
+        "toast_slice"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "hash_brown",
+          "croissant",
+          "hash_brown"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "waffle_square",
+        "toast_slice",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "croissant",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "toast_slice",
+        "waffle_square",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "fried_egg",
+        "fried_egg"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

@@ -18,7 +18,7 @@ Chef Coins are the game's single currency. They are earned and spent locally in 
 
 The shop previews 250, 700 and 1,600-coin packs as **Coming later**. They have no fake checkout, real-money price, simulated successful purchase, or development grant button in the player interface. These amounts and the earned prices above are initial tuning choices, not a measured or balanced live economy.
 
-All 30 campaign boards retain their no-tool solution certificates. A player can clear the complete campaign without spending coins. If the wallet is empty, the game offers free undo/restart. There are no energy costs, forced ads, randomized paid rewards or mandatory coin gates.
+All 150 campaign boards have no-tool solution certificates. A player can clear the complete campaign without spending coins. If the wallet is empty, the game offers free undo/restart. There are no energy costs, forced ads, randomized paid rewards or mandatory coin gates.
 
 ## Spending integrity
 
@@ -38,4 +38,4 @@ The payment system is deliberately deferred. Before enabling real-money purchase
 
 An ad provider should later offer a clearly labeled optional reward, pause/save the stable board before leaving the app, and award it once only after verified completion. Unavailable, canceled, failed and duplicate callbacks must leave the wallet and puzzle coherent. None of those providers is claimed to exist in this build.
 
-Change price constants and finish definitions in `services/economy_service.gd`. First-clear rewards remain in `SaveService.FIRST_CLEAR_COINS`. Re-run economy, save and scene integration tests after changing any entitlement or transaction behavior.
+Change price constants and finish definitions in `services/economy_service.gd`. First-clear rewards remain in `SaveService.FIRST_CLEAR_COINS`. Completing the former final level 30 now unlocks level 31; campaign expansion itself does not grant another clear reward. Re-run economy, save and scene integration tests after changing any entitlement or transaction behavior.

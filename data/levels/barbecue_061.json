@@ -1,0 +1,100 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "prawn",
+    "new_recipe": "",
+    "plan_hash": "31789688381b495389e3e839b2e917ca26f4a7b8cbf3fae1f2b4c8f79b4d42fa",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 7318500,
+    "solver_states": 41,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "be4ae4e5f1eb7464f8ec98641b5476e50e5ded19eeae534eee1dcf2c2ac2a019"
+  },
+  "chapter": 2,
+  "content_hash": "555ed8d1c5a2aac6961219dd6a28de2dff9bdd0bb339007493dceef94cb46993",
+  "content_version": 1,
+  "lesson": "Meet Prawn. Find its matching shapes and take your time.",
+  "lesson_key": "level.barbecue_061.lesson",
+  "level_id": "barbecue_061",
+  "mode": "campaign",
+  "number": 61,
+  "schema_version": 1,
+  "solution": [
+    [
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      1
+    ],
+    [
+      2,
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      2,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Prawn",
+  "title_key": "level.barbecue_061.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "chicken_drumstick",
+        "chicken_drumstick"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "prawn",
+        "prawn"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "chicken_drumstick",
+        "prawn"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        null,
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "hash_brown",
+    "new_recipe": "",
+    "plan_hash": "70346b467fe938c3cf2038381d179a2dd7bcae51186b5a1ca748b5d4782ee741",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 13602240,
+    "solver_states": 69,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "091c231ed4c3615363c28a1ee04e12e1a6b97a94a05d955e08f7a27ad42d53a2"
+  },
+  "chapter": 3,
+  "content_hash": "9e7440fb84c3afb2f4db57139c9ac020f28babc12ef4c7c802e122f638cae19c",
+  "content_version": 1,
+  "lesson": "Meet Hash Brown. Find its matching shapes and take your time.",
+  "lesson_key": "level.breakfast_121.lesson",
+  "level_id": "breakfast_121",
+  "mode": "campaign",
+  "number": 121,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      2,
+      3,
+      2
+    ],
+    [
+      2,
+      1,
+      0,
+      2
+    ],
+    [
+      1,
+      1,
+      2,
+      1
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      1,
+      3,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Hash Brown",
+  "title_key": "level.breakfast_121.title",
+  "trays": [
+    {
+      "front": [
+        "fried_egg",
+        "fried_egg",
+        "hash_brown"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "pancake_stack",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        "fried_egg",
+        "pancake_stack"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "hash_brown",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "hash_brown",
+        "waffle_square"
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

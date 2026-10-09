@@ -1,0 +1,141 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 18,
+    "new_food": "",
+    "new_recipe": "seafood_grill",
+    "plan_hash": "71c64fe5c2f2d75e4a54a4a3d9f774250b4664bfdd0869cca2d49b0a05dc8edd",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 8261061,
+    "solver_states": 79,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "69634318229b6f622ab9cce8b80b93db4158b53fa23f560328a4e252b0c37665"
+  },
+  "chapter": 2,
+  "content_hash": "fba07a4913c7a414416b098cad038949bec07a5aca975476540c1f10dea37454",
+  "content_version": 1,
+  "lesson": "Serve Seafood Grill with matching food batches, then clear the last pieces from the counter.",
+  "lesson_key": "level.barbecue_070.lesson",
+  "level_id": "barbecue_070",
+  "mode": "campaign_orders",
+  "number": 70,
+  "schema_version": 1,
+  "solution": [
+    [
+      2,
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      2,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      1,
+      0
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Seafood Grill",
+      "recipe_id": "seafood_grill",
+      "requirements": {
+        "fish_fillet": 1,
+        "prawn": 1,
+        "zucchini_round": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Today's Seafood Grill",
+  "title_key": "level.barbecue_070.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "prawn",
+        "zucchini_round"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "zucchini_round",
+          "fish_fillet",
+          "fish_fillet"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        null,
+        "zucchini_round"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "fish_fillet",
+        "prawn",
+        "prawn"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

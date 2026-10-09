@@ -1,0 +1,106 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "d53c95c3ddc8447e6b1e609aab4a618caa0c1ca3c0c0f8287a6d3bf591b45011",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 5223920,
+    "solver_states": 37,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "e4ffcf2ce2e66e0a989da8d66ad5ed600b1c363bc6d17632d254fc0cb9bc39c5"
+  },
+  "chapter": 1,
+  "content_hash": "8ba2a5e8d92eb8490a95f2cde938485fd8872c984b97d7a6223b68563eadb116",
+  "content_version": 1,
+  "lesson": "A fresh combination of familiar food. Settle in and find your first match.",
+  "lesson_key": "level.garden_041.lesson",
+  "level_id": "garden_041",
+  "mode": "campaign",
+  "number": 41,
+  "schema_version": 1,
+  "solution": [
+    [
+      2,
+      2,
+      0,
+      2
+    ],
+    [
+      1,
+      2,
+      2,
+      2
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Orchard Welcome",
+  "title_key": "level.garden_041.title",
+  "trays": [
+    {
+      "front": [
+        "bell_pepper_ring",
+        "button_mushroom",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "zucchini_round"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "zucchini_round",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "button_mushroom",
+        "button_mushroom"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

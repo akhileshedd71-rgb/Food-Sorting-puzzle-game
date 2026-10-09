@@ -43,10 +43,15 @@ func bind(index: int, data: Dictionary, selected: Vector2i, hint: Vector2i, read
 			icon.offset_top = -7
 			holder.add_child(icon)
 			if high_readability:
-				var name_label := GardenUI.label(FoodArt.title(str(food)), 14, GardenUI.INK, true)
+				var name_label := GardenUI.label(FoodCatalog.slot_label(str(food)), 14, GardenUI.INK, true)
+				name_label.name = "FoodName"
 				name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+				name_label.clip_text = true
+				name_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 				name_label.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 				name_label.offset_top = -22
+				name_label.offset_left = 2
+				name_label.offset_right = -2
 				holder.add_child(name_label)
 	if not data.queue.is_empty():
 		for i in range(3):

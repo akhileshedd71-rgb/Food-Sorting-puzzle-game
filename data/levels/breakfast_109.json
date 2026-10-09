@@ -1,0 +1,212 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 7,
+    "challenge": true,
+    "expected_foods": 6,
+    "expected_free_slots": 3,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "73029e9d0503b14704119269e84dde45794c35d272fef1d748d63dad110832ca",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 12345492,
+    "solver_states": 1505,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "f59e702c032efd46a1445934746daf4748147fe114702ae5e8b0776ee281d2df"
+  },
+  "chapter": 3,
+  "content_hash": "3e04fa6e69e598d3f2defd03d7bc623ec5336605bb287180a6d8e0c797e97fb4",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.breakfast_109.lesson",
+  "level_id": "breakfast_109",
+  "mode": "campaign",
+  "number": 109,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      1
+    ],
+    [
+      4,
+      0,
+      3,
+      0
+    ],
+    [
+      3,
+      2,
+      4,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      1
+    ],
+    [
+      5,
+      0,
+      4,
+      0
+    ],
+    [
+      1,
+      2,
+      5,
+      0
+    ],
+    [
+      4,
+      1,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      1,
+      4,
+      1
+    ],
+    [
+      5,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      5,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Daybreak Challenge",
+  "title_key": "level.breakfast_109.title",
+  "trays": [
+    {
+      "front": [
+        "zucchini_round",
+        "pancake_stack",
+        "fried_egg"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "fried_egg",
+        null,
+        "eggplant_slice"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "zucchini_round",
+          "corn_cob",
+          "fried_egg"
+        ],
+        [
+          "tomato",
+          "fried_egg",
+          "fried_egg"
+        ],
+        [
+          "fried_egg",
+          "eggplant_slice",
+          "fried_egg"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "pancake_stack",
+        "pancake_stack"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "tomato",
+        "corn_cob"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        "corn_cob"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "zucchini_round",
+          "fried_egg",
+          "corn_cob"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "corn_cob",
+        "fried_egg",
+        "eggplant_slice"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "a30dbc348354b1d340d4d6dc6215d19ec00ed6cb5b8879de30d90fa3798eb2da",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 4805004,
+    "solver_states": 2923,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "a732b4b74f9d4336ed0a2e049eb42e0f7fdf9af2a86f4e4f81c97bd8cc0850fd"
+  },
+  "chapter": 1,
+  "content_hash": "cfd79105f313424e4de98a77ac2e38d80aa30a2d35257d4163363505e56124ee",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.garden_037.lesson",
+  "level_id": "garden_037",
+  "mode": "campaign",
+  "number": 37,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      2,
+      5,
+      1
+    ],
+    [
+      4,
+      1,
+      3,
+      0
+    ],
+    [
+      1,
+      2,
+      4,
+      1
+    ],
+    [
+      5,
+      2,
+      1,
+      2
+    ],
+    [
+      4,
+      2,
+      5,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      3,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      4,
+      2
+    ],
+    [
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      2,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Greenhouse Table",
+  "title_key": "level.garden_037.title",
+  "trays": [
+    {
+      "front": [
+        "corn_cob",
+        "eggplant_slice",
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "button_mushroom",
+          "zucchini_round",
+          "zucchini_round"
+        ],
+        [
+          "bell_pepper_ring",
+          "eggplant_slice",
+          "zucchini_round"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "corn_cob",
+        null,
+        "bell_pepper_ring"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        "button_mushroom",
+        "zucchini_round"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "button_mushroom",
+        "zucchini_round"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        null,
+        "corn_cob"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

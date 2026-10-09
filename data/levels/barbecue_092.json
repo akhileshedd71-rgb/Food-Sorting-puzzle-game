@@ -1,0 +1,183 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 3,
+    "expected_max_rows": 2,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "bf7b0c179e9681576686a554349d032ef7db48ab1827b55e743ec385a6a67557",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 10565099,
+    "solver_states": 741,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "bc6ea4bd1a6de71e37ddb5ce6b133a6a6886142c86e88b5a79da163cb233b8ad"
+  },
+  "chapter": 2,
+  "content_hash": "b256cdadabba7d208c2df1aad5cd6e7a273e790df86de46de9664fe7353263b5",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.barbecue_092.lesson",
+  "level_id": "barbecue_092",
+  "mode": "campaign_orders",
+  "number": 92,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      2,
+      3,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      2
+    ],
+    [
+      0,
+      2,
+      2,
+      0
+    ],
+    [
+      4,
+      2,
+      2,
+      1
+    ],
+    [
+      3,
+      1,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      3,
+      1
+    ],
+    [
+      4,
+      0,
+      2,
+      0
+    ],
+    [
+      4,
+      1,
+      2,
+      1
+    ],
+    [
+      4,
+      0,
+      0,
+      2
+    ],
+    [
+      4,
+      1,
+      1,
+      0
+    ],
+    [
+      4,
+      2,
+      2,
+      2
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Backyard Combo",
+      "recipe_id": "backyard_combo",
+      "requirements": {
+        "chicken_drumstick": 1,
+        "corn_cob": 1
+      }
+    },
+    {
+      "id": "ticket_2",
+      "name": "Seafood Grill",
+      "recipe_id": "seafood_grill",
+      "requirements": {
+        "fish_fillet": 1,
+        "prawn": 1,
+        "zucchini_round": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Grillhouse Table",
+  "title_key": "level.barbecue_092.title",
+  "trays": [
+    {
+      "front": [
+        "prawn",
+        "prawn",
+        "zucchini_round"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "prawn",
+          "prawn",
+          "corn_cob"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "chicken_drumstick",
+        "prawn"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "corn_cob"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "chicken_drumstick",
+        "zucchini_round"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "fish_fillet",
+        "fish_fillet",
+        "corn_cob"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "prawn",
+          "chicken_drumstick",
+          "fish_fillet"
+        ]
+      ]
+    }
+  ]
+}

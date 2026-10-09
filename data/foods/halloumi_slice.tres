@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FoodDefinition" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://core/resources/food_definition.gd" id="1_definition"]
+[ext_resource type="Texture2D" path="res://assets/food/barbecue_atlas.png" id="2_atlas"]
+
+[sub_resource type="AtlasTexture" id="Atlas_food"]
+atlas = ExtResource("2_atlas")
+region = Rect2(1024, 512, 512, 512)
+
+[resource]
+script = ExtResource("1_definition")
+id = &"halloumi_slice"
+display_name_key = &"food.halloumi_slice"
+texture = SubResource("Atlas_food")
+tags = Array[StringName]([&"barbecue", &"cheese"])
+chapter = 2

@@ -1,0 +1,270 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": true,
+    "expected_foods": 6,
+    "expected_free_slots": 3,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "ad881cc1d78d204cde85b48ade1499dc29f4df68c0c7e3ad4d920756c12c5bb3",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 10250912,
+    "solver_states": 2568,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "12975b93f0ae3274a255926e2a53848dc8ee174455268e4f18f98692b2150079"
+  },
+  "chapter": 2,
+  "content_hash": "184e3f58178e443fa87031b5679d571bf4b20820221fc93106c2fdef93b254f9",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.barbecue_089.lesson",
+  "level_id": "barbecue_089",
+  "mode": "campaign_orders",
+  "number": 89,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      4,
+      0
+    ],
+    [
+      4,
+      1,
+      2,
+      0
+    ],
+    [
+      5,
+      1,
+      4,
+      1
+    ],
+    [
+      3,
+      2,
+      5,
+      1
+    ],
+    [
+      0,
+      2,
+      3,
+      2
+    ],
+    [
+      3,
+      1,
+      0,
+      2
+    ],
+    [
+      3,
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      3,
+      0
+    ],
+    [
+      5,
+      2,
+      3,
+      1
+    ],
+    [
+      3,
+      2,
+      5,
+      2
+    ],
+    [
+      5,
+      0,
+      2,
+      1
+    ],
+    [
+      5,
+      1,
+      0,
+      0
+    ],
+    [
+      5,
+      2,
+      0,
+      1
+    ],
+    [
+      5,
+      1,
+      3,
+      2
+    ],
+    [
+      3,
+      1,
+      5,
+      1
+    ],
+    [
+      3,
+      0,
+      2,
+      0
+    ],
+    [
+      3,
+      2,
+      2,
+      1
+    ],
+    [
+      3,
+      0,
+      0,
+      2
+    ],
+    [
+      3,
+      1,
+      1,
+      0
+    ],
+    [
+      3,
+      2,
+      2,
+      2
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Surf and Turf",
+      "recipe_id": "surf_and_turf",
+      "requirements": {
+        "bell_pepper_ring": 1,
+        "prawn": 1,
+        "steak": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Courtyard Challenge",
+  "title_key": "level.barbecue_089.title",
+  "trays": [
+    {
+      "front": [
+        "prawn",
+        "sausage_spiral",
+        "fish_fillet"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "prawn",
+        null,
+        null
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "sausage_spiral",
+          "prawn",
+          "prawn"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "sausage_spiral",
+        "steak",
+        "halloumi_slice"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "fish_fillet",
+        "fish_fillet",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "prawn",
+          "sausage_spiral",
+          "bell_pepper_ring"
+        ],
+        [
+          "steak",
+          "halloumi_slice",
+          "steak"
+        ],
+        [
+          "fish_fillet",
+          "prawn",
+          "steak"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "halloumi_slice",
+        "steak"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "steak",
+        "sausage_spiral"
+      ],
+      "id": "tray_6",
+      "queue": [
+        [
+          "halloumi_slice",
+          "fish_fillet",
+          "fish_fillet"
+        ],
+        [
+          "halloumi_slice",
+          "sausage_spiral",
+          "halloumi_slice"
+        ]
+      ]
+    }
+  ]
+}

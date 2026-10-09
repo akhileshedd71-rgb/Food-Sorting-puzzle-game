@@ -1,0 +1,171 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "609a59648f37f4100f1fcca7b6370833157ca24bf6623f35fb128a3351470102",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 12136034,
+    "solver_states": 391,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "016bb7ee47220871e8bb4e4b2c69c35ebc18148754122894564eee232eafe1cc"
+  },
+  "chapter": 3,
+  "content_hash": "cd2b80b945b9cedcc85e1425f5986df77bf7f298398caee939c4f0822a7af3a8",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.breakfast_107.lesson",
+  "level_id": "breakfast_107",
+  "mode": "campaign",
+  "number": 107,
+  "schema_version": 1,
+  "solution": [
+    [
+      2,
+      2,
+      3,
+      0
+    ],
+    [
+      0,
+      2,
+      2,
+      2
+    ],
+    [
+      2,
+      0,
+      0,
+      1
+    ],
+    [
+      5,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      4,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Daybreak Table",
+  "title_key": "level.breakfast_107.title",
+  "trays": [
+    {
+      "front": [
+        "button_mushroom",
+        null,
+        "zucchini_round"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "pancake_stack",
+          "pancake_stack"
+        ],
+        [
+          "button_mushroom",
+          "button_mushroom",
+          "fried_egg"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        "zucchini_round",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "bell_pepper_ring",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "fried_egg",
+        "fried_egg"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "bell_pepper_ring",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

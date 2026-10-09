@@ -1,0 +1,177 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "6f15fc16301f185d17d90adf22df5b5379e8550c6c6cfd7f8962b5877ab2cb45",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 11088744,
+    "solver_states": 1654,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "ee3f59f407b49dc2972372c97e4c87beee86368ab25565bc8d1850189b34f483"
+  },
+  "chapter": 2,
+  "content_hash": "d388c872de870b218dac084ad883a586f73fad4fe6c2d609b300e04d88696dc9",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.barbecue_097.lesson",
+  "level_id": "barbecue_097",
+  "mode": "campaign",
+  "number": 97,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      4,
+      1
+    ],
+    [
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      5,
+      1,
+      0,
+      2
+    ],
+    [
+      3,
+      1,
+      2,
+      0
+    ],
+    [
+      4,
+      0,
+      5,
+      1
+    ],
+    [
+      5,
+      2,
+      4,
+      0
+    ],
+    [
+      4,
+      2,
+      2,
+      1
+    ],
+    [
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      1,
+      0,
+      1
+    ],
+    [
+      4,
+      0,
+      3,
+      1
+    ],
+    [
+      4,
+      1,
+      5,
+      2
+    ],
+    [
+      4,
+      2,
+      0,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Gathering Table",
+  "title_key": "level.barbecue_097.title",
+  "trays": [
+    {
+      "front": [
+        "steak",
+        "halloumi_slice",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "halloumi_slice",
+        "sausage_spiral"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "fish_fillet",
+        "sausage_spiral",
+        "fish_fillet"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        null,
+        "steak"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "steak",
+          "steak",
+          "sausage_spiral"
+        ],
+        [
+          "fish_fillet",
+          "chicken_drumstick",
+          "steak"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        "halloumi_slice",
+        "steak"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

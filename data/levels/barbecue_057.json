@@ -1,0 +1,165 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "602ef493a3c9ef4443ca8af4e9b0da72700cb5ef50f3175ac2d89e0e11781c8d",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 6899584,
+    "solver_states": 292,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "138d5911103a8ea38374269376ef51c38d9b56621c817b7280b654e5fd5162c1"
+  },
+  "chapter": 2,
+  "content_hash": "a447388efb3c7772077ec5d58a939152c3ca5bf5b2bdc13019b3d07f2020f5b2",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.barbecue_057.lesson",
+  "level_id": "barbecue_057",
+  "mode": "campaign",
+  "number": 57,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      0,
+      2
+    ],
+    [
+      3,
+      1,
+      2,
+      0
+    ],
+    [
+      4,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      3,
+      1
+    ],
+    [
+      5,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      4,
+      0
+    ],
+    [
+      3,
+      2,
+      0,
+      1
+    ],
+    [
+      5,
+      0,
+      3,
+      2
+    ],
+    [
+      5,
+      1,
+      4,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Patio Table",
+  "title_key": "level.barbecue_057.title",
+  "trays": [
+    {
+      "front": [
+        "zucchini_round",
+        null,
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "steak",
+          "bell_pepper_ring",
+          "bell_pepper_ring"
+        ],
+        [
+          "chicken_drumstick",
+          "zucchini_round",
+          "chicken_drumstick"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "zucchini_round",
+        null,
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        null,
+        "button_mushroom"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "button_mushroom",
+        "chicken_drumstick"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "button_mushroom",
+        "zucchini_round"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "zucchini_round",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

@@ -6,7 +6,7 @@ extends RefCounted
 const SCHEMA_VERSION := 2
 const BOARD_SCHEMA_VERSION := 1
 const RULES_VERSION := 1
-const LEVEL_COUNT := 30
+const LEVEL_COUNT := LevelCatalog.LEVEL_COUNT
 const FIRST_CLEAR_COINS := 30
 const SETTING_KEYS := ["sound", "music", "haptics", "reduced_motion", "high_readability"]
 const MAX_FILE_BYTES := 4000000
@@ -369,7 +369,7 @@ static func _validate_payload(payload: Dictionary) -> Array:
 			if not _integer(record.get("level_number"), 1, LEVEL_COUNT) or not _integer(record.get("best_moves"), 0, 1000000):
 				errors.append("Invalid completion counters.")
 				continue
-			if level_id != "garden_%03d" % int(record.level_number) or record.get("transaction_id") != "first_clear:" + str(level_id):
+			if level_id != LevelCatalog.level_id(int(record.level_number)) or record.get("transaction_id") != "first_clear:" + str(level_id):
 				errors.append("Invalid completion identity.")
 			if record.get("reward") != FIRST_CLEAR_COINS or not record.get("recipes") is Array:
 				errors.append("Invalid completion reward.")
@@ -400,7 +400,7 @@ static func _validate_session_shape(session: Dictionary) -> Array:
 		var state_errors := _validate_state(state)
 		if not state_errors.is_empty():
 			return state_errors
-		if state.level_id != "garden_%03d" % int(session.level_number):
+		if state.level_id != LevelCatalog.level_id(int(session.level_number)):
 			errors.append("Saved level identity does not match.")
 		if previous_moves >= 0 and int(state.moves) != previous_moves + 1:
 			errors.append("Undo history is not consecutive.")
@@ -546,6 +546,12 @@ static func _migrate_payload(payload: Dictionary) -> Dictionary:
 			result.session["run_id"] = "legacy_" + _canonical(result.session).sha256_text().substr(0, 32)
 			result.session["hint_receipts"] = {}
 			result.session["extra_tray_granted"] = false
+	# Campaign growth is a derived progression update, not a new reward.
+	# Old capstone saves stopped at unlocked=30; their completion opens 31.
+	var unlocked: int = int(result.profile.unlocked)
+	for record in result.profile.completed.values():
+		unlocked = maxi(unlocked, int(record.level_number) + 1)
+	result.profile.unlocked = clampi(unlocked, 1, LEVEL_COUNT)
 	return result
 
 static func _validate_economy_profile(profile: Dictionary) -> Array:
@@ -598,4 +604,4 @@ static func _validate_session_extensions(session: Dictionary) -> Array:
 
 static func is_campaign_level(level: Dictionary) -> bool:
 	var number := int(level.get("number", 0))
-	return not level.has("tutorial_step") and number >= 1 and number <= LEVEL_COUNT and level.get("level_id", "") == "garden_%03d" % number
+	return not level.has("tutorial_step") and number >= 1 and number <= LEVEL_COUNT and level.get("level_id", "") == LevelCatalog.level_id(number)

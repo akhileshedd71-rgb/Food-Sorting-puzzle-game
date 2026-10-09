@@ -1,0 +1,242 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 4,
+    "challenge": false,
+    "expected_foods": 6,
+    "expected_free_slots": 6,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "a89451fa6450b1efb3dfac69ba60395ee5f61c5a8da49383cbd56a30f796aa48",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 14335343,
+    "solver_states": 2687,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "cd7ecddc4e3ba068b4d9e520cf1a3c9667a51245d583c92f32e31b1e38ef985c"
+  },
+  "chapter": 3,
+  "content_hash": "63292108d2a4faafbc7fbe1307d151c844c01bd37778bf5e8a6a8cba8f7a793f",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.breakfast_128.lesson",
+  "level_id": "breakfast_128",
+  "mode": "campaign",
+  "number": 128,
+  "schema_version": 1,
+  "solution": [
+    [
+      3,
+      0,
+      5,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      4,
+      0
+    ],
+    [
+      5,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      5,
+      1
+    ],
+    [
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      1,
+      4,
+      2
+    ],
+    [
+      1,
+      0,
+      2,
+      1
+    ],
+    [
+      2,
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      2,
+      1,
+      3,
+      1
+    ],
+    [
+      2,
+      1,
+      3,
+      2
+    ],
+    [
+      1,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      2,
+      3,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      1,
+      3,
+      2
+    ],
+    [
+      1,
+      2,
+      2,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Bakery Turnabout",
+  "title_key": "level.breakfast_128.title",
+  "trays": [
+    {
+      "front": [
+        "croissant",
+        "pancake_stack",
+        "toast_slice"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "hash_brown",
+        "croissant",
+        null
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "fried_egg",
+          "croissant",
+          "waffle_square"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "waffle_square",
+        "fried_egg",
+        "pancake_stack"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "fried_egg",
+          "croissant",
+          "croissant"
+        ],
+        [
+          "toast_slice",
+          "hash_brown",
+          "croissant"
+        ],
+        [
+          "waffle_square",
+          "toast_slice",
+          "waffle_square"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "waffle_square",
+        null,
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "hash_brown",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "pancake_stack",
+        null
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

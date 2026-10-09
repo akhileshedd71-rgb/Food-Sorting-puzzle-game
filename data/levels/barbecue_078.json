@@ -1,0 +1,194 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 6,
+    "expected_free_slots": 6,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "a86ee0710133e0e22448bdcc56c29eb1ae1999d401a948452205b939b7b57dd1",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 9098893,
+    "solver_states": 318,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "e1643fc083d62ef09f7c3a48394368858780f3070b50ef9a67af32d7e8cc5870"
+  },
+  "chapter": 2,
+  "content_hash": "0c7f8d7b561139a1acd192abd45e0e79b6ecaf49f397170d5a8e9d45aff68b27",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.barbecue_078.lesson",
+  "level_id": "barbecue_078",
+  "mode": "campaign",
+  "number": 78,
+  "schema_version": 1,
+  "solution": [
+    [
+      4,
+      0,
+      5,
+      0
+    ],
+    [
+      2,
+      2,
+      3,
+      0
+    ],
+    [
+      5,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      5,
+      1
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      2
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      1
+    ],
+    [
+      1,
+      2,
+      0,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Summer Turnabout",
+  "title_key": "level.barbecue_078.title",
+  "trays": [
+    {
+      "front": [
+        "sausage_spiral",
+        null,
+        "prawn"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "prawn",
+          "prawn",
+          "steak"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "steak",
+        "chicken_drumstick",
+        "steak"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "steak",
+          "prawn",
+          "steak"
+        ],
+        [
+          "sausage_spiral",
+          "halloumi_slice",
+          "sausage_spiral"
+        ],
+        [
+          "fish_fillet",
+          "halloumi_slice",
+          "prawn"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "halloumi_slice",
+        "steak",
+        "fish_fillet"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "fish_fillet"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        null,
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "prawn",
+        "chicken_drumstick"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 3,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "66694a04779e6e17233d68e5a0336805a4a24922d603eac972f757f020eb59ac",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 4176630,
+    "solver_states": 44,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "029043febc694149bf32e18b75414e1bd746c641aabfb3294f5d9668b8dc12b5"
+  },
+  "chapter": 1,
+  "content_hash": "db1f7d8671e46c4c8535137b8b5e40600473be57204e30f6629167a69c95fa94",
+  "content_version": 1,
+  "lesson": "A fresh combination of familiar food. Settle in and find your first match.",
+  "lesson_key": "level.garden_031.lesson",
+  "level_id": "garden_031",
+  "mode": "campaign",
+  "number": 31,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      3,
+      2,
+      1,
+      1
+    ],
+    [
+      2,
+      2,
+      3,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Garden Welcome",
+  "title_key": "level.garden_031.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        null,
+        "tomato"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        null,
+        "button_mushroom"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        null,
+        "corn_cob"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "corn_cob",
+        "button_mushroom"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

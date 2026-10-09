@@ -1,0 +1,127 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "b054277d7b6bd3a1a9ed394c3d6c998e48da72525b51740008a758ae6b56c103",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 15696820,
+    "solver_states": 98,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "e162ee741a030ddbc3693d4d35802f95220720d5d39b29e6bb64544f98a4962d"
+  },
+  "chapter": 3,
+  "content_hash": "3f31dc21c41f5a95c5b483cecba04d583a308f1ea72c35ddfd3e54d72446119f",
+  "content_version": 1,
+  "lesson": "A fresh combination of familiar food. Settle in and find your first match.",
+  "lesson_key": "level.breakfast_141.lesson",
+  "level_id": "breakfast_141",
+  "mode": "campaign",
+  "number": 141,
+  "schema_version": 1,
+  "solution": [
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      4,
+      1,
+      3,
+      2
+    ],
+    [
+      0,
+      2,
+      2,
+      0
+    ],
+    [
+      4,
+      2,
+      0,
+      2
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      2,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      2,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Honeylight Welcome",
+  "title_key": "level.breakfast_141.title",
+  "trays": [
+    {
+      "front": [
+        "toast_slice",
+        "toast_slice",
+        "waffle_square"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "hash_brown",
+        "waffle_square",
+        "hash_brown"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "croissant",
+        "waffle_square",
+        "hash_brown"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "croissant",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "croissant",
+        "toast_slice"
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

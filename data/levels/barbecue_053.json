@@ -1,0 +1,207 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "c3c806df201704d8d1a206a674bec7a066d10c1c048f988f4274b9304d61aae6",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 6480668,
+    "solver_states": 859,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "71f88bbe3acfd421b86b216cbe0e2663d81a4109a6c5cc8d2b97f920537495eb"
+  },
+  "chapter": 2,
+  "content_hash": "dbb245b2b9806228915b4bc9ffc3034f11766a84bc8b8b3542be19085b8290f5",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.barbecue_053.lesson",
+  "level_id": "barbecue_053",
+  "mode": "campaign",
+  "number": 53,
+  "schema_version": 1,
+  "solution": [
+    [
+      5,
+      2,
+      2,
+      2
+    ],
+    [
+      0,
+      1,
+      3,
+      2
+    ],
+    [
+      4,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      2
+    ],
+    [
+      4,
+      2,
+      2,
+      0
+    ],
+    [
+      4,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      2,
+      4,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      1
+    ],
+    [
+      4,
+      2,
+      0,
+      0
+    ],
+    [
+      1,
+      2,
+      4,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      1,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Backyard Turnabout",
+  "title_key": "level.barbecue_053.title",
+  "trays": [
+    {
+      "front": [
+        "chicken_drumstick",
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "button_mushroom",
+        "zucchini_round"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "chicken_drumstick",
+          "button_mushroom"
+        ],
+        [
+          "zucchini_round",
+          "bell_pepper_ring",
+          "zucchini_round"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "bell_pepper_ring",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        null,
+        "bell_pepper_ring"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "zucchini_round",
+          "button_mushroom",
+          "zucchini_round"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        null,
+        "bell_pepper_ring"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

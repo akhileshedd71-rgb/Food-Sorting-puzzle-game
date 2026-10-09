@@ -1,0 +1,177 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 6,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "8cb1c9059b27940099374e03de7dbb26bcc72f6a255629bf3cc46334cbb2b0db",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 10669828,
+    "solver_states": 283,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "727edf0b6c313e8087d72586b4c533f140620aaf429457de3d1b162111d5cf44"
+  },
+  "chapter": 2,
+  "content_hash": "b25ed8af7305676356aab88f6d001e6c2722072fbaee44abf5fdf8e697caa4d4",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.barbecue_093.lesson",
+  "level_id": "barbecue_093",
+  "mode": "campaign",
+  "number": 93,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      0,
+      5,
+      1
+    ],
+    [
+      0,
+      1,
+      4,
+      1
+    ],
+    [
+      2,
+      1,
+      4,
+      2
+    ],
+    [
+      2,
+      0,
+      3,
+      1
+    ],
+    [
+      2,
+      2,
+      1,
+      0
+    ],
+    [
+      4,
+      1,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      4,
+      1
+    ],
+    [
+      4,
+      0,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      4,
+      0
+    ],
+    [
+      1,
+      0,
+      3,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Grillhouse Turnabout",
+  "title_key": "level.barbecue_093.title",
+  "trays": [
+    {
+      "front": [
+        "halloumi_slice",
+        "steak",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "prawn",
+        "chicken_drumstick",
+        null
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "fish_fillet",
+          "sausage_spiral",
+          "sausage_spiral"
+        ],
+        [
+          "sausage_spiral",
+          "halloumi_slice",
+          "halloumi_slice"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "sausage_spiral",
+        "steak",
+        "chicken_drumstick"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "fish_fillet",
+        null,
+        "sausage_spiral"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        null,
+        null
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "sausage_spiral",
+          "chicken_drumstick",
+          "fish_fillet"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "prawn",
+        null,
+        "prawn"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

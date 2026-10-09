@@ -1,0 +1,269 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 6,
+    "challenge": true,
+    "expected_foods": 6,
+    "expected_free_slots": 3,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "666a4412718f0b87998da2e5031dca8b50fc5cf7acebd1535ed3ee6f83b301f5",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 15487362,
+    "solver_states": 567,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "7c3649e729d878197cca01191dc92492412f7b115c6cc2328d7963cd7005ed7f"
+  },
+  "chapter": 3,
+  "content_hash": "f750dc515fdca772b7363492a3a985864db3e4694e2c1e536bcbf0ba98902f04",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.breakfast_139.lesson",
+  "level_id": "breakfast_139",
+  "mode": "campaign_orders",
+  "number": 139,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      2,
+      0,
+      2
+    ],
+    [
+      1,
+      2,
+      3,
+      1
+    ],
+    [
+      5,
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      1,
+      4,
+      2
+    ],
+    [
+      3,
+      0,
+      5,
+      0
+    ],
+    [
+      1,
+      2,
+      3,
+      0
+    ],
+    [
+      3,
+      1,
+      1,
+      1
+    ],
+    [
+      4,
+      1,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      2,
+      1
+    ],
+    [
+      5,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      2,
+      4,
+      1
+    ],
+    [
+      1,
+      1,
+      3,
+      1
+    ],
+    [
+      3,
+      0,
+      1,
+      1
+    ],
+    [
+      5,
+      2,
+      1,
+      2
+    ],
+    [
+      2,
+      1,
+      3,
+      0
+    ],
+    [
+      3,
+      2,
+      2,
+      1
+    ],
+    [
+      4,
+      0,
+      3,
+      2
+    ],
+    [
+      5,
+      1,
+      4,
+      0
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Sweet Morning",
+      "recipe_id": "sweet_morning",
+      "requirements": {
+        "pancake_stack": 1,
+        "waffle_square": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Sunrise Challenge",
+  "title_key": "level.breakfast_139.title",
+  "trays": [
+    {
+      "front": [
+        "hash_brown",
+        "croissant",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        "toast_slice",
+        "waffle_square"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "toast_slice",
+          "fried_egg",
+          "waffle_square"
+        ],
+        [
+          "hash_brown",
+          "waffle_square",
+          "fried_egg"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "toast_slice",
+        "pancake_stack"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "hash_brown",
+        "hash_brown"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "hash_brown",
+          "croissant",
+          "waffle_square"
+        ],
+        [
+          "waffle_square",
+          "hash_brown",
+          "waffle_square"
+        ],
+        [
+          "hash_brown",
+          "toast_slice",
+          "pancake_stack"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "fried_egg",
+        "hash_brown",
+        "croissant"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "toast_slice",
+          "croissant",
+          "croissant"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "toast_slice",
+        "croissant",
+        "hash_brown"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

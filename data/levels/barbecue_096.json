@@ -1,0 +1,115 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "a9e4db92e1799e80cd67a94a19cf48d141aca72de3b88885614a4f4849178f02",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 10984015,
+    "solver_states": 84,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "0890c1c0b8ecf362b81c56afc267d716590a5ccc85814ed358033e78225a3b2f"
+  },
+  "chapter": 2,
+  "content_hash": "90041c771585b5c24caa330724d2c2b980017f3fccbb7727882fecad0000eeed",
+  "content_version": 1,
+  "lesson": "A fresh combination of familiar food. Settle in and find your first match.",
+  "lesson_key": "level.barbecue_096.lesson",
+  "level_id": "barbecue_096",
+  "mode": "campaign",
+  "number": 96,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      1,
+      3,
+      0
+    ],
+    [
+      2,
+      2,
+      4,
+      2
+    ],
+    [
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      1,
+      1
+    ],
+    [
+      2,
+      1,
+      0,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Gathering Welcome",
+  "title_key": "level.barbecue_096.title",
+  "trays": [
+    {
+      "front": [
+        "fish_fillet",
+        "fish_fillet",
+        "chicken_drumstick"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "halloumi_slice",
+        "chicken_drumstick"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        "fish_fillet",
+        "sausage_spiral"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "halloumi_slice",
+        "halloumi_slice"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "sausage_spiral",
+        "sausage_spiral",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

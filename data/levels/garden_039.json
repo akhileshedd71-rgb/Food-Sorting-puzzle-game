@@ -1,0 +1,206 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 9,
+    "challenge": true,
+    "expected_foods": 6,
+    "expected_free_slots": 3,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "7dac4929d51dad96c36bbb81948c84755e341388129f4bd68dc92c09a633613c",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 5014462,
+    "solver_states": 2922,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "a50fdb313f94e08857667d2d5b90be96fe4827b721bec6e3251a48fe6a4c9094"
+  },
+  "chapter": 1,
+  "content_hash": "5623f3f6f119f31957f1cb2c242e02b6fed200575b02c5f908425cff7672d2b3",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.garden_039.lesson",
+  "level_id": "garden_039",
+  "mode": "campaign",
+  "number": 39,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      2,
+      4,
+      1
+    ],
+    [
+      5,
+      0,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      1,
+      2
+    ],
+    [
+      3,
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      3,
+      0
+    ],
+    [
+      2,
+      2,
+      1,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      0
+    ],
+    [
+      5,
+      2,
+      2,
+      2
+    ],
+    [
+      1,
+      0,
+      5,
+      2
+    ],
+    [
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      1,
+      5,
+      0
+    ],
+    [
+      1,
+      2,
+      3,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Greenhouse Challenge",
+  "title_key": "level.garden_039.title",
+  "trays": [
+    {
+      "front": [
+        "zucchini_round",
+        "eggplant_slice",
+        "eggplant_slice"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "button_mushroom",
+        "corn_cob"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "tomato",
+          "button_mushroom",
+          "button_mushroom"
+        ],
+        [
+          "corn_cob",
+          "bell_pepper_ring",
+          "eggplant_slice"
+        ],
+        [
+          "bell_pepper_ring",
+          "corn_cob",
+          "tomato"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "zucchini_round",
+        "button_mushroom"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        "tomato",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        null,
+        "corn_cob"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "eggplant_slice",
+        "eggplant_slice"
+      ],
+      "id": "tray_6",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "corn_cob",
+          "zucchini_round"
+        ]
+      ]
+    }
+  ]
+}

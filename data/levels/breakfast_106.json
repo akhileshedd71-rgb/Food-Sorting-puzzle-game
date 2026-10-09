@@ -1,0 +1,121 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "pancake_stack",
+    "new_recipe": "",
+    "plan_hash": "7ebb3310c46accfee2bd8f19e92d44a37e2d4efd86231c573b89321fc8c87936",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 12031305,
+    "solver_states": 103,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "10b6f65216d677fcc7e7cb94a04bd729bb400872f70ff76dee5c97ec7d0c3a15"
+  },
+  "chapter": 3,
+  "content_hash": "6fcbd058148bd23efee90e963d66d60f6baf635fbfb1e83d9864f2e25fb2ece9",
+  "content_version": 1,
+  "lesson": "Meet Pancake Stack. Find its matching shapes and take your time.",
+  "lesson_key": "level.breakfast_106.lesson",
+  "level_id": "breakfast_106",
+  "mode": "campaign",
+  "number": 106,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      4,
+      0,
+      3,
+      2
+    ],
+    [
+      1,
+      1,
+      4,
+      0
+    ],
+    [
+      2,
+      2,
+      1,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Pancake Stack",
+  "title_key": "level.breakfast_106.title",
+  "trays": [
+    {
+      "front": [
+        "button_mushroom",
+        "fried_egg",
+        "button_mushroom"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "corn_cob",
+        "fried_egg"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        null,
+        "fried_egg"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "pancake_stack",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        "corn_cob",
+        "corn_cob"
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": true,
+    "expected_foods": 5,
+    "expected_free_slots": 3,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "66cc6482d188d6d42bf8cdf405f9e7cbc374658de7d4280c689a8494916752cd",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 8679977,
+    "solver_states": 382,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "b845e2b929ecdbf1735cf1d12df8418255f2e8fd6a2c97bec3e57c5161b880c0"
+  },
+  "chapter": 2,
+  "content_hash": "5795cfd53883b46a011f625aa39cbad3140f38568aae76750e6f98c8e2f0935b",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.barbecue_074.lesson",
+  "level_id": "barbecue_074",
+  "mode": "campaign",
+  "number": 74,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      2,
+      4,
+      2
+    ],
+    [
+      2,
+      2,
+      1,
+      1
+    ],
+    [
+      5,
+      1,
+      1,
+      2
+    ],
+    [
+      1,
+      1,
+      2,
+      2
+    ],
+    [
+      1,
+      2,
+      3,
+      2
+    ],
+    [
+      2,
+      0,
+      5,
+      1
+    ],
+    [
+      4,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      2,
+      4,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      2
+    ],
+    [
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      2,
+      3,
+      0
+    ],
+    [
+      5,
+      2,
+      2,
+      2
+    ],
+    [
+      4,
+      1,
+      5,
+      2
+    ],
+    [
+      0,
+      0,
+      4,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Ember Challenge",
+  "title_key": "level.barbecue_074.title",
+  "trays": [
+    {
+      "front": [
+        "prawn",
+        null,
+        "prawn"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "sausage_spiral",
+        "prawn",
+        "steak"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "sausage_spiral",
+          "steak",
+          "fish_fillet"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        "steak",
+        "sausage_spiral"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "sausage_spiral",
+          "sausage_spiral",
+          "steak"
+        ],
+        [
+          "steak",
+          "prawn",
+          "fish_fillet"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "prawn",
+        "fish_fillet",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "chicken_drumstick",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        "sausage_spiral",
+        "prawn"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

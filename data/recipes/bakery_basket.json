@@ -1,0 +1,12 @@
+{
+  "chapter": 3,
+  "id": "bakery_basket",
+  "name": "Bakery Basket",
+  "name_key": "recipe.bakery_basket",
+  "requirements": {
+    "croissant": 2,
+    "toast_slice": 1
+  },
+  "schema_version": 1,
+  "unlock_level": 130
+}

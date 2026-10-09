@@ -1,0 +1,254 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": true,
+    "expected_foods": 5,
+    "expected_free_slots": 3,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "dfd68dd21e5ff8784b287350c60835189a440058488d1384d10af7f024c3f088",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 9727267,
+    "solver_states": 1867,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "0479f06e83f1d9de59728f76bd88636fab90682abb38cb3affd16f88e9dfb3b0"
+  },
+  "chapter": 2,
+  "content_hash": "f136d55231fb0e484704bf9ad01c8961811ae5c9bf0485b719daadd1d1ee81a6",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.barbecue_084.lesson",
+  "level_id": "barbecue_084",
+  "mode": "campaign_orders",
+  "number": 84,
+  "schema_version": 1,
+  "solution": [
+    [
+      3,
+      1,
+      2,
+      2
+    ],
+    [
+      1,
+      0,
+      3,
+      1
+    ],
+    [
+      5,
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      4,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      1,
+      5,
+      1
+    ],
+    [
+      3,
+      1,
+      5,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      1
+    ],
+    [
+      2,
+      0,
+      3,
+      1
+    ],
+    [
+      5,
+      0,
+      2,
+      0
+    ],
+    [
+      4,
+      2,
+      5,
+      0
+    ],
+    [
+      3,
+      2,
+      4,
+      2
+    ],
+    [
+      4,
+      2,
+      0,
+      0
+    ],
+    [
+      5,
+      2,
+      4,
+      2
+    ],
+    [
+      4,
+      1,
+      5,
+      2
+    ],
+    [
+      4,
+      0,
+      1,
+      0
+    ],
+    [
+      4,
+      2,
+      1,
+      1
+    ],
+    [
+      4,
+      0,
+      3,
+      2
+    ],
+    [
+      4,
+      1,
+      1,
+      2
+    ],
+    [
+      4,
+      2,
+      0,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Smoky Platter",
+      "recipe_id": "smoky_platter",
+      "requirements": {
+        "bell_pepper_ring": 1,
+        "button_mushroom": 1,
+        "halloumi_slice": 1,
+        "sausage_spiral": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Sunset Challenge",
+  "title_key": "level.barbecue_084.title",
+  "trays": [
+    {
+      "front": [
+        "button_mushroom",
+        "chicken_drumstick",
+        "button_mushroom"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "halloumi_slice",
+        "button_mushroom",
+        "button_mushroom"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "sausage_spiral",
+        "sausage_spiral",
+        null
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "halloumi_slice",
+          "button_mushroom",
+          "button_mushroom"
+        ],
+        [
+          "bell_pepper_ring",
+          "halloumi_slice",
+          "chicken_drumstick"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "sausage_spiral",
+        "halloumi_slice"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "halloumi_slice",
+        "sausage_spiral"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "halloumi_slice",
+          "sausage_spiral",
+          "button_mushroom"
+        ],
+        [
+          "bell_pepper_ring",
+          "halloumi_slice",
+          "button_mushroom"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "halloumi_slice",
+        "button_mushroom",
+        null
+      ],
+      "id": "tray_6",
+      "queue": [
+        [
+          "chicken_drumstick",
+          "sausage_spiral",
+          "halloumi_slice"
+        ]
+      ]
+    }
+  ]
+}

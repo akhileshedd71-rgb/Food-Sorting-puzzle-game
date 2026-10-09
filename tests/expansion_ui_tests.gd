@@ -398,7 +398,7 @@ func clear_campaign(number: int) -> void:
 	await settle()
 	var before: int = game.economy.balance()
 	await solve_current()
-	check(game.model.is_won() and game.save.data.profile.completed.has("garden_%03d" % number), "campaign %d completes through input" % number)
+	check(game.model.is_won() and game.save.data.profile.completed.has(LevelCatalog.level_id(number)), "campaign %d completes through input" % number)
 	check(game.economy.balance() == before + 30, "first campaign %d clear earns 30 spendable coins" % number)
 
 

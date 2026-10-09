@@ -1,0 +1,94 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 2,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "70a1f30509778d6c41eb927ef97ce29934263f9e3315f0ddb6264756d02608f2",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 4700275,
+    "solver_states": 26,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "5778c3bc121212178eba3f3e90ca77a94d57cba5eaceb5926276729e0f090a44"
+  },
+  "chapter": 1,
+  "content_hash": "93b749548cca5cba8fbf8a203ae13da9f307fb935eaef975d55ebce4232a5c6b",
+  "content_version": 1,
+  "lesson": "A fresh combination of familiar food. Settle in and find your first match.",
+  "lesson_key": "level.garden_036.lesson",
+  "level_id": "garden_036",
+  "mode": "campaign",
+  "number": 36,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      3,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      2,
+      1,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Greenhouse Welcome",
+  "title_key": "level.garden_036.title",
+  "trays": [
+    {
+      "front": [
+        "bell_pepper_ring",
+        null,
+        "button_mushroom"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "corn_cob",
+        "button_mushroom"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        null,
+        "corn_cob"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        null,
+        "bell_pepper_ring"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

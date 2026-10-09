@@ -81,7 +81,15 @@ func run() -> void:
 	await settle()
 	var album_scroll: ScrollContainer = game.page.find_children("*", "ScrollContainer", true, false)[0]
 	check(album_scroll.get_global_rect().end.y <= game.size.y + 1, "recipe album scroll viewport fits screen")
-	check(album_scroll.get_child(0).get_child_count() == 4, "recipe album exposes all four recipes")
+	var recipe_names: Dictionary = {}
+	var album_chapter: int = int(LevelCatalog.chapter_for_level(game.next_table_number()).id)
+	for recipe in LevelCatalog.load_recipes():
+		if int(recipe.chapter) == album_chapter: recipe_names[str(recipe.name)] = 0
+	check(recipe_names.size() == 4, "selected chapter has four recipe cards")
+	for label in album_scroll.find_children("*", "Label", true, false):
+		if recipe_names.has(label.text): recipe_names[label.text] += 1
+	for recipe_name in recipe_names:
+		check(recipe_names[recipe_name] == 1, "recipe album exposes exactly one card for " + recipe_name)
 	check(album_scroll.get_child(0).get_combined_minimum_size().y <= album_scroll.size.y + 1 or album_scroll.get_v_scroll_bar().max_value > album_scroll.get_v_scroll_bar().page, "recipe album fits or scrolls its content")
 	await screenshot("album")
 	album_scroll.scroll_vertical = int(album_scroll.get_v_scroll_bar().max_value)

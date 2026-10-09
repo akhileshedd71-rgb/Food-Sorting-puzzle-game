@@ -1,0 +1,165 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 6,
+    "expected_free_slots": 3,
+    "expected_max_rows": 2,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "8915ef4bdb5539d76345673b659164025b48fb3486348430588e08ce1bf169ae",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 4281359,
+    "solver_states": 147,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "2a3b0036d1cbec83a88a3376f87cc2eb171aaa01a55b03e10768e2651340c055"
+  },
+  "chapter": 1,
+  "content_hash": "49f0eaeb3d13c28ae111ca59a2b0b94f7f7648d6671a268b3688b29b1366bb80",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.garden_032.lesson",
+  "level_id": "garden_032",
+  "mode": "campaign_orders",
+  "number": 32,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      1,
+      3,
+      0
+    ],
+    [
+      4,
+      2,
+      2,
+      1
+    ],
+    [
+      2,
+      0,
+      4,
+      2
+    ],
+    [
+      4,
+      2,
+      3,
+      1
+    ],
+    [
+      4,
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      2
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      4,
+      0,
+      2,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Garden Banquet",
+      "recipe_id": "garden_banquet",
+      "requirements": {
+        "bell_pepper_ring": 1,
+        "button_mushroom": 1,
+        "corn_cob": 1,
+        "eggplant_slice": 1,
+        "tomato": 1,
+        "zucchini_round": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Garden Table",
+  "title_key": "level.garden_032.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        "eggplant_slice",
+        "tomato"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "corn_cob",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        null,
+        "button_mushroom"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "corn_cob",
+          "bell_pepper_ring",
+          "tomato"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        null,
+        "eggplant_slice"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "zucchini_round",
+        "button_mushroom"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "corn_cob",
+          "button_mushroom",
+          "eggplant_slice"
+        ]
+      ]
+    }
+  ]
+}

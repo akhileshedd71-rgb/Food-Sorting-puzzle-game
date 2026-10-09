@@ -1,0 +1,112 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "sausage_spiral",
+    "new_recipe": "",
+    "plan_hash": "f39ef6c9ed61d2fedbdf141b05beb4d5b27f0c50d358bc7d53ee0a86ff6ba9cb",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 8365790,
+    "solver_states": 70,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "785e17e3b8bc38e2263e27a5145d72b3a09e39180e91c237447059e323ca2448"
+  },
+  "chapter": 2,
+  "content_hash": "1c6b3581ccf446f227c679a63cdc2ecc9859e1d56d3753858286d7e935744846",
+  "content_version": 1,
+  "lesson": "Meet Sausage Spiral. Find its matching shapes and take your time.",
+  "lesson_key": "level.barbecue_071.lesson",
+  "level_id": "barbecue_071",
+  "mode": "campaign",
+  "number": 71,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      3,
+      1
+    ],
+    [
+      2,
+      2,
+      3,
+      2
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Sausage Spiral",
+  "title_key": "level.barbecue_071.title",
+  "trays": [
+    {
+      "front": [
+        "chicken_drumstick",
+        "sausage_spiral",
+        "steak"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        "sausage_spiral",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "sausage_spiral",
+        "chicken_drumstick",
+        "steak"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        null,
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 12,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "a10986d7e1578e1a2eb5aa5889585d056bbd1b5c737b2c32f4e50554d5eee209",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 5642836,
+    "solver_states": 235,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "201b99e330118854c15d31834d6f73c50750db9cb63c13c0737972a624cc0eca"
+  },
+  "chapter": 1,
+  "content_hash": "463922ac0ef383db851b0b313b0db44e2aa8599afa3ed3d16be1ff6614d9227d",
+  "content_version": 1,
+  "lesson": "Enjoy a little breathing room. Finish this short serving at your own pace.",
+  "lesson_key": "level.garden_045.lesson",
+  "level_id": "garden_045",
+  "mode": "campaign_orders",
+  "number": 45,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      3,
+      0,
+      1,
+      1
+    ],
+    [
+      3,
+      1,
+      2,
+      0
+    ],
+    [
+      3,
+      2,
+      2,
+      1
+    ],
+    [
+      3,
+      0,
+      0,
+      2
+    ],
+    [
+      3,
+      1,
+      1,
+      2
+    ],
+    [
+      3,
+      2,
+      2,
+      2
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Garden Sampler",
+      "recipe_id": "garden_sampler",
+      "requirements": {
+        "button_mushroom": 1,
+        "corn_cob": 1,
+        "tomato": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Orchard Breather",
+  "title_key": "level.garden_045.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        null,
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "tomato",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "button_mushroom",
+        "button_mushroom"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "tomato",
+          "corn_cob",
+          "button_mushroom"
+        ]
+      ]
+    }
+  ]
+}

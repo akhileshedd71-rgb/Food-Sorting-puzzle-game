@@ -1,0 +1,121 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 2,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "croissant",
+    "new_recipe": "",
+    "plan_hash": "27f4a7194d281622daa665c5815910b5a425dfca58608e1a1f9ea960beb4cee0",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 14125885,
+    "solver_states": 109,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "4f8d1f1a705c8d589b4485f1889d21509b2d98c7871b6c190114b54cfd2696f2"
+  },
+  "chapter": 3,
+  "content_hash": "421639a34ea376b4dd889cc60cd9bbb0378a1f2ba02080941941bd7e96caf4af",
+  "content_version": 1,
+  "lesson": "Meet Croissant. Find its matching shapes and take your time.",
+  "lesson_key": "level.breakfast_126.lesson",
+  "level_id": "breakfast_126",
+  "mode": "campaign",
+  "number": 126,
+  "schema_version": 1,
+  "solution": [
+    [
+      3,
+      1,
+      4,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      3,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Croissant",
+  "title_key": "level.breakfast_126.title",
+  "trays": [
+    {
+      "front": [
+        "fried_egg",
+        "waffle_square",
+        "croissant"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "croissant",
+        "fried_egg",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "fried_egg",
+        "waffle_square",
+        "waffle_square"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "croissant",
+        "pancake_stack",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        "pancake_stack",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

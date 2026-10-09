@@ -1,0 +1,13 @@
+{
+  "chapter": 2,
+  "id": "seafood_grill",
+  "name": "Seafood Grill",
+  "name_key": "recipe.seafood_grill",
+  "requirements": {
+    "fish_fillet": 1,
+    "prawn": 1,
+    "zucchini_round": 1
+  },
+  "schema_version": 1,
+  "unlock_level": 70
+}

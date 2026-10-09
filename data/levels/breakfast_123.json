@@ -1,0 +1,183 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "16ddaebb2bf6519bb9ada683e22c493c1b34bd9aacc894eb5a6fb2b2a1ec0e3a",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 13811698,
+    "solver_states": 282,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "b4f10463c29f9f7323fccd4c11425283783c643fae05165801f0c1446de4f7d3"
+  },
+  "chapter": 3,
+  "content_hash": "0c43e13cf040d07b1f228296c8f24c234bb16672dc4ce9c9736958ea9710a4bf",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.breakfast_123.lesson",
+  "level_id": "breakfast_123",
+  "mode": "campaign",
+  "number": 123,
+  "schema_version": 1,
+  "solution": [
+    [
+      2,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      4,
+      2
+    ],
+    [
+      3,
+      0,
+      1,
+      1
+    ],
+    [
+      3,
+      1,
+      5,
+      1
+    ],
+    [
+      4,
+      0,
+      5,
+      2
+    ],
+    [
+      3,
+      2,
+      4,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      5,
+      2,
+      0,
+      1
+    ],
+    [
+      0,
+      2,
+      5,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Sunday Turnabout",
+  "title_key": "level.breakfast_123.title",
+  "trays": [
+    {
+      "front": [
+        "toast_slice",
+        "toast_slice",
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "waffle_square",
+          "pancake_stack",
+          "hash_brown"
+        ],
+        [
+          "pancake_stack",
+          "pancake_stack",
+          "fried_egg"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "fried_egg",
+        "waffle_square"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "toast_slice",
+        null,
+        "hash_brown"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "toast_slice",
+        "fried_egg"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "toast_slice",
+        "fried_egg",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "toast_slice",
+        null,
+        null
+      ],
+      "id": "tray_6",
+      "queue": [
+        [
+          "fried_egg",
+          "fried_egg",
+          "hash_brown"
+        ]
+      ]
+    }
+  ]
+}

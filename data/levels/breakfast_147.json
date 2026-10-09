@@ -1,0 +1,235 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "f5c9089fe612e3e66e9ea2bfab504946ab6c702ffc5a6906f91eb493b9b1a969",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 16325194,
+    "solver_states": 1110,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "417b7e2e369783b2176a421c3003e94d991814720676cb2e6be960f6afea2cc5"
+  },
+  "chapter": 3,
+  "content_hash": "0c9f262f698149c7fbe6c7205e1f12e7893d584f4bfb684872dd8ae5f099d72d",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.breakfast_147.lesson",
+  "level_id": "breakfast_147",
+  "mode": "campaign_orders",
+  "number": 147,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      2,
+      1,
+      2
+    ],
+    [
+      2,
+      2,
+      3,
+      1
+    ],
+    [
+      3,
+      2,
+      4,
+      0
+    ],
+    [
+      5,
+      1,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      2
+    ],
+    [
+      1,
+      1,
+      5,
+      1
+    ],
+    [
+      5,
+      2,
+      1,
+      0
+    ],
+    [
+      4,
+      2,
+      1,
+      1
+    ],
+    [
+      5,
+      0,
+      4,
+      2
+    ],
+    [
+      3,
+      0,
+      5,
+      0
+    ],
+    [
+      3,
+      1,
+      5,
+      2
+    ],
+    [
+      3,
+      2,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      2
+    ],
+    [
+      3,
+      0,
+      1,
+      1
+    ],
+    [
+      3,
+      1,
+      0,
+      1
+    ],
+    [
+      5,
+      1,
+      0,
+      2
+    ],
+    [
+      3,
+      2,
+      5,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Brunch Board",
+      "recipe_id": "brunch_board",
+      "requirements": {
+        "button_mushroom": 1,
+        "fried_egg": 1,
+        "hash_brown": 1,
+        "tomato": 1
+      }
+    },
+    {
+      "id": "ticket_2",
+      "name": "Classic Breakfast",
+      "recipe_id": "classic_breakfast",
+      "requirements": {
+        "fried_egg": 1,
+        "hash_brown": 1,
+        "toast_slice": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Celebration Table",
+  "title_key": "level.breakfast_147.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        null,
+        "hash_brown"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "hash_brown",
+        "fried_egg",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "hash_brown",
+        "toast_slice"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "toast_slice",
+        null,
+        "tomato"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "button_mushroom",
+          "button_mushroom",
+          "fried_egg"
+        ],
+        [
+          "hash_brown",
+          "fried_egg",
+          "toast_slice"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "tomato",
+        "button_mushroom"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "fried_egg",
+        "hash_brown",
+        "fried_egg"
+      ],
+      "id": "tray_6",
+      "queue": [
+        [
+          "tomato",
+          "fried_egg",
+          "hash_brown"
+        ]
+      ]
+    }
+  ]
+}

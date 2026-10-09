@@ -1,0 +1,171 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "28dd4c0052c8db72ed37836ba2672b11d37aa4aba2bbc2c35604cd2838650f96",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 11717118,
+    "solver_states": 189,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "d86afba39443dfb88acf9cfdacb42e9755c391009e9276fe8348824b1544a28f"
+  },
+  "chapter": 3,
+  "content_hash": "a099a910779eea3a23e8a1e48515bc3a22c1dc7e9fa46dfe816395782704555b",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.breakfast_103.lesson",
+  "level_id": "breakfast_103",
+  "mode": "campaign",
+  "number": 103,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      2,
+      2,
+      2
+    ],
+    [
+      4,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      4,
+      0
+    ],
+    [
+      5,
+      0,
+      4,
+      1
+    ],
+    [
+      4,
+      0,
+      5,
+      0
+    ],
+    [
+      5,
+      2,
+      4,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      1
+    ],
+    [
+      4,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      5,
+      2
+    ],
+    [
+      4,
+      2,
+      0,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Morning Turnabout",
+  "title_key": "level.breakfast_103.title",
+  "trays": [
+    {
+      "front": [
+        "bell_pepper_ring",
+        "zucchini_round",
+        "fried_egg"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "zucchini_round",
+          "fried_egg",
+          "zucchini_round"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "button_mushroom",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "fried_egg",
+        "fried_egg",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        null,
+        "zucchini_round"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "fried_egg",
+          "zucchini_round",
+          "zucchini_round"
+        ],
+        [
+          "bell_pepper_ring",
+          "bell_pepper_ring",
+          "zucchini_round"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "fried_egg",
+        "zucchini_round"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

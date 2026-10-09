@@ -1,0 +1,13 @@
+{
+  "chapter": 3,
+  "id": "classic_breakfast",
+  "name": "Classic Breakfast",
+  "name_key": "recipe.classic_breakfast",
+  "requirements": {
+    "fried_egg": 1,
+    "hash_brown": 1,
+    "toast_slice": 1
+  },
+  "schema_version": 1,
+  "unlock_level": 125
+}

@@ -1,0 +1,100 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 3,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "fish_fillet",
+    "new_recipe": "",
+    "plan_hash": "b8491ff2562857b32426fcef9ccd85a16ec8b9af4b538c4a7690deba2a1eecd2",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 7842145,
+    "solver_states": 35,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "33ef474b57ff2bc47054a083ac48104d3f56daa147cc8a50637b7d21f0b9c0ef"
+  },
+  "chapter": 2,
+  "content_hash": "84671f39bdb2d48a1bfdc677e83001b3bbe0be8be2bd9ab207831957c58c6072",
+  "content_version": 1,
+  "lesson": "Meet Fish Fillet. Find its matching shapes and take your time.",
+  "lesson_key": "level.barbecue_066.lesson",
+  "level_id": "barbecue_066",
+  "mode": "campaign",
+  "number": 66,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      2,
+      3,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      3,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Fish Fillet",
+  "title_key": "level.barbecue_066.title",
+  "trays": [
+    {
+      "front": [
+        "steak",
+        "steak",
+        "chicken_drumstick"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "fish_fillet",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "fish_fillet",
+        "chicken_drumstick",
+        "fish_fillet"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "chicken_drumstick"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

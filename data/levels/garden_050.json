@@ -1,0 +1,160 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 12,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "22cb2526a14db021e0aff70cd832531a92026ee20bfe8f41ba633232b60216c2",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 6166481,
+    "solver_states": 321,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "72b7a72a658d779b150e9eaa3f61af48baa89a15dfc927cf4faf47bbb277c8b3"
+  },
+  "chapter": 1,
+  "content_hash": "21683d08765c30c6b9146251ed0afe5ac1d04b1f43b5ab7b46cf3d9ecab2ffc0",
+  "content_version": 1,
+  "lesson": "Enjoy a little breathing room. Finish this short serving at your own pace.",
+  "lesson_key": "level.garden_050.lesson",
+  "level_id": "garden_050",
+  "mode": "campaign_orders",
+  "number": 50,
+  "schema_version": 1,
+  "solution": [
+    [
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      2,
+      0,
+      1
+    ],
+    [
+      3,
+      0,
+      2,
+      1
+    ],
+    [
+      3,
+      1,
+      1,
+      2
+    ],
+    [
+      3,
+      2,
+      0,
+      2
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Ratatouille Grill",
+      "recipe_id": "ratatouille_grill",
+      "requirements": {
+        "bell_pepper_ring": 1,
+        "eggplant_slice": 1,
+        "tomato": 1,
+        "zucchini_round": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "A Garden Farewell",
+  "title_key": "level.garden_050.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "zucchini_round",
+        "zucchini_round"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        null,
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "eggplant_slice",
+        null
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "eggplant_slice",
+          "tomato"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        null,
+        "bell_pepper_ring"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "tomato",
+          "eggplant_slice",
+          "bell_pepper_ring"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "chapter": 3,
+  "id": "sweet_morning",
+  "name": "Sweet Morning",
+  "name_key": "recipe.sweet_morning",
+  "requirements": {
+    "pancake_stack": 1,
+    "waffle_square": 1
+  },
+  "schema_version": 1,
+  "unlock_level": 115
+}

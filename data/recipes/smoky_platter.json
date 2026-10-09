@@ -1,0 +1,14 @@
+{
+  "chapter": 2,
+  "id": "smoky_platter",
+  "name": "Smoky Platter",
+  "name_key": "recipe.smoky_platter",
+  "requirements": {
+    "bell_pepper_ring": 1,
+    "button_mushroom": 1,
+    "halloumi_slice": 1,
+    "sausage_spiral": 1
+  },
+  "schema_version": 1,
+  "unlock_level": 80
+}

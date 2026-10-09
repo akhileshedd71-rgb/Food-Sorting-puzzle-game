@@ -1,0 +1,141 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 12,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "f97f422a5fbebaab3553e832c81e1c73d886c9201a2bcda7f1835c5e6d2894eb",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 8784706,
+    "solver_states": 66,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "12e57e03707e873a5a4c4881a97d9440cfe8ac35d7637a160f4dd9eae53c4fa5"
+  },
+  "chapter": 2,
+  "content_hash": "1959238e87be248463557ed46ad5ad21e15a6935a0b4067a29d6b422266011b5",
+  "content_version": 1,
+  "lesson": "Enjoy a little breathing room. Finish this short serving at your own pace.",
+  "lesson_key": "level.barbecue_075.lesson",
+  "level_id": "barbecue_075",
+  "mode": "campaign_orders",
+  "number": 75,
+  "schema_version": 1,
+  "solution": [
+    [
+      3,
+      2,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      2,
+      2,
+      2
+    ],
+    [
+      1,
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      0,
+      2,
+      0
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Surf and Turf",
+      "recipe_id": "surf_and_turf",
+      "requirements": {
+        "bell_pepper_ring": 1,
+        "prawn": 1,
+        "steak": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Ember Breather",
+  "title_key": "level.barbecue_075.title",
+  "trays": [
+    {
+      "front": [
+        "prawn",
+        null,
+        "steak"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "steak",
+        "prawn"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "bell_pepper_ring",
+          "prawn"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        null,
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "steak"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

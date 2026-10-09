@@ -1,0 +1,229 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 4,
+    "challenge": true,
+    "expected_foods": 6,
+    "expected_free_slots": 3,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "19f2f4aa0239e9f2a897c2d16f0e47431751c1985112d28763187342ef0490cf",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 9203622,
+    "solver_states": 342,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "e531295b8c7756f6d009c3ff9612ba9719e86013f20f6b0a02e1d9edf7b6b041"
+  },
+  "chapter": 2,
+  "content_hash": "fe1284a0c744c8351b544bcb5576162621a1ab451da95a72d425162b6d930fac",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.barbecue_079.lesson",
+  "level_id": "barbecue_079",
+  "mode": "campaign_orders",
+  "number": 79,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      0,
+      4,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      5,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      3,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      2,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      4,
+      2
+    ],
+    [
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      5,
+      1,
+      2,
+      1
+    ],
+    [
+      3,
+      1,
+      5,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Surf and Turf",
+      "recipe_id": "surf_and_turf",
+      "requirements": {
+        "bell_pepper_ring": 1,
+        "prawn": 1,
+        "steak": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Summer Challenge",
+  "title_key": "level.barbecue_079.title",
+  "trays": [
+    {
+      "front": [
+        "prawn",
+        null,
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "halloumi_slice",
+          "fish_fillet",
+          "bell_pepper_ring"
+        ],
+        [
+          "fish_fillet",
+          "bell_pepper_ring",
+          "steak"
+        ],
+        [
+          "chicken_drumstick",
+          "fish_fillet",
+          "fish_fillet"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "prawn",
+        "fish_fillet"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "fish_fillet",
+          "bell_pepper_ring"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "steak",
+        "chicken_drumstick"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "halloumi_slice",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        null,
+        "steak"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "prawn",
+        "chicken_drumstick",
+        "halloumi_slice"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

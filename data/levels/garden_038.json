@@ -1,0 +1,218 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "e041a80452cd986888985b1ea37b2be3a2ffa4043008c5bbcb9ba5f988ee8e1c",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 4909733,
+    "solver_states": 1819,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "fbbd5603a7f014d701e56688b02dda4c96be89d20ed475086d74bee3b1352c0b"
+  },
+  "chapter": 1,
+  "content_hash": "72594e0ec59dfcc5378e7f0243dcea080572983c1439838cf7b9fbf4938dfa53",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.garden_038.lesson",
+  "level_id": "garden_038",
+  "mode": "campaign",
+  "number": 38,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      3,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      4,
+      2
+    ],
+    [
+      3,
+      0,
+      2,
+      1
+    ],
+    [
+      2,
+      1,
+      3,
+      0
+    ],
+    [
+      3,
+      2,
+      2,
+      1
+    ],
+    [
+      5,
+      1,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      5,
+      1
+    ],
+    [
+      4,
+      0,
+      2,
+      0
+    ],
+    [
+      5,
+      2,
+      4,
+      0
+    ],
+    [
+      5,
+      0,
+      1,
+      0
+    ],
+    [
+      5,
+      1,
+      1,
+      1
+    ],
+    [
+      5,
+      0,
+      3,
+      2
+    ],
+    [
+      5,
+      1,
+      1,
+      2
+    ],
+    [
+      5,
+      2,
+      0,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Greenhouse Turnabout",
+  "title_key": "level.garden_038.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "bell_pepper_ring",
+        "button_mushroom"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "bell_pepper_ring",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "corn_cob",
+        null
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "zucchini_round",
+          "zucchini_round",
+          "zucchini_round"
+        ],
+        [
+          "button_mushroom",
+          "eggplant_slice",
+          "button_mushroom"
+        ],
+        [
+          "bell_pepper_ring",
+          "button_mushroom",
+          "zucchini_round"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "button_mushroom",
+        "zucchini_round"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "eggplant_slice",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "corn_cob",
+        "eggplant_slice"
+      ],
+      "id": "tray_6",
+      "queue": [
+        [
+          "button_mushroom",
+          "bell_pepper_ring",
+          "corn_cob"
+        ]
+      ]
+    }
+  ]
+}

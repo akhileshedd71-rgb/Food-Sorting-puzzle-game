@@ -1,0 +1,168 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 2,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "bee5dbb4efed912ed8454d047dd29a95b3f4332a7588403688bd81a224966910",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 8470519,
+    "solver_states": 134,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "f2ff8e0c7790415ccc873c02bc8e59ea502820204ca1349b9ff5021a65deb159"
+  },
+  "chapter": 2,
+  "content_hash": "748144c20fe07df526f5fc10467bc5c718543dfcffe4de48586903b5d394d5b1",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.barbecue_072.lesson",
+  "level_id": "barbecue_072",
+  "mode": "campaign_orders",
+  "number": 72,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      1,
+      4,
+      0
+    ],
+    [
+      3,
+      1,
+      4,
+      2
+    ],
+    [
+      0,
+      0,
+      3,
+      1
+    ],
+    [
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      4,
+      0
+    ],
+    [
+      3,
+      0,
+      1,
+      0
+    ],
+    [
+      4,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      2,
+      4,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Surf and Turf",
+      "recipe_id": "surf_and_turf",
+      "requirements": {
+        "bell_pepper_ring": 1,
+        "prawn": 1,
+        "steak": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Ember Table",
+  "title_key": "level.barbecue_072.title",
+  "trays": [
+    {
+      "front": [
+        "prawn",
+        "bell_pepper_ring",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "sausage_spiral",
+        "steak"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "prawn",
+          "bell_pepper_ring",
+          "prawn"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "prawn",
+        "bell_pepper_ring",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "sausage_spiral",
+        "prawn"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "sausage_spiral",
+        null
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "steak",
+          "prawn"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 6,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "a5dd1f1960baed079d76f2afbebe58129de55f9f5ca6a63fcb78d95fe31d8245",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 5433378,
+    "solver_states": 1572,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "91edb5864a4d2b60a45d6b12b17681253ccafc1cbb68573d1d7f350611bbd33f"
+  },
+  "chapter": 1,
+  "content_hash": "00df1ebd06b4036f3dbbdf8c7b7712ac3c8b917a7518ca4bcae5715db6e25de6",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.garden_043.lesson",
+  "level_id": "garden_043",
+  "mode": "campaign",
+  "number": 43,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      3,
+      2
+    ],
+    [
+      0,
+      1,
+      4,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      1,
+      0,
+      1
+    ],
+    [
+      4,
+      1,
+      3,
+      1
+    ],
+    [
+      2,
+      2,
+      4,
+      1
+    ],
+    [
+      0,
+      1,
+      3,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      2
+    ],
+    [
+      1,
+      1,
+      2,
+      2
+    ],
+    [
+      1,
+      2,
+      0,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Orchard Turnabout",
+  "title_key": "level.garden_043.title",
+  "trays": [
+    {
+      "front": [
+        "bell_pepper_ring",
+        "corn_cob",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "corn_cob",
+          "tomato",
+          "zucchini_round"
+        ],
+        [
+          "button_mushroom",
+          "eggplant_slice",
+          "button_mushroom"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "eggplant_slice",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "eggplant_slice",
+          "corn_cob",
+          "button_mushroom"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "corn_cob",
+        "tomato"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        "corn_cob",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

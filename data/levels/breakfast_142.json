@@ -1,0 +1,208 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 6,
+    "expected_free_slots": 3,
+    "expected_max_rows": 2,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "696a59ad5ad46884a19254684e29d1965aedb2db3e50ff195ca184739ee9a073",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 15801549,
+    "solver_states": 2521,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "e91c06eceb37c12c47571f3e19093f64f2a83f7558ea4b30ebfbabbe44f59157"
+  },
+  "chapter": 3,
+  "content_hash": "de005cec6ffa3e9ddced2fbe8e838c195116b196a6d74db1a49cb8b232661e92",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.breakfast_142.lesson",
+  "level_id": "breakfast_142",
+  "mode": "campaign_orders",
+  "number": 142,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      1,
+      3,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      3,
+      2,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      1,
+      0,
+      1
+    ],
+    [
+      3,
+      2,
+      2,
+      2
+    ],
+    [
+      1,
+      1,
+      3,
+      2
+    ],
+    [
+      2,
+      0,
+      4,
+      1
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      2,
+      0,
+      2
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Bakery Basket",
+      "recipe_id": "bakery_basket",
+      "requirements": {
+        "croissant": 2,
+        "toast_slice": 1
+      }
+    },
+    {
+      "id": "ticket_2",
+      "name": "Brunch Board",
+      "recipe_id": "brunch_board",
+      "requirements": {
+        "button_mushroom": 1,
+        "fried_egg": 1,
+        "hash_brown": 1,
+        "tomato": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Honeylight Table",
+  "title_key": "level.breakfast_142.title",
+  "trays": [
+    {
+      "front": [
+        "toast_slice",
+        "croissant",
+        "croissant"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "croissant",
+          "button_mushroom",
+          "button_mushroom"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "hash_brown",
+        "fried_egg"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "croissant",
+        "fried_egg",
+        "button_mushroom"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "tomato",
+          "fried_egg",
+          "hash_brown"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "hash_brown",
+        "croissant"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "toast_slice",
+          "toast_slice",
+          "croissant"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "tomato",
+        null,
+        "tomato"
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

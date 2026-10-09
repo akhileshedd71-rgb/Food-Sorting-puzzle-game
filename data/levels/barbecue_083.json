@@ -1,0 +1,195 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "ebe1c259ea36d1ba354815f2ca04a4ef8d6af1b583235020f0543f90898d54d0",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 9622538,
+    "solver_states": 295,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "1bd7b4e3160ad6f6151c1d3bc0fb4ca79476dc47fb3baba91427e0c38cac7407"
+  },
+  "chapter": 2,
+  "content_hash": "2b671227805266d91cb6c7a27920af1e045c019a3adeef2b37b318f4867b2ec2",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.barbecue_083.lesson",
+  "level_id": "barbecue_083",
+  "mode": "campaign",
+  "number": 83,
+  "schema_version": 1,
+  "solution": [
+    [
+      5,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      5,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      4,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      2,
+      4,
+      1
+    ],
+    [
+      2,
+      2,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      4,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      5,
+      2,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      5,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Sunset Turnabout",
+  "title_key": "level.barbecue_083.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        null,
+        "fish_fillet"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "prawn",
+        null,
+        "chicken_drumstick"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "chicken_drumstick",
+        "chicken_drumstick"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "steak",
+          "prawn",
+          "fish_fillet"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "fish_fillet",
+        "steak",
+        "fish_fillet"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "steak",
+          "chicken_drumstick",
+          "chicken_drumstick"
+        ],
+        [
+          "fish_fillet",
+          "steak",
+          "steak"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        "prawn",
+        "fish_fillet"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

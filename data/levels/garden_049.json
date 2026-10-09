@@ -1,0 +1,253 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 3,
+    "challenge": true,
+    "expected_foods": 6,
+    "expected_free_slots": 3,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "b5eed1f19721b52af06ccea94ff301fcb9f76b1bc46fb8154f88bceed3ef2662",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 6061752,
+    "solver_states": 3027,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "1169aef09911e27285cde601c19fc4f1c81ca4c944cf20c3ab4e645d509accd2"
+  },
+  "chapter": 1,
+  "content_hash": "456b2a0050c5699d674c8784645c99feb548452ebc494957eb265f533b7669b8",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.garden_049.lesson",
+  "level_id": "garden_049",
+  "mode": "campaign",
+  "number": 49,
+  "schema_version": 1,
+  "solution": [
+    [
+      2,
+      2,
+      4,
+      2
+    ],
+    [
+      3,
+      0,
+      2,
+      2
+    ],
+    [
+      2,
+      1,
+      3,
+      0
+    ],
+    [
+      5,
+      0,
+      2,
+      1
+    ],
+    [
+      2,
+      2,
+      5,
+      0
+    ],
+    [
+      1,
+      1,
+      2,
+      2
+    ],
+    [
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      0,
+      4,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      4,
+      0
+    ],
+    [
+      3,
+      1,
+      5,
+      0
+    ],
+    [
+      1,
+      2,
+      3,
+      1
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      1,
+      3,
+      0
+    ],
+    [
+      3,
+      1,
+      5,
+      1
+    ],
+    [
+      3,
+      0,
+      0,
+      1
+    ],
+    [
+      4,
+      1,
+      1,
+      0
+    ],
+    [
+      3,
+      2,
+      1,
+      1
+    ],
+    [
+      3,
+      0,
+      4,
+      1
+    ],
+    [
+      3,
+      1,
+      1,
+      2
+    ],
+    [
+      3,
+      2,
+      0,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Sunlit Challenge",
+  "title_key": "level.garden_049.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        "tomato",
+        "tomato"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "zucchini_round",
+        "corn_cob"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "button_mushroom",
+          "tomato",
+          "button_mushroom"
+        ],
+        [
+          "tomato",
+          "tomato",
+          "corn_cob"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "bell_pepper_ring",
+        "tomato"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "button_mushroom",
+          "corn_cob",
+          "corn_cob"
+        ],
+        [
+          "button_mushroom",
+          "bell_pepper_ring",
+          "zucchini_round"
+        ],
+        [
+          "eggplant_slice",
+          "zucchini_round",
+          "button_mushroom"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "corn_cob",
+        null
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "zucchini_round",
+          "zucchini_round",
+          "eggplant_slice"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "corn_cob",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

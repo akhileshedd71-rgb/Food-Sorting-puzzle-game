@@ -1,0 +1,189 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 6,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "93bb77963ee2f90494f68cab92348df5dc699eef6f11be7dc2db0569099cc939",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 7527958,
+    "solver_states": 349,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "cdc6c765c20164c9059615cd57bb4a8c0a937008b39fd01ac3ace320e4a09085"
+  },
+  "chapter": 2,
+  "content_hash": "739b9a660b4ee19e8483c20e98f88b9d0650472650ee16aec3d518efee712546",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.barbecue_063.lesson",
+  "level_id": "barbecue_063",
+  "mode": "campaign",
+  "number": 63,
+  "schema_version": 1,
+  "solution": [
+    [
+      3,
+      2,
+      0,
+      2
+    ],
+    [
+      3,
+      1,
+      4,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      5,
+      0
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      4,
+      2,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      4,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      4,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      4,
+      0
+    ],
+    [
+      5,
+      1,
+      1,
+      2
+    ],
+    [
+      2,
+      2,
+      5,
+      1
+    ],
+    [
+      0,
+      2,
+      2,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Fireside Turnabout",
+  "title_key": "level.barbecue_063.title",
+  "trays": [
+    {
+      "front": [
+        "zucchini_round",
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "chicken_drumstick",
+          "prawn",
+          "steak"
+        ],
+        [
+          "zucchini_round",
+          "tomato",
+          "eggplant_slice"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "prawn",
+        "eggplant_slice",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "eggplant_slice",
+        "steak"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "chicken_drumstick",
+        "zucchini_round"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "chicken_drumstick",
+        "prawn"
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "zucchini_round",
+          "tomato",
+          "tomato"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "zucchini_round",
+        "steak"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": true,
+    "expected_foods": 5,
+    "expected_free_slots": 3,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "957f0a7a61f8e810beac698ad41aa9ab7b70186a090e061a84e1ec28107df3a0",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 16011007,
+    "solver_states": 353,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "ad84e0df640800ccd8bf0ee41efa78bca90e0ff516c2f4ce2ad814e304596389"
+  },
+  "chapter": 3,
+  "content_hash": "a6cbba74ded73ccdcdd2ce7b6912f851e31f9a4e9c324a4a153c8c2bd03d5902",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.breakfast_144.lesson",
+  "level_id": "breakfast_144",
+  "mode": "campaign_orders",
+  "number": 144,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      0
+    ],
+    [
+      2,
+      1,
+      4,
+      2
+    ],
+    [
+      1,
+      2,
+      2,
+      1
+    ],
+    [
+      3,
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      3,
+      1
+    ],
+    [
+      5,
+      1,
+      4,
+      0
+    ],
+    [
+      3,
+      2,
+      0,
+      1
+    ],
+    [
+      5,
+      2,
+      3,
+      2
+    ],
+    [
+      3,
+      0,
+      0,
+      2
+    ],
+    [
+      3,
+      1,
+      5,
+      1
+    ],
+    [
+      4,
+      1,
+      5,
+      2
+    ],
+    [
+      3,
+      2,
+      4,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Bakery Basket",
+      "recipe_id": "bakery_basket",
+      "requirements": {
+        "croissant": 2,
+        "toast_slice": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Honeylight Challenge",
+  "title_key": "level.breakfast_144.title",
+  "trays": [
+    {
+      "front": [
+        "waffle_square",
+        "croissant",
+        "waffle_square"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "toast_slice",
+        "waffle_square",
+        "croissant"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "croissant",
+        "hash_brown",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "waffle_square",
+        "toast_slice"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "croissant",
+          "croissant",
+          "waffle_square"
+        ],
+        [
+          "waffle_square",
+          "fried_egg",
+          "waffle_square"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "toast_slice",
+        "hash_brown",
+        null
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "waffle_square",
+          "fried_egg",
+          "waffle_square"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "fried_egg",
+        "hash_brown",
+        "croissant"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

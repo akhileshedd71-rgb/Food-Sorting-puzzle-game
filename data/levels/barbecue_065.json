@@ -1,0 +1,117 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 18,
+    "new_food": "",
+    "new_recipe": "surf_and_turf",
+    "plan_hash": "467560ae058998731fb0c9d228a303615335ee7bf25006af3c8861702873fa52",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 7737416,
+    "solver_states": 36,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "770374ec8d0c4fa450e0ec46dade0cf64464d2e86737e1d9144cd164e87c6414"
+  },
+  "chapter": 2,
+  "content_hash": "41b8431748f378cecf05d3739ca0a0cec6f443f9de24b4b95dbc0913121cd306",
+  "content_version": 1,
+  "lesson": "Serve Surf and Turf with matching food batches, then clear the last pieces from the counter.",
+  "lesson_key": "level.barbecue_065.lesson",
+  "level_id": "barbecue_065",
+  "mode": "campaign_orders",
+  "number": 65,
+  "schema_version": 1,
+  "solution": [
+    [
+      3,
+      2,
+      2,
+      2
+    ],
+    [
+      0,
+      2,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      2,
+      0,
+      0,
+      0
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Surf and Turf",
+      "recipe_id": "surf_and_turf",
+      "requirements": {
+        "bell_pepper_ring": 1,
+        "prawn": 1,
+        "steak": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Today's Surf and Turf",
+  "title_key": "level.barbecue_065.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        null,
+        "prawn"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "prawn",
+          "prawn"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        null,
+        "bell_pepper_ring"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "steak",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "steak"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

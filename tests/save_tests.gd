@@ -23,6 +23,8 @@ func _initialize() -> void:
 	_test_recovery_boundaries()
 	_test_corruption_archives()
 	_test_validation_and_reset()
+	_test_v02_content_expansion()
+	_test_later_chapter_persistence()
 	_cleanup()
 	_test_audio.call_deferred()
 
@@ -179,11 +181,11 @@ func _test_validation_and_reset() -> void:
 	_check(loaded.load_save() and loaded.data.profile.coins == 0, "Payload tampering fails checksum even at a higher revision")
 	_cleanup()
 	service = SaveService.new(save_path)
-	level = _simple_level(30)
+	level = _simple_level(LevelCatalog.LEVEL_COUNT)
 	model.setup(level)
 	model.apply_move(1, 0, 0, 2)
 	service.commit_session(model, level)
-	_check(service.data.profile.unlocked == 30 and service.last_error.is_empty(), "Final chapter unlock stays within 30 authored levels")
+	_check(service.data.profile.unlocked == LevelCatalog.LEVEL_COUNT and service.last_error.is_empty(), "Final chapter unlock stays within the authored campaign")
 	service.clear_session()
 	_check(service.data.session.is_empty() and service.data.profile.coins == 30, "Discarding a session preserves completion and currency")
 	service.reset_progress()
@@ -191,6 +193,99 @@ func _test_validation_and_reset() -> void:
 	_write_text(save_path, "damaged after reset")
 	loaded = SaveService.new(save_path)
 	_check(loaded.load_save() and loaded.data.profile.completed.is_empty(), "Backup recovery cannot resurrect progress after confirmed reset")
+
+func _test_v02_content_expansion() -> void:
+	_cleanup()
+	# Frozen bytes captured by the actual v0.2 production services before
+	# changing either the catalog or SaveService. Never regenerate on test runs.
+	var original_text := FileAccess.get_file_as_string("res://tests/fixtures/v0_2_completed_30_save.json")
+	var original: Dictionary = JSON.parse_string(original_text).payload
+	_write_text(save_path, original_text)
+	var service := SaveService.new(save_path)
+	_check(service.load_save(), "Authentic v0.2 envelope loads after content expansion")
+	_check(service.data.schema_version == 2 and service.data.profile.unlocked == 31, "Completed old capstone unlocks 31 without a schema change")
+	var expected: Dictionary = original.duplicate(true)
+	expected.profile.unlocked = 31
+	_check(SaveService._canonical(service.data) == SaveService._canonical(expected), "Unlock reconciliation changes no wallet, session, receipt, history, theme or tutorial field")
+	var level := LevelCatalog.load_level(30)
+	_check(not level.is_empty() and service.validate_session(level).is_empty(), "Frozen level30 dictionary remains compatible with the v0.2 content hash")
+	var model := BoardModel.new()
+	_check(service.restore_session(model) and model.run_id == original.session.run_id, "Legacy paid run resumes with its original identity")
+	_check(model.extra_tray_granted and model.state.trays.back().front == ["tomato", null, null] and model.history.size() == 2, "Occupied purchased tray and pre-grant undo history survive expansion")
+	var economy := EconomyService.new(service)
+	_check(economy.initialize().awarded == 0 and economy.balance() == 670 and economy.complete_tutorial().awarded == 0, "Expansion grants neither welcome nor graduation coins twice")
+	_check(service.data.profile.owned_themes.size() == 3 and service.data.profile.active_theme == "berry", "Purchased themes and equipped finish survive expansion")
+	_check(model.undo() and model.state.trays.back().front == [null, null, null], "Legacy undo empties the previously occupied purchased tray")
+	var hint := economy.buy_hint(model, level, 0)
+	_check(hint.status == "ok" and hint.charged == 0 and economy.balance() == 670, "Old paid hint receipt remains free after undo")
+	_check(model.undo() and model.extra_tray_granted and model.state.trays.back().front == [null, null, null], "Undo before the old grant retains an empty purchased tray")
+	_check(SaveService._inventory(model.state.trays) == SaveService._inventory(level.trays), "Legacy grant undo preserves all original food exactly once")
+	service.commit_session(model, level)
+	_check(service.last_error.is_empty() and service.validate_session(level).is_empty(), "Expanded save safely persists the resumed legacy board")
+	var loaded := SaveService.new(save_path)
+	_check(loaded.load_save() and loaded.data.profile.unlocked == 31 and loaded.data.profile.coins == 670, "Derived unlock persists with the unchanged wallet")
+	var clean_replay := BoardModel.new()
+	clean_replay.setup(level)
+	for command in level.solution:
+		_check(clean_replay.apply_move(command[0], command[1], command[2], command[3]), "Original capstone proof command still executes")
+	loaded.commit_session(clean_replay, level)
+	_check(clean_replay.is_won() and loaded.data.profile.coins == 670 and loaded.data.profile.completed.size() == 30, "Replaying old capstone cannot repeat its first-clear reward")
+	# An unfinished old capstone never unlocks the new chapter prematurely.
+	var unfinished: Dictionary = original.duplicate(true)
+	unfinished.profile.completed.erase("garden_030")
+	unfinished.profile.coins = 640
+	unfinished.profile.unlocked = 30
+	_cleanup()
+	_write_text(save_path, SaveService._canonical(SaveService._make_envelope(unfinished, 1)))
+	var not_done := SaveService.new(save_path)
+	_check(not_done.load_save() and not_done.data.profile.unlocked == 30, "An unfinished level30 stays locked at30 after expansion")
+	_cleanup()
+
+func _test_later_chapter_persistence() -> void:
+	# Small persistence fixtures use only real registered foods and the catalog
+	# identity mapping; content solution validation is exercised separately.
+	for sample in [
+		{"number": 51, "food": "chicken_drumstick"},
+		{"number": 100, "food": "halloumi_slice"},
+		{"number": 101, "food": "fried_egg"},
+		{"number": 150, "food": "croissant"}
+	]:
+		_cleanup()
+		var level := _simple_level(int(sample.number))
+		for tray in level.trays:
+			for index in range(3):
+				if tray.front[index] != null:
+					tray.front[index] = sample.food
+		level.mode = "campaign_orders"
+		level.tickets = [{"id": "new_chapter_order", "requirements": {sample.food: 1}}]
+		var model := BoardModel.new()
+		model.setup(level)
+		var service := SaveService.new(save_path)
+		service.commit_session(model, level)
+		_check(service.last_error.is_empty(), "Later chapter registered food and ticket save successfully")
+		var loaded := SaveService.new(save_path)
+		_check(loaded.load_save() and loaded.validate_session(level).is_empty(), "Later chapter identity and inventory reload correctly")
+		model.apply_move(1, 0, 0, 2)
+		service.commit_session(model, level)
+		_check(model.is_won() and service.last_error.is_empty() and service.data.profile.coins == 30, "Later chapter first clear grants the normal once-only reward")
+		var expected_unlock := mini(int(sample.number) + 1, LevelCatalog.LEVEL_COUNT)
+		_check(service.data.profile.unlocked == expected_unlock and service.data.profile.completed.has(LevelCatalog.level_id(int(sample.number))), "Later chapter completion uses the catalog ID and correct next level")
+		service.commit_session(model, level)
+		_check(service.data.profile.coins == 30 and loaded.load_save(), "Later chapter repeated settlement cannot duplicate currency")
+		var before := service.data.duplicate(true)
+		var wrong_identity: Dictionary = level.duplicate(true)
+		wrong_identity.level_id = "garden_%03d" % int(sample.number)
+		service.commit_session(model, wrong_identity)
+		_check(service.data == before and not SaveService.is_campaign_level(wrong_identity), "Mismatched chapter identity cannot replace a valid session")
+		var invalid: Dictionary = before.duplicate(true)
+		invalid.session.state.level_id = wrong_identity.level_id
+		_check(not SaveService._validate_payload(invalid).is_empty(), "Saved history/state cannot impersonate a different chapter prefix")
+		invalid = before.duplicate(true)
+		var record: Dictionary = invalid.profile.completed[LevelCatalog.level_id(int(sample.number))]
+		invalid.profile.completed.clear()
+		invalid.profile.completed[wrong_identity.level_id] = record
+		_check(not SaveService._validate_payload(invalid).is_empty(), "Completion records cannot use the old garden prefix in later chapters")
+	_cleanup()
 
 func _test_audio() -> void:
 	var audio := GameAudio.new()
@@ -211,7 +306,7 @@ func _test_audio() -> void:
 	quit(0 if failures == 0 else 1)
 
 func _simple_level(number: int = 1) -> Dictionary:
-	return {"schema_version": 1, "content_version": 1, "level_id": "garden_%03d" % number,
+	return {"schema_version": 1, "content_version": 1, "level_id": LevelCatalog.level_id(number),
 		"number": number, "mode": "campaign", "active_ticket_limit": 1,
 		"trays": [{"id": "t1", "front": ["tomato", "tomato", null], "queue": []},
 			{"id": "t2", "front": ["tomato", null, null], "queue": []}], "tickets": []}

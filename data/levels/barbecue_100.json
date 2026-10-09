@@ -1,0 +1,141 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 12,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "4e83a9036e89ef233f3425c323274fab01e76fc2c352c7638c3d9d8d228414dc",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 11402931,
+    "solver_states": 245,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "b93031f743649afb5c0d42bdeab6a3a0dde22a8d33c905c8111dbb952f63103a"
+  },
+  "chapter": 2,
+  "content_hash": "3f4f469fcc0630a64e426ab506f58bad42992c06d61d9cd4b31ad9fd2113ca6b",
+  "content_version": 1,
+  "lesson": "Enjoy a little breathing room. Finish this short serving at your own pace.",
+  "lesson_key": "level.barbecue_100.lesson",
+  "level_id": "barbecue_100",
+  "mode": "campaign_orders",
+  "number": 100,
+  "schema_version": 1,
+  "solution": [
+    [
+      2,
+      1,
+      3,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      2,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      1,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      2,
+      2
+    ],
+    [
+      1,
+      1,
+      3,
+      2
+    ],
+    [
+      1,
+      2,
+      0,
+      2
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Seafood Grill",
+      "recipe_id": "seafood_grill",
+      "requirements": {
+        "fish_fillet": 1,
+        "prawn": 1,
+        "zucchini_round": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "The Backyard Celebration",
+  "title_key": "level.barbecue_100.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "prawn",
+        "zucchini_round"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "zucchini_round",
+          "fish_fillet",
+          "prawn"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "fish_fillet",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "fish_fillet",
+        "prawn"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

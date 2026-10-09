@@ -1,0 +1,100 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "steak",
+    "new_recipe": "",
+    "plan_hash": "1a1d12e46df18f1416df8b2b689c81c01302ff2177fad4f0c146e7ba4b0375a3",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 6794855,
+    "solver_states": 36,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "973d34513a5d621b2bcf5245452316a721f4782a9ded5c3fae1f6b8b1bb260b9"
+  },
+  "chapter": 2,
+  "content_hash": "5ce6bd7e8d4d3cdc7ddb92e85ac41a4e9a71e17f03d0e3e5696d49261e743735",
+  "content_version": 1,
+  "lesson": "Meet Steak. Find its matching shapes and take your time.",
+  "lesson_key": "level.barbecue_056.lesson",
+  "level_id": "barbecue_056",
+  "mode": "campaign",
+  "number": 56,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      2,
+      0,
+      0
+    ],
+    [
+      3,
+      2,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      3,
+      2
+    ],
+    [
+      1,
+      0,
+      2,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Steak",
+  "title_key": "level.barbecue_056.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "corn_cob",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        null,
+        "corn_cob"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        "steak",
+        "steak"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        "chicken_drumstick",
+        "corn_cob"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "31a455e36f879d9cbe81d97f3f70d001780035010bbf2bad3f2d2ee49b0c743a",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 16220465,
+    "solver_states": 118,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "62b0dfa79eac44762b90803212879abccb5f1712593fc28683788dd5e193a953"
+  },
+  "chapter": 3,
+  "content_hash": "d53c9be39f2d6e2e9c67470c29801aa08f4c6ff5ff60247574cfdfc45164127a",
+  "content_version": 1,
+  "lesson": "A fresh combination of familiar food. Settle in and find your first match.",
+  "lesson_key": "level.breakfast_146.lesson",
+  "level_id": "breakfast_146",
+  "mode": "campaign",
+  "number": 146,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      1
+    ],
+    [
+      4,
+      1,
+      1,
+      2
+    ],
+    [
+      3,
+      1,
+      4,
+      1
+    ],
+    [
+      2,
+      1,
+      3,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Celebration Welcome",
+  "title_key": "level.breakfast_146.title",
+  "trays": [
+    {
+      "front": [
+        "fried_egg",
+        "hash_brown",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "toast_slice",
+        "hash_brown",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "toast_slice",
+        "fried_egg",
+        "hash_brown"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "croissant",
+        "fried_egg"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "croissant",
+        "toast_slice",
+        "croissant"
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

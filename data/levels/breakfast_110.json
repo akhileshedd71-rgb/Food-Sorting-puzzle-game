@@ -1,0 +1,112 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 12,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "cd666c783aa6b235a6ec434631c5ef497cf49584fa99ab84ff142307a53de8d3",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 12450221,
+    "solver_states": 41,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "cf6ca6765c2a02d33e5748e49f5fb5c481434a851f6a5dd964ff7d2c97c6dc6c"
+  },
+  "chapter": 3,
+  "content_hash": "a256b168db0ee32518b86ab907ab2954492f207fd11948d6ff137ddc5d7ed4f9",
+  "content_version": 1,
+  "lesson": "Enjoy a little breathing room. Finish this short serving at your own pace.",
+  "lesson_key": "level.breakfast_110.lesson",
+  "level_id": "breakfast_110",
+  "mode": "campaign",
+  "number": 110,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      1
+    ],
+    [
+      2,
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      2,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Daybreak Breather",
+  "title_key": "level.breakfast_110.title",
+  "trays": [
+    {
+      "front": [
+        "fried_egg",
+        null,
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        "fried_egg",
+        "eggplant_slice"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "pancake_stack"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "pancake_stack",
+          "eggplant_slice",
+          "pancake_stack"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        null,
+        "fried_egg"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

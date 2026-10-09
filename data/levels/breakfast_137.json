@@ -1,0 +1,190 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "35071e18c30f0f6994a3c27489e0f6701be5663a3762144f4e2084fb865bb93b",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 15277904,
+    "solver_states": 301,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "7fe874b3eb52680627e869521cc05df37927b7af14e39d916e133c81444d641a"
+  },
+  "chapter": 3,
+  "content_hash": "f3f66c876aa8381e6a827facb909ae889f0971490bf7f76e0f170248f96eb6b8",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.breakfast_137.lesson",
+  "level_id": "breakfast_137",
+  "mode": "campaign_orders",
+  "number": 137,
+  "schema_version": 1,
+  "solution": [
+    [
+      3,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      4,
+      2
+    ],
+    [
+      1,
+      2,
+      0,
+      1
+    ],
+    [
+      0,
+      2,
+      5,
+      0
+    ],
+    [
+      5,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      2,
+      5,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      4,
+      0,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      4,
+      0
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Sweet Morning",
+      "recipe_id": "sweet_morning",
+      "requirements": {
+        "pancake_stack": 1,
+        "waffle_square": 1
+      }
+    },
+    {
+      "id": "ticket_2",
+      "name": "Bakery Basket",
+      "recipe_id": "bakery_basket",
+      "requirements": {
+        "croissant": 2,
+        "toast_slice": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Sunrise Table",
+  "title_key": "level.breakfast_137.title",
+  "trays": [
+    {
+      "front": [
+        "croissant",
+        "waffle_square",
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "croissant",
+          "croissant",
+          "hash_brown"
+        ],
+        [
+          "waffle_square",
+          "toast_slice",
+          "hash_brown"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "toast_slice",
+        "pancake_stack",
+        "croissant"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "toast_slice",
+        "pancake_stack"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "croissant",
+        null,
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        "waffle_square",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "croissant",
+        "hash_brown"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

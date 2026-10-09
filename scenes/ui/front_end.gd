@@ -50,8 +50,8 @@ static func title(game: Variant) -> void:
 	content.add_child(GardenUI.button("Enter the cafe  →", game.show_home, GardenUI.TEAL, Vector2(0, 98)))
 	game.page.add_child(invitation)
 	game.page.add_child(GardenUI.spacer(0, true))
-	game.page.add_child(game.centered("GARDEN GRILL  ·  30 TABLES TO DISCOVER", 17, Color("64452f"), true))
-	game.page.add_child(game.centered("v0.2  ·  Made for a little everyday joy", 15, Color("64452f")))
+	game.page.add_child(game.centered("THREE CHAPTERS  ·  150 TABLES TO DISCOVER", 17, Color("64452f"), true))
+	game.page.add_child(game.centered("v0.3  ·  Made for a little everyday joy", 15, Color("64452f")))
 	game.animate_page()
 
 static func home(game: Variant) -> void:
@@ -70,20 +70,23 @@ static func home(game: Variant) -> void:
 	var card := GardenUI.panel()
 	var body := GardenUI.vbox(10)
 	card.add_child(body)
+	var number: int = game.next_table_number()
+	var chapter_data: Dictionary = LevelCatalog.chapter_for_level(number)
 	var chapter := GardenUI.hbox(10)
-	chapter.add_child(GardenUI.expand(GardenUI.label("01  GARDEN GRILL", 24, GardenUI.TEAL, true)))
-	chapter.add_child(GardenUI.label("%d / 30" % game.save.data.profile.completed.size(), 22, GardenUI.TEAL, true))
+	chapter.add_child(GardenUI.expand(GardenUI.label("%02d  %s" % [chapter_data.id, str(chapter_data.name).to_upper()], 22, GardenUI.TEAL, true)))
+	chapter.add_child(GardenUI.label("%d / 50" % game.chapter_completed(chapter_data), 22, GardenUI.TEAL, true))
 	body.add_child(chapter)
 	var foods := GardenUI.hbox(2)
 	foods.alignment = BoxContainer.ALIGNMENT_CENTER
-	for id in ["tomato", "corn_cob", "button_mushroom", "bell_pepper_ring"]:
-		foods.add_child(FoodArt.icon(id, 114))
+	for id in chapter_data.foods.slice(0, 4):
+		foods.add_child(FoodArt.icon(str(id), 114))
 	body.add_child(foods)
-	var resume: bool = not game.save.data.session.is_empty()
-	var number: int = int(game.save.data.session.level_number) if resume else int(game.save.data.profile.unlocked)
+	var resume: bool = not game.save.data.session.is_empty() and game.save.data.session.state.outcome != "won"
 	var needs_school: bool = not game.economy.tutorial_complete() and not resume and game.save.data.profile.completed.is_empty()
+	var final_table: bool = not game.save.data.session.is_empty() and game.save.data.session.state.outcome == "won" and number == LevelCatalog.LEVEL_COUNT
 	body.add_child(game.centered("A fresh start, one plate at a time." if needs_school else "A little space makes all the difference.", 22))
-	body.add_child(GardenUI.button("Start cooking  →" if needs_school else "%s · Level %d  →" % ["Continue" if resume else "Play", number], game.begin_adventure, GardenUI.TEAL, Vector2(0, 92)))
+	var invitation_text: String = "Start cooking  →" if needs_school else ("Celebrate your collection  →" if final_table else "%s · Level %d  →" % ["Continue" if resume else "Play", number])
+	body.add_child(GardenUI.button(invitation_text, game.begin_adventure, GardenUI.TEAL, Vector2(0, 92)))
 	if needs_school:
 		body.add_child(game.centered("Includes three quick, hands-on lessons", 18, Color("837660")))
 	game.page.add_child(card)

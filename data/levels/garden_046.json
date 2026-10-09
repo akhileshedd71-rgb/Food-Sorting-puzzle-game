@@ -1,0 +1,106 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 2,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "355b8a17f2cf12f5922dc639df92c936f04371a1606a77a112f8f4cd0a2df950",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 5747565,
+    "solver_states": 56,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "e89a4d8f196b1588dc3d55e4da3ad9f7d56448dfdb0438281feaf13f99dbc1ee"
+  },
+  "chapter": 1,
+  "content_hash": "63906e2934225ed4ca3908b6d8024da4f40eb78f942f84c059dee87af271ada1",
+  "content_version": 1,
+  "lesson": "A fresh combination of familiar food. Settle in and find your first match.",
+  "lesson_key": "level.garden_046.lesson",
+  "level_id": "garden_046",
+  "mode": "campaign",
+  "number": 46,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Sunlit Welcome",
+  "title_key": "level.garden_046.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "zucchini_round",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "zucchini_round",
+        "bell_pepper_ring",
+        "eggplant_slice"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "zucchini_round"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "eggplant_slice",
+        "eggplant_slice"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

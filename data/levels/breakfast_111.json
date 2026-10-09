@@ -1,0 +1,115 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "waffle_square",
+    "new_recipe": "",
+    "plan_hash": "55ae3fc3a7118fbf4e8084117317224bed868c351d4504e3576e28724e4937f9",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 12554950,
+    "solver_states": 87,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "b4227fb7a80f587582d13f52ed11b55f7d0cfadce3ffd89d7be9dca57e37f76b"
+  },
+  "chapter": 3,
+  "content_hash": "06d7bd82ade7dedb06532de617e9ffac56d19d6e1edcd77cd55a455e422df9ae",
+  "content_version": 1,
+  "lesson": "Meet Waffle Square. Find its matching shapes and take your time.",
+  "lesson_key": "level.breakfast_111.lesson",
+  "level_id": "breakfast_111",
+  "mode": "campaign",
+  "number": 111,
+  "schema_version": 1,
+  "solution": [
+    [
+      3,
+      2,
+      4,
+      1
+    ],
+    [
+      0,
+      1,
+      3,
+      2
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      1,
+      1
+    ],
+    [
+      2,
+      1,
+      0,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Waffle Square",
+  "title_key": "level.breakfast_111.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "waffle_square",
+        "pancake_stack"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "fried_egg",
+        "pancake_stack",
+        "fried_egg"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "fried_egg",
+        "pancake_stack",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "waffle_square",
+        "button_mushroom"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        null,
+        "button_mushroom"
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

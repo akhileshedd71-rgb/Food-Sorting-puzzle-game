@@ -1,0 +1,128 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 12,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "18a01247ca7351299d0395c50c7a009e38364524e971398fccf8c4625d9a8f66",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 15592091,
+    "solver_states": 57,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "70d8d1ca738839043fc94add9467c8fd7184aa08dbc811db28dbdee4b60c1052"
+  },
+  "chapter": 3,
+  "content_hash": "b4f32740aec383c38c0dccc65e0d0f72f2c15c8b020f60e073860057f6dbf707",
+  "content_version": 1,
+  "lesson": "Enjoy a little breathing room. Finish this short serving at your own pace.",
+  "lesson_key": "level.breakfast_140.lesson",
+  "level_id": "breakfast_140",
+  "mode": "campaign_orders",
+  "number": 140,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Sweet Morning",
+      "recipe_id": "sweet_morning",
+      "requirements": {
+        "pancake_stack": 1,
+        "waffle_square": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Sunrise Breather",
+  "title_key": "level.breakfast_140.title",
+  "trays": [
+    {
+      "front": [
+        "toast_slice",
+        null,
+        "waffle_square"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        null,
+        "toast_slice"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        null,
+        "toast_slice"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "pancake_stack",
+          "waffle_square",
+          "pancake_stack"
+        ]
+      ]
+    }
+  ]
+}

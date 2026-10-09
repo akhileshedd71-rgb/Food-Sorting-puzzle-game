@@ -1,0 +1,128 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 18,
+    "new_food": "",
+    "new_recipe": "backyard_combo",
+    "plan_hash": "a8128804b29766c48ee8e51e5f8bab45e9f7fb9a95830396a5ecf637f6fa2859",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 6690126,
+    "solver_states": 67,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "c078adb44086aadfad7e207322559281f58c20d6d70e3ccefeec074efd0c9e8f"
+  },
+  "chapter": 2,
+  "content_hash": "c07183cbcc6a26d2ea968baa1e11c0a747b3df564c32843d4e1f60a95bdd5ec3",
+  "content_version": 1,
+  "lesson": "Serve Backyard Combo with matching food batches, then clear the last pieces from the counter.",
+  "lesson_key": "level.barbecue_055.lesson",
+  "level_id": "barbecue_055",
+  "mode": "campaign_orders",
+  "number": 55,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      3,
+      2,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      3,
+      2
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Backyard Combo",
+      "recipe_id": "backyard_combo",
+      "requirements": {
+        "chicken_drumstick": 1,
+        "corn_cob": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Today's Backyard Combo",
+  "title_key": "level.barbecue_055.title",
+  "trays": [
+    {
+      "front": [
+        "corn_cob",
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "chicken_drumstick",
+          "corn_cob",
+          "chicken_drumstick"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "chicken_drumstick",
+        "zucchini_round"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

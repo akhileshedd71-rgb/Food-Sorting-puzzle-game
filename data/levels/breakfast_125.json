@@ -1,0 +1,141 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 18,
+    "new_food": "",
+    "new_recipe": "classic_breakfast",
+    "plan_hash": "4e037dad0c12daff3aad95346bae4ec291f4e2ed10baff9bf5f3d54bbf242c6d",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 14021156,
+    "solver_states": 68,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "f91f8b818259608212c562ccaca9871d651e7257b046d41fa2eb8222f9a2ac07"
+  },
+  "chapter": 3,
+  "content_hash": "acd67032d166f297582adeccaa0824422cacf4696ab119427262ebd4f7157e87",
+  "content_version": 1,
+  "lesson": "Serve Classic Breakfast with matching food batches, then clear the last pieces from the counter.",
+  "lesson_key": "level.breakfast_125.lesson",
+  "level_id": "breakfast_125",
+  "mode": "campaign_orders",
+  "number": 125,
+  "schema_version": 1,
+  "solution": [
+    [
+      3,
+      2,
+      1,
+      1
+    ],
+    [
+      1,
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      2,
+      1,
+      2
+    ],
+    [
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      2,
+      2
+    ],
+    [
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      2,
+      1
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Classic Breakfast",
+      "recipe_id": "classic_breakfast",
+      "requirements": {
+        "fried_egg": 1,
+        "hash_brown": 1,
+        "toast_slice": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Today's Classic Breakfast",
+  "title_key": "level.breakfast_125.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        null,
+        "hash_brown"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "fried_egg",
+          "fried_egg",
+          "hash_brown"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "toast_slice",
+        null,
+        "hash_brown"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "fried_egg",
+        "toast_slice"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "toast_slice"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": true,
+    "expected_foods": 5,
+    "expected_free_slots": 3,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "de96ef1a1cc48f6fbd859e544ba04eda8a536daf1ad21e1c49fdf411110929ef",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 10774557,
+    "solver_states": 1604,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "46bc950af3dfdf2c4b249713b6d4a4d2fbd7b30b8315b0be0ce3f2d24369bc8d"
+  },
+  "chapter": 2,
+  "content_hash": "5b9b5759b41de56d25d5ba7df3183c78ddd4d9d6e636e4726b2b097a2985da4b",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.barbecue_094.lesson",
+  "level_id": "barbecue_094",
+  "mode": "campaign_orders",
+  "number": 94,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      4,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      2,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      5,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      1,
+      1
+    ],
+    [
+      3,
+      1,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      1,
+      0,
+      1
+    ],
+    [
+      2,
+      1,
+      4,
+      1
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      2,
+      2,
+      3,
+      1
+    ],
+    [
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      2,
+      1
+    ],
+    [
+      2,
+      2,
+      0,
+      2
+    ],
+    [
+      3,
+      1,
+      2,
+      2
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Backyard Combo",
+      "recipe_id": "backyard_combo",
+      "requirements": {
+        "chicken_drumstick": 1,
+        "corn_cob": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Grillhouse Challenge",
+  "title_key": "level.barbecue_094.title",
+  "trays": [
+    {
+      "front": [
+        "sausage_spiral",
+        null,
+        "fish_fillet"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "fish_fillet",
+        "prawn",
+        "corn_cob"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "chicken_drumstick",
+          "fish_fillet",
+          "fish_fillet"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "corn_cob",
+        "sausage_spiral",
+        "prawn"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "prawn",
+          "fish_fillet",
+          "prawn"
+        ],
+        [
+          "prawn",
+          "prawn",
+          "chicken_drumstick"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "corn_cob",
+        "prawn",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "chicken_drumstick",
+        "sausage_spiral"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "prawn",
+        "prawn",
+        "fish_fillet"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 6,
+    "expected_max_rows": 2,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 18,
+    "new_food": "",
+    "new_recipe": "bakery_basket",
+    "plan_hash": "ec5c65a7f6f39095cb6ea3de83e4b775314c2a17cfe3432b1b300dd231dc989c",
+    "relief": true,
+    "rhythm": "relief",
+    "seed": 14544801,
+    "solver_states": 56,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "d76d05101c670767d37c250de4eca0f00faef339a51dbc614b2a04d274da433c"
+  },
+  "chapter": 3,
+  "content_hash": "2f044300ab9b2ca12f342ef6de606a1cea680f8f4fc09ba0cc35c866f3224599",
+  "content_version": 1,
+  "lesson": "Serve Bakery Basket with matching food batches, then clear the last pieces from the counter.",
+  "lesson_key": "level.breakfast_130.lesson",
+  "level_id": "breakfast_130",
+  "mode": "campaign_orders",
+  "number": 130,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      1,
+      2
+    ],
+    [
+      3,
+      2,
+      2,
+      2
+    ],
+    [
+      1,
+      0,
+      3,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ]
+  ],
+  "tickets": [
+    {
+      "id": "ticket_1",
+      "name": "Bakery Basket",
+      "recipe_id": "bakery_basket",
+      "requirements": {
+        "croissant": 2,
+        "toast_slice": 1
+      }
+    }
+  ],
+  "timer_seconds": 0,
+  "title": "Today's Bakery Basket",
+  "title_key": "level.breakfast_130.title",
+  "trays": [
+    {
+      "front": [
+        "toast_slice",
+        "fried_egg",
+        "croissant"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "croissant",
+        null
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "croissant",
+          "toast_slice",
+          "toast_slice"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "fried_egg",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "croissant",
+        null
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "croissant",
+          "croissant",
+          "fried_egg"
+        ]
+      ]
+    }
+  ]
+}

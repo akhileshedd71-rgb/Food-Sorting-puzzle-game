@@ -1,11 +1,116 @@
 {
   "schema_version": 1,
   "foods": [
-    {"id": "tomato", "display_name": "Tomato", "resource": "res://data/foods/tomato.tres"},
-    {"id": "corn_cob", "display_name": "Corn", "resource": "res://data/foods/corn_cob.tres"},
-    {"id": "button_mushroom", "display_name": "Mushroom", "resource": "res://data/foods/button_mushroom.tres"},
-    {"id": "bell_pepper_ring", "display_name": "Pepper", "resource": "res://data/foods/bell_pepper_ring.tres"},
-    {"id": "zucchini_round", "display_name": "Zucchini", "resource": "res://data/foods/zucchini_round.tres"},
-    {"id": "eggplant_slice", "display_name": "Eggplant", "resource": "res://data/foods/eggplant_slice.tres"}
+    {
+      "id": "tomato",
+      "display_name": "Tomato",
+      "resource": "res://data/foods/tomato.tres",
+      "unlock_level": 1
+    },
+    {
+      "id": "corn_cob",
+      "display_name": "Corn",
+      "resource": "res://data/foods/corn_cob.tres",
+      "unlock_level": 2
+    },
+    {
+      "id": "button_mushroom",
+      "display_name": "Mushroom",
+      "resource": "res://data/foods/button_mushroom.tres",
+      "unlock_level": 3
+    },
+    {
+      "id": "bell_pepper_ring",
+      "display_name": "Pepper",
+      "resource": "res://data/foods/bell_pepper_ring.tres",
+      "unlock_level": 11
+    },
+    {
+      "id": "zucchini_round",
+      "display_name": "Zucchini",
+      "resource": "res://data/foods/zucchini_round.tres",
+      "unlock_level": 21
+    },
+    {
+      "id": "eggplant_slice",
+      "display_name": "Eggplant",
+      "resource": "res://data/foods/eggplant_slice.tres",
+      "unlock_level": 25
+    },
+    {
+      "id": "chicken_drumstick",
+      "display_name": "Chicken Drumstick",
+      "resource": "res://data/foods/chicken_drumstick.tres",
+      "unlock_level": 51,
+      "slot_label": "Drumstick"
+    },
+    {
+      "id": "steak",
+      "display_name": "Steak",
+      "resource": "res://data/foods/steak.tres",
+      "unlock_level": 56
+    },
+    {
+      "id": "prawn",
+      "display_name": "Prawn",
+      "resource": "res://data/foods/prawn.tres",
+      "unlock_level": 61
+    },
+    {
+      "id": "fish_fillet",
+      "display_name": "Fish Fillet",
+      "resource": "res://data/foods/fish_fillet.tres",
+      "unlock_level": 66
+    },
+    {
+      "id": "sausage_spiral",
+      "display_name": "Sausage Spiral",
+      "resource": "res://data/foods/sausage_spiral.tres",
+      "unlock_level": 71,
+      "slot_label": "Sausage"
+    },
+    {
+      "id": "halloumi_slice",
+      "display_name": "Halloumi Slice",
+      "resource": "res://data/foods/halloumi_slice.tres",
+      "unlock_level": 76,
+      "slot_label": "Halloumi"
+    },
+    {
+      "id": "fried_egg",
+      "display_name": "Fried Egg",
+      "resource": "res://data/foods/fried_egg.tres",
+      "unlock_level": 101
+    },
+    {
+      "id": "pancake_stack",
+      "display_name": "Pancakes",
+      "resource": "res://data/foods/pancake_stack.tres",
+      "unlock_level": 106
+    },
+    {
+      "id": "waffle_square",
+      "display_name": "Waffle",
+      "resource": "res://data/foods/waffle_square.tres",
+      "unlock_level": 111
+    },
+    {
+      "id": "toast_slice",
+      "display_name": "Toast",
+      "resource": "res://data/foods/toast_slice.tres",
+      "unlock_level": 116
+    },
+    {
+      "id": "hash_brown",
+      "display_name": "Hash Brown",
+      "resource": "res://data/foods/hash_brown.tres",
+      "unlock_level": 121
+    },
+    {
+      "id": "croissant",
+      "display_name": "Croissant",
+      "resource": "res://data/foods/croissant.tres",
+      "unlock_level": 126
+    }
   ]
 }

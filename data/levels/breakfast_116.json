@@ -1,0 +1,121 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "toast_slice",
+    "new_recipe": "",
+    "plan_hash": "405ec2840705033e0215b2c65e3320822da78b4296bf5a0b40bcebe8e05633cc",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 13078595,
+    "solver_states": 94,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "63c7c3f903331f5a0622298eda95731014f3bb8da76c7751c51a6087499e21a0"
+  },
+  "chapter": 3,
+  "content_hash": "a2aed17677de4db76b70ed90b756dffaa3ff3cd29833927afc047543995e36ef",
+  "content_version": 1,
+  "lesson": "Meet Toast Slice. Find its matching shapes and take your time.",
+  "lesson_key": "level.breakfast_116.lesson",
+  "level_id": "breakfast_116",
+  "mode": "campaign",
+  "number": 116,
+  "schema_version": 1,
+  "solution": [
+    [
+      4,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      4,
+      1
+    ],
+    [
+      4,
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      4,
+      2
+    ],
+    [
+      0,
+      1,
+      3,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Toast Slice",
+  "title_key": "level.breakfast_116.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "fried_egg",
+        "toast_slice"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "toast_slice",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "pancake_stack",
+        "pancake_stack"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "fried_egg",
+        "fried_egg"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "pancake_stack",
+        "toast_slice"
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

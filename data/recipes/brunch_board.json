@@ -1,0 +1,14 @@
+{
+  "chapter": 3,
+  "id": "brunch_board",
+  "name": "Brunch Board",
+  "name_key": "recipe.brunch_board",
+  "requirements": {
+    "button_mushroom": 1,
+    "fried_egg": 1,
+    "hash_brown": 1,
+    "tomato": 1
+  },
+  "schema_version": 1,
+  "unlock_level": 135
+}

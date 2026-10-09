@@ -1,0 +1,201 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": true,
+    "expected_foods": 5,
+    "expected_free_slots": 3,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "ce99c609de97001a6de136269e957c394c072afadd6417e7bcf75b67ae5e48f2",
+    "relief": false,
+    "rhythm": "challenge",
+    "seed": 6585397,
+    "solver_states": 1705,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "f12130abb847e96fd1d460332349335f817498ca9adb8d2c9bbdd0641b9f4873"
+  },
+  "chapter": 2,
+  "content_hash": "4ada412794bab5aafe177269fa4ef29e7439cfc19f914e11e4d16ea6eb0c51d5",
+  "content_version": 1,
+  "lesson": "A little planning goes a long way. Keep room for the next row; Undo and Restart are always free.",
+  "lesson_key": "level.barbecue_054.lesson",
+  "level_id": "barbecue_054",
+  "mode": "campaign",
+  "number": 54,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      3,
+      2,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      3,
+      2
+    ],
+    [
+      3,
+      0,
+      1,
+      1
+    ],
+    [
+      5,
+      1,
+      1,
+      2
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      5,
+      2,
+      2,
+      0
+    ],
+    [
+      3,
+      1,
+      5,
+      1
+    ],
+    [
+      4,
+      2,
+      5,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      3,
+      1
+    ],
+    [
+      0,
+      2,
+      4,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Backyard Challenge",
+  "title_key": "level.barbecue_054.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        null,
+        "chicken_drumstick"
+      ],
+      "id": "tray_1",
+      "queue": [
+        [
+          "zucchini_round",
+          "eggplant_slice",
+          "zucchini_round"
+        ],
+        [
+          "zucchini_round",
+          "bell_pepper_ring",
+          "tomato"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "chicken_drumstick",
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        null,
+        "tomato"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "bell_pepper_ring",
+        "eggplant_slice",
+        "chicken_drumstick"
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "bell_pepper_ring",
+          "eggplant_slice",
+          "bell_pepper_ring"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "tomato",
+        "tomato",
+        "eggplant_slice"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        "bell_pepper_ring",
+        "tomato"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

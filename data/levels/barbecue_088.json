@@ -1,0 +1,248 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 1,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "40e9aac4fcdae4bf672e9a5a1a24bbf70b0bfb9585256a0123217251d5f973c4",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 10146183,
+    "solver_states": 1316,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "b3d6159b94070a38334b664147b2343ef5316cc92453e2e83d4243d6fc048ea2"
+  },
+  "chapter": 2,
+  "content_hash": "6e1a158af8e35d17ab82b85db7bd72f6a87b571d85fb74a0e7cff1c68aea8278",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.barbecue_088.lesson",
+  "level_id": "barbecue_088",
+  "mode": "campaign",
+  "number": 88,
+  "schema_version": 1,
+  "solution": [
+    [
+      5,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      4,
+      2
+    ],
+    [
+      4,
+      1,
+      1,
+      0
+    ],
+    [
+      5,
+      1,
+      4,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      2
+    ],
+    [
+      3,
+      1,
+      1,
+      2
+    ],
+    [
+      3,
+      2,
+      5,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      1
+    ],
+    [
+      5,
+      0,
+      0,
+      2
+    ],
+    [
+      5,
+      2,
+      3,
+      0
+    ],
+    [
+      5,
+      0,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      5,
+      0
+    ],
+    [
+      5,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      5,
+      2,
+      0,
+      2
+    ],
+    [
+      5,
+      0,
+      1,
+      1
+    ],
+    [
+      5,
+      1,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      0
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Courtyard Turnabout",
+  "title_key": "level.barbecue_088.title",
+  "trays": [
+    {
+      "front": [
+        "sausage_spiral",
+        null,
+        "sausage_spiral"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "halloumi_slice",
+        "prawn"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "fish_fillet",
+        "halloumi_slice",
+        null
+      ],
+      "id": "tray_4",
+      "queue": [
+        [
+          "fish_fillet",
+          "steak",
+          "steak"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "steak",
+        "halloumi_slice",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "sausage_spiral",
+        "steak",
+        "sausage_spiral"
+      ],
+      "id": "tray_6",
+      "queue": [
+        [
+          "halloumi_slice",
+          "sausage_spiral",
+          "sausage_spiral"
+        ],
+        [
+          "steak",
+          "halloumi_slice",
+          "fish_fillet"
+        ],
+        [
+          "halloumi_slice",
+          "prawn",
+          "prawn"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 4,
+    "expected_free_slots": 3,
+    "expected_max_rows": 2,
+    "expected_trays": 5,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "e15de0874ca798e31e2f2785a869a8e1c3ecf9e7b4ad0f99fbf569514162ffb4",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 6375939,
+    "solver_states": 352,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "4e11b6fec7a35e0ffe71de6a42dc74e63dd4e74877046af665032280cb5bdadb"
+  },
+  "chapter": 2,
+  "content_hash": "f5fcb82d929a5e961e7c3583f6d0ee9b04b978e8e5c2328cc4829feaaceb6e78",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.barbecue_052.lesson",
+  "level_id": "barbecue_052",
+  "mode": "campaign",
+  "number": 52,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      2,
+      0,
+      2
+    ],
+    [
+      4,
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      4,
+      1
+    ],
+    [
+      2,
+      1,
+      4,
+      2
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      1
+    ],
+    [
+      2,
+      1,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      2,
+      2,
+      1
+    ],
+    [
+      1,
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      2,
+      1,
+      2
+    ],
+    [
+      0,
+      0,
+      2,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Backyard Table",
+  "title_key": "level.barbecue_052.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "corn_cob",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "corn_cob",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_2",
+      "queue": [
+        [
+          "corn_cob",
+          "corn_cob",
+          "bell_pepper_ring"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "button_mushroom",
+        "chicken_drumstick"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "corn_cob",
+          "chicken_drumstick",
+          "corn_cob"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "chicken_drumstick",
+        "corn_cob",
+        "corn_cob"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "button_mushroom",
+        "bell_pepper_ring",
+        "corn_cob"
+      ],
+      "id": "tray_5",
+      "queue": []
+    }
+  ]
+}

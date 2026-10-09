@@ -1,0 +1,12 @@
+{
+  "chapter": 2,
+  "id": "backyard_combo",
+  "name": "Backyard Combo",
+  "name_key": "recipe.backyard_combo",
+  "requirements": {
+    "chicken_drumstick": 1,
+    "corn_cob": 1
+  },
+  "schema_version": 1,
+  "unlock_level": 55
+}

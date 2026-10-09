@@ -1,0 +1,94 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 19,
+    "challenge": false,
+    "expected_foods": 3,
+    "expected_free_slots": 3,
+    "expected_max_rows": 1,
+    "expected_trays": 4,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "halloumi_slice",
+    "new_recipe": "",
+    "plan_hash": "0effcfeeb22ebcd4333e44f20ca1387a64d72ce94f25072627dae9901243802b",
+    "relief": false,
+    "rhythm": "introduction",
+    "seed": 8889435,
+    "solver_states": 32,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "844d5e16b025c78c64a08d64ba33c9cf15f093d71c73ef47447fd17e22b19e5c"
+  },
+  "chapter": 2,
+  "content_hash": "494d4760c01bc0f7108851b8d1238b2666bbc3945e0354fa40ba3d718c9d5bcb",
+  "content_version": 1,
+  "lesson": "Meet Halloumi Slice. Find its matching shapes and take your time.",
+  "lesson_key": "level.barbecue_076.lesson",
+  "level_id": "barbecue_076",
+  "mode": "campaign",
+  "number": 76,
+  "schema_version": 1,
+  "solution": [
+    [
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Welcome, Halloumi Slice",
+  "title_key": "level.barbecue_076.title",
+  "trays": [
+    {
+      "front": [
+        "chicken_drumstick",
+        "chicken_drumstick",
+        null
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "steak",
+        "halloumi_slice",
+        "chicken_drumstick"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "steak",
+        "steak"
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "halloumi_slice",
+        "halloumi_slice"
+      ],
+      "id": "tray_4",
+      "queue": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "chapter": 2,
+  "id": "surf_and_turf",
+  "name": "Surf and Turf",
+  "name_key": "recipe.surf_and_turf",
+  "requirements": {
+    "bell_pepper_ring": 1,
+    "prawn": 1,
+    "steak": 1
+  },
+  "schema_version": 1,
+  "unlock_level": 65
+}

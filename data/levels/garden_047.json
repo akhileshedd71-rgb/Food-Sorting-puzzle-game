@@ -1,0 +1,177 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 2,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "5bdcbbbe23aa18b2e1a379c65e6951c7688ccbae681e8e77e6c5afeca7b05b6c",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 5852294,
+    "solver_states": 572,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "ec218a651f1237a33aa8bcf8f92b1dc52166d1ebb35cd7b1d96e7a2506cd0021"
+  },
+  "chapter": 1,
+  "content_hash": "56ae15c2c98a91ce6c15de7e80b090b0f0d66f1525df3b93fe957f317be1a349",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.garden_047.lesson",
+  "level_id": "garden_047",
+  "mode": "campaign",
+  "number": 47,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      3,
+      2
+    ],
+    [
+      2,
+      2,
+      4,
+      2
+    ],
+    [
+      3,
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      3,
+      1
+    ],
+    [
+      5,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      5,
+      1
+    ],
+    [
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      1
+    ],
+    [
+      5,
+      2,
+      2,
+      1
+    ],
+    [
+      2,
+      0,
+      4,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      2
+    ],
+    [
+      2,
+      2,
+      5,
+      2
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Sunlit Table",
+  "title_key": "level.garden_047.title",
+  "trays": [
+    {
+      "front": [
+        "tomato",
+        null,
+        "bell_pepper_ring"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        null,
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        null,
+        "zucchini_round"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "tomato",
+          "eggplant_slice",
+          "tomato"
+        ],
+        [
+          "zucchini_round",
+          "eggplant_slice",
+          "corn_cob"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "tomato",
+        "bell_pepper_ring",
+        null
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "tomato",
+        "zucchini_round",
+        null
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "corn_cob",
+        "bell_pepper_ring",
+        "tomato"
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

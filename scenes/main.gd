@@ -2,7 +2,7 @@ extends Control
 ## Application flow and presentation. The BoardModel is the sole game authority.
 
 const NONE := Vector2i(-1, -1)
-const TOTAL_LEVELS := 30
+const TOTAL_LEVELS := LevelCatalog.LEVEL_COUNT
 @export var tuning: GameTuning = preload("res://data/tuning/default.tres")
 
 var save: SaveService
@@ -339,6 +339,19 @@ func show_home() -> void:
 	tutorial_mode = false
 	GardenFrontEnd.home(self)
 
+func next_table_number() -> int:
+	if save.data.session.is_empty(): return int(save.data.profile.unlocked)
+	var number := int(save.data.session.level_number)
+	if save.data.session.state.outcome == "won" and number < TOTAL_LEVELS:
+		return mini(number + 1, int(save.data.profile.unlocked))
+	return number
+
+func chapter_completed(chapter: Dictionary) -> int:
+	var count := 0
+	for number in range(int(chapter.start), int(chapter.end) + 1):
+		if save.data.profile.completed.has(LevelCatalog.level_id(number)): count += 1
+	return count
+
 func continue_game() -> void:
 	if save.data.session.is_empty():
 		start_level(int(save.data.profile.unlocked))
@@ -350,6 +363,9 @@ func continue_game() -> void:
 		var body := open_modal("This table has changed", "Your completed progress is safe. Restart this level to use its updated recipe and tray layout.")
 		body.add_child(GardenUI.button("Restart level %d" % number, func(): start_level(number)))
 		body.add_child(GardenUI.button("Back", close_modal, GardenUI.CREAM))
+		return
+	if save.data.session.state.outcome == "won" and next_table_number() > number:
+		start_level(next_table_number())
 		return
 	tutorial_mode = false
 	level = candidate
@@ -386,7 +402,7 @@ func build_game() -> void:
 	top.add_child(GardenUI.button("Ⅱ", show_pause, GardenUI.TEAL, Vector2(76, 80)))
 	var badge := GardenUI.panel()
 	var badge_text := GardenUI.vbox(0)
-	badge_text.add_child(centered("COOKING SCHOOL" if tutorial_mode else "GARDEN GRILL", 16, GardenUI.TEAL, true))
+	badge_text.add_child(centered("COOKING SCHOOL" if tutorial_mode else str(LevelCatalog.chapter_for_level(int(level.number)).name).to_upper(), 16, GardenUI.TEAL, true))
 	badge_text.add_child(centered("Lesson %d / 3" % (tutorial_index + 1) if tutorial_mode else "Level %02d" % int(level.number), 30, GardenUI.INK, true))
 	badge.add_child(badge_text)
 	top.add_child(GardenUI.expand(badge))
@@ -495,41 +511,14 @@ func refresh_orders() -> void:
 	body.add_child(foods)
 	orders.add_child(panel)
 
-func show_levels() -> void:
-	clear_page("levels")
-	add_header("Your garden journey", show_home)
-	page.add_child(GardenUI.spacer(70))
-	page.add_child(centered("Thirty little victories", 36, GardenUI.CREAM, true))
-	page.add_child(centered("Replay a favorite. Discover something fresh.", 22, GardenUI.CREAM))
-	page.add_child(GardenUI.spacer(40))
-	var panel := GardenUI.panel()
-	panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	var scroll := ScrollContainer.new()
-	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	panel.add_child(scroll)
-	var list := GardenUI.vbox(16)
-	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	scroll.add_child(list)
-	list.add_child(centered("CHAPTER 01 · GARDEN GRILL", 23, GardenUI.TEAL, true))
-	var grid := GridContainer.new()
-	grid.columns = 5
-	grid.add_theme_constant_override("h_separation", 12)
-	grid.add_theme_constant_override("v_separation", 16)
-	list.add_child(grid)
-	for n in range(1, TOTAL_LEVELS + 1):
-		var completed: bool = save.data.profile.completed.has("garden_%03d" % n)
-		var unlocked: bool = n <= int(save.data.profile.unlocked)
-		var button := GardenUI.button("%02d%s" % [n, " ✓" if completed else ""], choose_level.bind(n), GardenUI.TEAL if completed else GardenUI.GOLD, Vector2(0, 96))
-		button.add_theme_font_size_override("font_size", 23)
-		button.disabled = not unlocked
-		grid.add_child(GardenUI.expand(button))
-	list.add_child(GardenUI.spacer(10))
-	list.add_child(centered("Next season: Backyard Barbecue", 23, GardenUI.TEAL, true))
-	list.add_child(centered("More chapters are on the menu.\nThis edition includes the complete 30-level Garden slice.", 20))
-	page.add_child(panel)
-	page.add_child(GardenUI.button("Continue", continue_game))
+func show_levels(chapter_id: int = 0) -> void:
+	GardenCollection.levels(self, chapter_id)
 
 func choose_level(n: int) -> void:
+	if n < 1 or n > int(save.data.profile.unlocked): return
+	if not save.data.session.is_empty() and int(save.data.session.level_number) == n and save.data.session.state.outcome != "won":
+		continue_game()
+		return
 	if not save.data.session.is_empty() and int(save.data.session.level_number) != n and save.data.session.state.outcome != "won":
 		var body := open_modal("Start another table?", "Your current board will be replaced. Completed levels and coins are kept.")
 		body.add_child(GardenUI.button("Play level %d" % n, start_level.bind(n)))
@@ -537,36 +526,8 @@ func choose_level(n: int) -> void:
 	else:
 		start_level(n)
 
-func show_album() -> void:
-	clear_page("album")
-	add_header("The recipe book", show_home)
-	page.add_child(GardenUI.spacer(48))
-	page.add_child(centered("Made with a match", 37, GardenUI.CREAM, true))
-	page.add_child(centered("One triple prepares one batch.", 24, GardenUI.CREAM))
-	page.add_child(GardenUI.spacer(36))
-	var scroll := ScrollContainer.new()
-	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	var list := GardenUI.vbox(20)
-	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	scroll.add_child(list)
-	var recipes: Array = LevelCatalog.load_recipes()
-	for recipe in recipes:
-		var card := GardenUI.panel()
-		var body := GardenUI.vbox(10)
-		card.add_child(body)
-		var unlocked: bool = int(save.data.profile.unlocked) >= int(recipe.unlock_level)
-		body.add_child(GardenUI.label(str(recipe.name), 29, GardenUI.TEAL, true))
-		body.add_child(GardenUI.label("On your menu" if unlocked else "Discover at level %d" % recipe.unlock_level, 19, Color("8a7960")))
-		var foods := GardenUI.hbox(2)
-		for id in recipe.requirements:
-			var ingredient := GardenUI.vbox(0)
-			ingredient.add_child(FoodArt.icon(id, 79))
-			ingredient.add_child(centered("×%d" % recipe.requirements[id], 18))
-			foods.add_child(ingredient)
-		body.add_child(foods)
-		list.add_child(card)
-	page.add_child(scroll)
+func show_album(chapter_id: int = 0, foods_view: bool = false) -> void:
+	GardenCollection.album(self, chapter_id, foods_view)
 
 func show_settings() -> void:
 	var body := open_modal("Make yourself at home", "Tune your table. Your settings save automatically.")
@@ -599,7 +560,7 @@ func show_help() -> void:
 	body.add_child(GardenUI.button("Let's play", close_modal))
 
 func show_credits() -> void:
-	var body := open_modal("Garden Table", "An original food sorting puzzle for Akhilesh Mahto.\n\nBuilt with Godot 4.7.2. Original AI-generated food and restaurant art; original synthesized audio. Open Sans font by the Open Sans authors (Apache 2.0).\n\nThe reference images informed the art direction. No reference sprites are used.\n\nVersion 0.2 · Welcome to the Garden")
+	var body := open_modal("Garden Table", "An original food sorting puzzle for Akhilesh Mahto.\n\nBuilt with Godot 4.7.2. Original AI-generated food and restaurant art; original synthesized audio. Open Sans font by the Open Sans authors (Apache 2.0).\n\nThe reference images informed the art direction. No reference sprites are used.\n\nVersion 0.3 · A Bigger Table")
 	body.add_child(GardenUI.button("Lovely", close_modal))
 
 func confirm_reset() -> void:
@@ -670,19 +631,24 @@ func show_win() -> void:
 	cancel_pointer()
 	audio.play_cue("win")
 	var last_level: bool = int(level.number) == TOTAL_LEVELS
-	var body := open_modal("A garden well served!" if last_level else "Beautifully served!", "All trays clear. All good things together.\nLevel %d finished in %d moves." % [level.number, model.state.moves])
+	var chapter: Dictionary = LevelCatalog.chapter_for_level(int(level.number))
+	var chapter_end: bool = int(level.number) == int(chapter.end)
+	var body := open_modal("A feast to remember!" if last_level else ("Chapter beautifully served!" if chapter_end else "Beautifully served!"), "All trays clear. All good things together.\nLevel %d finished in %d moves." % [level.number, model.state.moves])
 	var icons := GardenUI.hbox(0)
 	icons.alignment = BoxContainer.ALIGNMENT_CENTER
-	for id in FoodArt.IDS.slice(0, 3): icons.add_child(FoodArt.icon(id, 110))
+	for id in chapter.foods.slice(0, 3): icons.add_child(FoodArt.icon(str(id), 110))
 	body.add_child(icons)
 	body.add_child(centered("+%d Chef Coins · First clear!" % first_clear_reward if first_clear_reward > 0 else "A lovely replay · reward already collected", 24, GardenUI.TEAL, true))
 	body.add_child(centered("Wallet: %d Chef Coins" % economy.balance(), 22, GardenUI.TEAL))
 	if first_clear_reward > 0: GardenMotion.coin_burst(self, size * Vector2(0.5, 0.4), first_clear_reward, settings().reduced_motion)
 	first_clear_reward = 0
 	if last_level:
-		body.add_child(centered("The Garden Grill collection is complete.\nBackyard Barbecue is a future chapter.", 23))
+		body.add_child(centered("150 tables. Three delicious chapters.\nRevisit your favorites and enjoy your collection.", 23))
 		body.add_child(GardenUI.button("Back to the garden", show_home))
 	else:
+		if chapter_end:
+			var next_chapter: Dictionary = LevelCatalog.chapter_for_level(int(level.number) + 1)
+			body.add_child(centered("%s is complete.\nNext stop: %s!" % [chapter.name, next_chapter.name], 24, GardenUI.TEAL, true))
 		body.add_child(GardenUI.button("Next table  →", func(): start_level(int(level.number) + 1)))
 	body.add_child(GardenUI.button("Replay this level", restart_current, GardenUI.CREAM))
 	body.add_child(GardenUI.button("Home", show_home, GardenUI.CREAM))

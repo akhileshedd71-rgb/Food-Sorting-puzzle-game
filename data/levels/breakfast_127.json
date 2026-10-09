@@ -1,0 +1,189 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 3,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "07b963cfbc3d1435a479852ce4ea57ce53896567541b6a8dd5135167dd23ebd5",
+    "relief": false,
+    "rhythm": "normal",
+    "seed": 14230614,
+    "solver_states": 1755,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "2e7b993acdbed508469877c38234a8ded9df2f092a8c5212041c633200e1de56"
+  },
+  "chapter": 3,
+  "content_hash": "d5a133cf803f5c7360d7251846ee04c4fb081dad63cd7866f9916263665a07f3",
+  "content_version": 1,
+  "lesson": "Look at the waiting rows before making room. Every matching triple prepares one batch.",
+  "lesson_key": "level.breakfast_127.lesson",
+  "level_id": "breakfast_127",
+  "mode": "campaign",
+  "number": 127,
+  "schema_version": 1,
+  "solution": [
+    [
+      5,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      4,
+      2
+    ],
+    [
+      3,
+      0,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      4,
+      0,
+      2,
+      0
+    ],
+    [
+      3,
+      1,
+      4,
+      0
+    ],
+    [
+      4,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      2,
+      4,
+      0
+    ],
+    [
+      4,
+      2,
+      1,
+      2
+    ],
+    [
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      1,
+      0,
+      1
+    ],
+    [
+      4,
+      0,
+      2,
+      2
+    ],
+    [
+      4,
+      1,
+      0,
+      2
+    ],
+    [
+      4,
+      2,
+      3,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Bakery Table",
+  "title_key": "level.breakfast_127.title",
+  "trays": [
+    {
+      "front": [
+        null,
+        "waffle_square",
+        "toast_slice"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "pancake_stack",
+        "croissant"
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        "fried_egg",
+        null
+      ],
+      "id": "tray_3",
+      "queue": []
+    },
+    {
+      "front": [
+        "waffle_square",
+        "toast_slice",
+        "waffle_square"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        "fried_egg",
+        "toast_slice",
+        null
+      ],
+      "id": "tray_5",
+      "queue": [
+        [
+          "waffle_square",
+          "croissant",
+          "pancake_stack"
+        ],
+        [
+          "fried_egg",
+          "croissant",
+          "waffle_square"
+        ]
+      ]
+    },
+    {
+      "front": [
+        null,
+        "waffle_square",
+        null
+      ],
+      "id": "tray_6",
+      "queue": []
+    }
+  ]
+}

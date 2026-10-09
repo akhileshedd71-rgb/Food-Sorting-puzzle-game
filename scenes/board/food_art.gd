@@ -1,7 +1,9 @@
 class_name FoodArt
 extends RefCounted
 
-const IDS := ["tomato", "corn_cob", "button_mushroom", "bell_pepper_ring", "zucchini_round", "eggplant_slice"]
+static func ids() -> Array:
+	return FoodCatalog.ids()
+
 static func title(id: String) -> String:
 	return FoodCatalog.display_name(id)
 

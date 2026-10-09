@@ -1,0 +1,218 @@
+{
+  "active_ticket_limit": 1,
+  "authoring": {
+    "candidate": 0,
+    "challenge": false,
+    "expected_foods": 5,
+    "expected_free_slots": 6,
+    "expected_max_rows": 4,
+    "expected_trays": 6,
+    "generator_version": 1,
+    "human_playtest_status": "pending",
+    "max_solution_moves": 40,
+    "new_food": "",
+    "new_recipe": "",
+    "plan_hash": "4fe222194cf2cf1dc693b21483e98cf4f2205efa3a59f67c738fd7fd082cc9a7",
+    "relief": false,
+    "rhythm": "variation",
+    "seed": 12240763,
+    "solver_states": 901,
+    "source": "Seeded offline candidate generation with an explicit chapter curriculum and production-resolver certification",
+    "structural_signature": "f56beb99174473cfd0d48e23f8e664121965c942f9c4f43607f3dba46f550084"
+  },
+  "chapter": 3,
+  "content_hash": "6b6461dd6675f5f685a38cd33817b51671b21ea27ae009a85ffb161e77419fef",
+  "content_version": 1,
+  "lesson": "A deeper helping is waiting. Use the previews to keep useful space between matches.",
+  "lesson_key": "level.breakfast_108.lesson",
+  "level_id": "breakfast_108",
+  "mode": "campaign",
+  "number": 108,
+  "schema_version": 1,
+  "solution": [
+    [
+      0,
+      0,
+      4,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      3,
+      1
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      3,
+      2,
+      2,
+      1
+    ],
+    [
+      1,
+      1,
+      3,
+      2
+    ],
+    [
+      2,
+      0,
+      4,
+      1
+    ],
+    [
+      5,
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      2,
+      5,
+      1
+    ],
+    [
+      5,
+      0,
+      1,
+      2
+    ],
+    [
+      2,
+      1,
+      5,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      0
+    ],
+    [
+      5,
+      2,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      5,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      1
+    ]
+  ],
+  "tickets": [],
+  "timer_seconds": 0,
+  "title": "Daybreak Turnabout",
+  "title_key": "level.breakfast_108.title",
+  "trays": [
+    {
+      "front": [
+        "fried_egg",
+        "bell_pepper_ring",
+        "pancake_stack"
+      ],
+      "id": "tray_1",
+      "queue": []
+    },
+    {
+      "front": [
+        "eggplant_slice",
+        null,
+        null
+      ],
+      "id": "tray_2",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        "pancake_stack",
+        "bell_pepper_ring"
+      ],
+      "id": "tray_3",
+      "queue": [
+        [
+          "fried_egg",
+          "fried_egg",
+          "pancake_stack"
+        ],
+        [
+          "pancake_stack",
+          "pancake_stack",
+          "fried_egg"
+        ],
+        [
+          "eggplant_slice",
+          "zucchini_round",
+          "eggplant_slice"
+        ]
+      ]
+    },
+    {
+      "front": [
+        "pancake_stack",
+        null,
+        "bell_pepper_ring"
+      ],
+      "id": "tray_4",
+      "queue": []
+    },
+    {
+      "front": [
+        null,
+        null,
+        "fried_egg"
+      ],
+      "id": "tray_5",
+      "queue": []
+    },
+    {
+      "front": [
+        "pancake_stack",
+        "zucchini_round",
+        "pancake_stack"
+      ],
+      "id": "tray_6",
+      "queue": [
+        [
+          "zucchini_round",
+          "fried_egg",
+          "pancake_stack"
+        ]
+      ]
+    }
+  ]
+}
