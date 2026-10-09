@@ -10,8 +10,17 @@ var state: Dictionary = {}
 var history: Array = []
 var last_events: Array = []
 var undo_capacity: int = DEFAULT_TUNING.undo_capacity
+# Run identity is persistence metadata, never part of replay or solver hashes.
+var run_id: String = ""
+var extra_tray_granted: bool:
+	get:
+		return bool(state.get("extra_tray_granted", false))
+
+const EXTRA_TRAY_ID := "__extra_tray"
+const MAX_TRAYS := 8
 
 func setup(level: Dictionary) -> void:
+	run_id = Crypto.new().generate_random_bytes(16).hex_encode()
 	history.clear()
 	last_events.clear()
 	state = {
@@ -63,14 +72,35 @@ func apply_move(source_tray: int, source_slot: int, target_tray: int, target_slo
 func undo() -> bool:
 	if history.is_empty():
 		return false
+	var keep_grant := extra_tray_granted
 	state = history.pop_back().duplicate(true)
+	if keep_grant and not extra_tray_granted:
+		_append_granted_tray()
+		_evaluate_outcome()
 	last_events = []
 	return true
+
+func grant_extra_tray() -> bool:
+	if state.is_empty() or is_won() or extra_tray_granted or state.trays.size() >= MAX_TRAYS:
+		return false
+	for tray in state.trays:
+		if tray.id == EXTRA_TRAY_ID:
+			return false
+	_append_granted_tray()
+	_evaluate_outcome()
+	last_events = []
+	return true
+
+func _append_granted_tray() -> void:
+	state["extra_tray_granted"] = true
+	state["extra_tray_id"] = EXTRA_TRAY_ID
+	state.trays.append({"id": EXTRA_TRAY_ID, "front": [null, null, null], "queue": []})
 
 func snapshot() -> Dictionary:
 	return state.duplicate(true)
 
 func restore(saved: Dictionary) -> void:
+	run_id = ""
 	state = saved.duplicate(true)
 	history = []
 	last_events = []

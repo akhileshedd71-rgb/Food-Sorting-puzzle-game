@@ -8,6 +8,7 @@ const GOLD := Color("f5ca47")
 const CORAL := Color("e87650")
 const BODY = preload("res://assets/fonts/Body.ttf")
 const HEADING = preload("res://assets/fonts/Heading.ttf")
+static var reduced_motion: bool = false
 
 static func box(color: Color, radius: int = 20, border: Color = Color.TRANSPARENT, width: int = 0, shadow: int = 0) -> StyleBoxFlat:
 	var s := StyleBoxFlat.new()
@@ -48,7 +49,8 @@ static func button(text: String, action: Callable, color: Color = TEAL, minimum:
 	b.add_theme_stylebox_override("pressed", box(color.darkened(0.08), 21, color.lightened(0.1), 3))
 	b.add_theme_stylebox_override("disabled", box(Color("e1d7bd"), 21, Color("c5b89c"), 2))
 	b.add_theme_stylebox_override("focus", box(Color(0, 0, 0, 0), 21, GOLD, 4))
-	b.pressed.connect(action)
+	if action.is_valid(): b.pressed.connect(action)
+	b.button_down.connect(func(): GardenMotion.press(b, reduced_motion))
 	return b
 
 static func panel(color: Color = CREAM, radius: int = 24) -> PanelContainer:

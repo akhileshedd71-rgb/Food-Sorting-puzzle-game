@@ -7,6 +7,14 @@ const TOTAL_LEVELS := 30
 
 var save: SaveService
 var audio: GameAudio
+var economy: EconomyService
+var background: TextureRect
+var tutorial_mode: bool = false
+var tutorial_index: int = 0
+var shop_origin: String = "home"
+var wallet_button: Button
+var scenery_gap: Control
+var first_clear_reward: int = 0
 var model: BoardModel
 var level: Dictionary = {}
 var screen: String = "home"
@@ -37,10 +45,19 @@ func _ready() -> void:
 	get_tree().auto_accept_quit = false
 	save = SaveService.new()
 	save.load_save()
+	economy = EconomyService.new(save)
+	economy.initialize()
+	GardenUI.reduced_motion = bool(settings().reduced_motion)
 	audio = GameAudio.new()
 	add_child(audio)
 	audio.configure(settings())
+	var base := ColorRect.new()
+	base.color = GardenUI.CREAM
+	base.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	base.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(base)
 	var bg := TextureRect.new()
+	background = bg
 	bg.texture = preload("res://assets/backgrounds/restaurant.png")
 	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
@@ -52,10 +69,7 @@ func _ready() -> void:
 	add_child(stage)
 	resized.connect(_layout_stage)
 	_layout_stage()
-	if save.data.profile.completed.is_empty() and save.data.session.is_empty():
-		start_level(1)
-	else:
-		show_home()
+	show_splash()
 	if not save.recovery_notice.is_empty():
 		show_toast(save.recovery_notice)
 	# Reproducible QA entrypoints; ordinary play never uses these flags.
@@ -64,9 +78,192 @@ func _ready() -> void:
 			start_level(int(arg.get_slice("=", 1)))
 		elif arg == "--home":
 			show_home()
+		elif arg == "--title":
+			show_title()
+		elif arg == "--school":
+			start_tutorial(0)
 
 func settings() -> Dictionary:
 	return save.data.profile.settings
+
+func show_splash() -> void:
+	GardenFrontEnd.splash(self)
+
+func show_title() -> void:
+	tutorial_mode = false
+	GardenFrontEnd.title(self)
+
+func animate_page() -> void:
+	GardenMotion.enter(page, bool(settings().reduced_motion))
+
+func begin_adventure() -> void:
+	if not economy.tutorial_complete() and save.data.session.is_empty() and save.data.profile.completed.is_empty():
+		start_tutorial()
+	else:
+		continue_game()
+
+func start_tutorial(index: int = -1) -> void:
+	if screen == "game" and not tutorial_mode and model:
+		commit_current_session()
+	tutorial_mode = true
+	tutorial_index = clampi(economy.tutorial_step() if index < 0 else index, 0, 2)
+	if index < 0 and economy.tutorial_complete(): tutorial_index = 0
+	level = CookingSchool.lesson(tutorial_index)
+	model = BoardModel.new()
+	model.undo_capacity = tuning.undo_capacity
+	model.setup(level)
+	first_clear_reward = 0
+	build_game()
+	update_tutorial_guidance()
+
+func update_tutorial_guidance() -> void:
+	if not tutorial_mode or not is_instance_valid(board): return
+	var instruction := CookingSchool.instruction(tutorial_index, model)
+	selected = instruction.source
+	hint_cell = instruction.target
+	refresh_game()
+	status_label.text = str(instruction.body)
+	progress_label.text = str(instruction.progress)
+	GardenMotion.enter(status_label, bool(settings().reduced_motion))
+
+func show_lesson_complete() -> void:
+	cancel_pointer()
+	var last_lesson := tutorial_index == 2
+	var awarded := 0
+	var recorded := false
+	if last_lesson:
+		var reward := economy.complete_tutorial()
+		awarded = int(reward.get("awarded", 0))
+		recorded = reward.status == "ok"
+	else:
+		recorded = economy.set_tutorial_step(tutorial_index + 1)
+	if not recorded:
+		var retry := open_modal("One last thing to save", "You completed this lesson, but your progress couldn't be saved. Your coins are unchanged. Check available storage, then try again before continuing.")
+		retry.add_child(GardenUI.button("Try saving again", show_lesson_complete))
+		retry.add_child(GardenUI.button("Leave without saving this lesson", show_home, GardenUI.CREAM))
+		return
+	audio.play_cue("win")
+	var description := "You matched identical foods. A full tray of three makes one batch."
+	if tutorial_index == 1: description = "You emptied a row and revealed the next plate. Ready-made triples clear all by themselves!"
+	if last_lesson: description = "You prepared batches, saved ingredients for a future order, and served the whole menu. You're ready for your own table."
+	var body := open_modal("Ready, chef!" if last_lesson else "Lovely work!", description)
+	var row := GardenUI.hbox(12)
+	row.alignment = BoxContainer.ALIGNMENT_CENTER
+	for i in range(3):
+		row.add_child(centered("✓" if i <= tutorial_index else "○", 34, GardenUI.TEAL, true))
+	body.add_child(row)
+	if awarded > 0:
+		body.add_child(centered("Graduation gift · +%d Chef Coins" % awarded, 26, GardenUI.TEAL, true))
+		GardenMotion.coin_burst(self, size * Vector2(0.5, 0.45), awarded, settings().reduced_motion)
+	if last_lesson:
+		body.add_child(GardenUI.button("To my table  →", continue_game))
+	else:
+		body.add_child(GardenUI.button("Next lesson  →", start_tutorial.bind(tutorial_index + 1)))
+	body.add_child(GardenUI.button("Main menu", show_home, GardenUI.CREAM))
+
+func restart_current() -> void:
+	if tutorial_mode: start_tutorial(tutorial_index)
+	else: start_level(int(level.number))
+
+func show_shop() -> void:
+	if busy: return
+	if screen != "shop": shop_origin = "game" if screen == "game" else "home"
+	if screen == "game": commit_current_session()
+	GardenFrontEnd.shop(self)
+
+func return_from_shop() -> void:
+	if shop_origin == "game" and model:
+		build_game()
+		if tutorial_mode: update_tutorial_guidance()
+	else:
+		show_home()
+
+func show_earn_coins() -> void:
+	var body := open_modal("Good food earns good things", "100 Chef Coins welcome you to the cafe.\n\nEarn 30 for each first-time campaign clear, plus a one-time 30-coin Cooking School graduation gift.\n\nReplay, undo and restart stay free. Coin purchases will arrive in a later update.")
+	body.add_child(centered("Your wallet: %d Chef Coins" % economy.balance(), 26, GardenUI.TEAL, true))
+	body.add_child(GardenUI.button("Lovely", close_modal))
+
+func shop_hint() -> void:
+	return_from_shop()
+	request_hint()
+
+func shop_extra_tray() -> void:
+	return_from_shop()
+	request_extra_tray()
+
+func request_extra_tray() -> void:
+	if busy or not model or model.is_won() or tutorial_mode: return
+	if model.extra_tray_granted:
+		show_toast("Your extra tray is already on the table for this attempt.")
+		return
+	var body := open_modal("Make a little more room", "Add one empty tray for 40 Chef Coins. It stays through undo and Continue, until you restart or finish this level.")
+	body.add_child(centered("Your balance: %d Chef Coins" % economy.balance(), 23, GardenUI.TEAL, true))
+	body.add_child(GardenUI.button("Add a tray · ◉ 40", purchase_extra_tray, GardenUI.GOLD))
+	body.add_child(GardenUI.button("Keep playing", close_modal, GardenUI.CREAM))
+
+func purchase_extra_tray() -> void:
+	var result := economy.buy_extra_tray(model, level)
+	close_modal()
+	if result.status != "ok":
+		economy_message(result)
+		return
+	build_game()
+	audio.play_cue("serve")
+	show_toast("A little breathing room. Your extra tray stays through undo.")
+
+func purchase_hint() -> void:
+	var result := economy.buy_hint(model, level, tuning.hint_budget_ms)
+	close_modal()
+	if result.status != "ok":
+		economy_message(result)
+		return
+	var next: Array = result.move
+	selected = Vector2i(next[0], next[1])
+	hint_cell = Vector2i(next[2], next[3])
+	refresh_game()
+	status_label.text = "Move %s to the outlined space. %s" % [FoodArt.title(str(model.state.trays[selected.x].front[selected.y])), "Hint already paid for." if int(result.charged) == 0 else "10 Chef Coins spent."]
+	GardenMotion.enter(status_label, settings().reduced_motion)
+	audio.play_cue("select")
+
+func economy_message(result: Dictionary) -> void:
+	match str(result.get("status", "unavailable")):
+		"insufficient":
+			var body := open_modal("A few more Chef Coins", "You don't have enough coins for that yet. Clear a new campaign level to earn 30, or finish Cooking School for its graduation gift. Undo and restart are always free.")
+			body.add_child(centered("Your wallet: %d" % economy.balance(), 25, GardenUI.TEAL, true))
+			body.add_child(GardenUI.button("Keep playing", close_modal))
+		"unknown": show_toast("No verified solution found in time. No coins spent. Try undo or restart.")
+		"save_failed": show_toast("Couldn't save this action. Your coins and board are unchanged.")
+		_: show_toast("That helper is unavailable on this table. No coins spent.")
+
+func equipped_finish() -> Dictionary:
+	for finish in economy.themes():
+		if finish.equipped: return finish
+	return {}
+
+func confirm_finish(id: String) -> void:
+	for finish in economy.themes():
+		if str(finish.id) != id: continue
+		var body := open_modal("%s, just for you" % finish.name, "Unlock this enamel finish permanently for %d Chef Coins. Switch between your owned finishes whenever you like." % finish.cost)
+		body.add_child(GardenUI.button("Unlock · ◉ %d" % finish.cost, buy_finish.bind(id), GardenUI.GOLD))
+		body.add_child(GardenUI.button("Maybe later", close_modal, GardenUI.CREAM))
+		return
+
+func buy_finish(id: String) -> void:
+	var result := economy.buy_theme(id)
+	close_modal()
+	if result.status != "ok":
+		economy_message(result)
+		return
+	GardenFrontEnd.shop(self)
+	audio.play_cue("serve")
+	show_toast("A lovely new finish. It's yours to keep.")
+
+func equip_finish(id: String) -> void:
+	var result := economy.equip_theme(id)
+	if result.status == "ok":
+		GardenFrontEnd.shop(self)
+		audio.play_cue("click")
+	else: economy_message(result)
 
 func _layout_stage() -> void:
 	if not stage:
@@ -76,11 +273,20 @@ func _layout_stage() -> void:
 	cancel_pointer()
 
 func clear_page(kind: String) -> void:
+	GardenMotion.cancel_all(self)
+	for child in get_children():
+		if child.has_meta("page_effect"):
+			remove_child(child)
+			child.queue_free()
+	if is_instance_valid(toast_node): toast_node.queue_free()
+	toast_node = null
 	generation += 1
 	cancel_pointer()
 	close_modal()
 	screen = kind
+	background.visible = kind != "splash"
 	board = null
+	wallet_button = null
 	busy = false
 	for child in stage.get_children():
 		stage.remove_child(child)
@@ -96,7 +302,7 @@ func clear_page(kind: String) -> void:
 	page = GardenUI.vbox(18)
 	page.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	margins.add_child(page)
-	audio.set_music_active(true)
+	audio.set_music_active(application_active)
 
 func safe_top() -> int:
 	if OS.get_name() != "Android":
@@ -116,7 +322,7 @@ func centered(text: String, font_size: int, color: Color = GardenUI.INK, bold: b
 	var l := GardenUI.label(text, font_size, color, bold)
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	if color == GardenUI.CREAM and font_size >= 24:
+	if color == GardenUI.CREAM and font_size >= 20:
 		l.add_theme_color_override("font_outline_color", Color("365c48"))
 		l.add_theme_constant_override("outline_size", 5)
 	return l
@@ -130,44 +336,8 @@ func add_header(title: String, back: Callable) -> void:
 	page.add_child(row)
 
 func show_home() -> void:
-	clear_page("home")
-	var top := GardenUI.hbox()
-	var badge := GardenUI.panel(GardenUI.CREAM)
-	badge.add_child(GardenUI.label("GARDEN GRILL  /  CHAPTER 01", 20, GardenUI.TEAL, true))
-	top.add_child(GardenUI.expand(badge))
-	top.add_child(GardenUI.button("☼", show_settings, GardenUI.CREAM, Vector2(76, 76)))
-	page.add_child(top)
-	page.add_child(GardenUI.spacer(115))
-	var brand := centered("Garden\nTable", 82, GardenUI.CREAM, true)
-	brand.add_theme_color_override("font_shadow_color", Color("305a46"))
-	brand.add_theme_constant_override("shadow_offset_y", 6)
-	brand.add_theme_color_override("font_outline_color", Color("305a46"))
-	brand.add_theme_constant_override("outline_size", 12)
-	page.add_child(brand)
-	page.add_child(centered("A little room. A lovely meal.", 26, GardenUI.CREAM, true))
-	page.add_child(GardenUI.spacer(0, true))
-	var welcome := GardenUI.panel()
-	var content := GardenUI.vbox(12)
-	welcome.add_child(content)
-	content.add_child(centered("FRESH FROM THE GARDEN", 20, GardenUI.TEAL, true))
-	var food_row := GardenUI.hbox(0)
-	food_row.alignment = BoxContainer.ALIGNMENT_CENTER
-	for id in FoodArt.IDS.slice(0, 3):
-		food_row.add_child(FoodArt.icon(id, 132))
-	content.add_child(food_row)
-	content.add_child(centered("Match three. Make space.\nServe something wonderful.", 27))
-	var completed: int = save.data.profile.completed.size()
-	content.add_child(centered("%d / 30 tables cleared   ·   %d coins" % [completed, save.data.profile.coins], 21, GardenUI.TEAL))
-	page.add_child(welcome)
-	var next_level := int(save.data.profile.unlocked)
-	var resume: bool = not save.data.session.is_empty()
-	page.add_child(GardenUI.button("Continue · Level %d" % (int(save.data.session.level_number) if resume else next_level), continue_game, GardenUI.TEAL, Vector2(0, 98)))
-	var menu := GardenUI.hbox()
-	menu.add_child(GardenUI.expand(GardenUI.button("Levels", show_levels, GardenUI.CREAM)))
-	menu.add_child(GardenUI.expand(GardenUI.button("Recipe book", show_album, GardenUI.CREAM)))
-	page.add_child(menu)
-	page.add_child(GardenUI.spacer(0, true))
-	page.add_child(centered("30 handcrafted puzzles · Untimed · Offline", 19, Color("613f2b")))
+	tutorial_mode = false
+	GardenFrontEnd.home(self)
 
 func continue_game() -> void:
 	if save.data.session.is_empty():
@@ -181,17 +351,19 @@ func continue_game() -> void:
 		body.add_child(GardenUI.button("Restart level %d" % number, func(): start_level(number)))
 		body.add_child(GardenUI.button("Back", close_modal, GardenUI.CREAM))
 		return
+	tutorial_mode = false
 	level = candidate
 	model = BoardModel.new()
 	model.undo_capacity = tuning.undo_capacity
 	model.setup(level)
-	model.restore(save.data.session.state)
-	model.history = save.data.session.history.duplicate(true)
+	save.restore_session(model)
 	build_game()
 	if model.is_won():
 		show_win()
 
 func start_level(number: int) -> void:
+	tutorial_mode = false
+	first_clear_reward = 0
 	number = clampi(number, 1, TOTAL_LEVELS)
 	level = LevelCatalog.load_level(number)
 	if level.is_empty():
@@ -207,32 +379,35 @@ func start_level(number: int) -> void:
 
 func build_game() -> void:
 	clear_page("game")
+	if model.state.trays.size() > 6: page.add_theme_constant_override("separation", 12)
 	selected = NONE
 	hint_cell = NONE
 	var top := GardenUI.hbox(14)
 	top.add_child(GardenUI.button("Ⅱ", show_pause, GardenUI.TEAL, Vector2(76, 80)))
 	var badge := GardenUI.panel()
 	var badge_text := GardenUI.vbox(0)
-	badge_text.add_child(centered("GARDEN GRILL", 16, GardenUI.TEAL, true))
-	badge_text.add_child(centered("Level %02d" % int(level.number), 32, GardenUI.INK, true))
+	badge_text.add_child(centered("COOKING SCHOOL" if tutorial_mode else "GARDEN GRILL", 16, GardenUI.TEAL, true))
+	badge_text.add_child(centered("Lesson %d / 3" % (tutorial_index + 1) if tutorial_mode else "Level %02d" % int(level.number), 30, GardenUI.INK, true))
 	badge.add_child(badge_text)
 	top.add_child(GardenUI.expand(badge))
-	var move_card := GardenUI.panel()
-	move_card.custom_minimum_size.x = 124
-	var move_box := GardenUI.vbox(0)
-	move_box.add_child(centered("MOVES", 15, GardenUI.TEAL, true))
-	moves_label = centered("0", 29, GardenUI.INK, true)
-	move_box.add_child(moves_label)
-	move_card.add_child(move_box)
-	top.add_child(move_card)
+	moves_label = centered("0 moves", 16, GardenUI.TEAL)
+	badge_text.add_child(moves_label)
+	wallet_button = GardenUI.button("Guide\nFREE" if tutorial_mode else "◉ %d\nChef Coins" % economy.balance(), request_hint if tutorial_mode else show_shop, GardenUI.GOLD, Vector2(140, 84))
+	wallet_button.add_theme_font_size_override("font_size", 20)
+	top.add_child(wallet_button)
 	page.add_child(top)
 	# Scenery remains visible above the worktop.
-	var restaurant_gap := GardenUI.spacer(178)
-	page.add_child(restaurant_gap)
+	scenery_gap = GardenUI.spacer(24 if model.state.trays.size() > 6 else (114 if tutorial_mode else 146))
+	page.add_child(scenery_gap)
 	var title_card := GardenUI.panel(Color("fff4d8"), 18)
 	var title_box := GardenUI.vbox(4)
 	title_card.add_child(title_box)
-	title_box.add_child(centered(str(level.get("title", "Fresh beginnings")), 28, GardenUI.INK, true))
+	var goal_row := GardenUI.hbox(8)
+	goal_row.add_child(GardenUI.expand(centered(str(level.get("title", "Fresh beginnings")), 25, GardenUI.INK, true)))
+	var queue_button := GardenUI.button("≡", show_queues, GardenUI.CREAM, Vector2(56, 42))
+	queue_button.tooltip_text = "Inspect queued plates"
+	goal_row.add_child(queue_button)
+	title_box.add_child(goal_row)
 	progress_label = centered("", 19, GardenUI.TEAL)
 	title_box.add_child(progress_label)
 	progress_bar = ProgressBar.new()
@@ -266,18 +441,21 @@ func build_game() -> void:
 	var tools_row := GardenUI.hbox(14)
 	undo_button = GardenUI.button("↶\nUndo", undo_move, GardenUI.TEAL, Vector2(0, 102))
 	tools_row.add_child(GardenUI.expand(undo_button))
-	tools_row.add_child(GardenUI.expand(GardenUI.button("✦\nHint", request_hint, GardenUI.TEAL, Vector2(0, 102))))
-	tools_row.add_child(GardenUI.expand(GardenUI.button("≡\nQueues", show_queues, GardenUI.TEAL, Vector2(0, 102))))
+	tools_row.add_child(GardenUI.expand(GardenUI.button("✦\nGuide" if tutorial_mode else "✦\nHint · 10", request_hint, GardenUI.TEAL, Vector2(0, 102))))
+	tools_row.add_child(GardenUI.expand(GardenUI.button("?\nHelp" if tutorial_mode else "+\nTray · 40", show_help if tutorial_mode else request_extra_tray, GardenUI.TEAL, Vector2(0, 102))))
 	tools_row.add_child(GardenUI.expand(GardenUI.button("⟳\nRestart", confirm_restart, GardenUI.TEAL, Vector2(0, 102))))
 	page.add_child(tools_row)
-	page.add_child(centered("TAKE YOUR TIME  ·  EVERY PUZZLE HAS A SOLUTION", 15, Color("684629"), true))
+	page.add_child(centered("LEARN AT YOUR OWN PACE  ·  EVERY TOOL IS FREE HERE" if tutorial_mode else "UNDO & RESTART ARE FREE  ·  TOOLS ARE ALWAYS OPTIONAL", 14, Color("684629"), true))
 	refresh_game()
+	animate_page()
 
 func refresh_game() -> void:
 	if not is_instance_valid(board):
 		return
+	board.finish = equipped_finish()
 	board.bind(model.state, selected, hint_cell, bool(settings().high_readability))
-	moves_label.text = str(model.state.moves)
+	moves_label.text = "%d moves" % int(model.state.moves)
+	if is_instance_valid(wallet_button) and not tutorial_mode: wallet_button.text = "◉ %d\nChef Coins" % economy.balance()
 	undo_button.disabled = model.history.is_empty() or model.is_won()
 	var total_batches := int(model.state.initial_total) / 3
 	progress_label.text = "%d / %d batches prepared  ·  No timer" % [model.state.batches, total_batches]
@@ -405,11 +583,13 @@ func show_settings() -> void:
 		toggle.button_pressed = bool(settings().get(entry[0], false))
 		toggle.toggled.connect(func(value: bool):
 			settings()[entry[0]] = value
+			GardenUI.reduced_motion = bool(settings().reduced_motion)
 			save.save_game()
 			audio.configure(settings())
 			if screen == "game": refresh_game())
 		body.add_child(toggle)
-	body.add_child(GardenUI.button("How to play", show_help, GardenUI.GOLD))
+	body.add_child(GardenUI.button("Cooking School", start_tutorial, GardenUI.GOLD))
+	body.add_child(GardenUI.button("How to play", show_help, GardenUI.CREAM))
 	body.add_child(GardenUI.button("Credits", show_credits, GardenUI.CREAM))
 	body.add_child(GardenUI.button("Reset progress", confirm_reset, GardenUI.CREAM))
 	body.add_child(GardenUI.button("Done", close_modal))
@@ -419,7 +599,7 @@ func show_help() -> void:
 	body.add_child(GardenUI.button("Let's play", close_modal))
 
 func show_credits() -> void:
-	var body := open_modal("Garden Table", "An original food sorting puzzle for Akhilesh Mahto.\n\nBuilt with Godot 4.7.2. Original AI-generated food and restaurant art; original synthesized audio. Open Sans font by the Open Sans authors (Apache 2.0).\n\nThe reference images informed the art direction. No reference sprites are used.\n\nVersion 0.1 · Garden Grill vertical slice")
+	var body := open_modal("Garden Table", "An original food sorting puzzle for Akhilesh Mahto.\n\nBuilt with Godot 4.7.2. Original AI-generated food and restaurant art; original synthesized audio. Open Sans font by the Open Sans authors (Apache 2.0).\n\nThe reference images informed the art direction. No reference sprites are used.\n\nVersion 0.2 · Welcome to the Garden")
 	body.add_child(GardenUI.button("Lovely", close_modal))
 
 func confirm_reset() -> void:
@@ -427,16 +607,19 @@ func confirm_reset() -> void:
 	body.add_child(GardenUI.button("Keep my progress", close_modal))
 	body.add_child(GardenUI.button("Delete local progress", func():
 		save.reset_progress()
+		economy.initialize()
+		GardenUI.reduced_motion = bool(settings().reduced_motion)
 		audio.configure(settings())
 		model = null
 		level = {}
+		tutorial_mode = false
 		show_home(), GardenUI.CORAL))
 
 func show_pause() -> void:
 	if screen != "game": return
 	cancel_pointer()
 	commit_current_session()
-	var body := open_modal("A little breather", "Your table is saved. Come back whenever you like.")
+	var body := open_modal("A little breather", "Your campaign table is safe. This lesson restarts when you return." if tutorial_mode else "Your table is saved. Come back whenever you like.")
 	body.add_child(GardenUI.button("Resume", close_modal))
 	body.add_child(GardenUI.button("Settings", show_settings, GardenUI.CREAM))
 	body.add_child(GardenUI.button("Restart level", confirm_restart, GardenUI.CREAM))
@@ -446,7 +629,7 @@ func confirm_restart() -> void:
 	if not model: return
 	var body := open_modal("Set the table again?", "Restart this level from its original layout. Your completed progress is kept.")
 	body.add_child(GardenUI.button("Keep playing", close_modal))
-	body.add_child(GardenUI.button("Restart level", func(): start_level(int(level.number)), GardenUI.GOLD))
+	body.add_child(GardenUI.button("Restart level", restart_current, GardenUI.GOLD))
 
 func show_orders() -> void:
 	var body := open_modal("Today's menu", "Each match makes one batch. Future orders keep your prepared ingredients.")
@@ -481,6 +664,9 @@ func show_queues() -> void:
 	body.add_child(GardenUI.button("Got it", close_modal))
 
 func show_win() -> void:
+	if tutorial_mode:
+		show_lesson_complete()
+		return
 	cancel_pointer()
 	audio.play_cue("win")
 	var last_level: bool = int(level.number) == TOTAL_LEVELS
@@ -489,13 +675,16 @@ func show_win() -> void:
 	icons.alignment = BoxContainer.ALIGNMENT_CENTER
 	for id in FoodArt.IDS.slice(0, 3): icons.add_child(FoodArt.icon(id, 110))
 	body.add_child(icons)
-	body.add_child(centered("%d / 30 tables cleared  ·  %d coins" % [save.data.profile.completed.size(), save.data.profile.coins], 22, GardenUI.TEAL, true))
+	body.add_child(centered("+%d Chef Coins · First clear!" % first_clear_reward if first_clear_reward > 0 else "A lovely replay · reward already collected", 24, GardenUI.TEAL, true))
+	body.add_child(centered("Wallet: %d Chef Coins" % economy.balance(), 22, GardenUI.TEAL))
+	if first_clear_reward > 0: GardenMotion.coin_burst(self, size * Vector2(0.5, 0.4), first_clear_reward, settings().reduced_motion)
+	first_clear_reward = 0
 	if last_level:
 		body.add_child(centered("The Garden Grill collection is complete.\nBackyard Barbecue is a future chapter.", 23))
 		body.add_child(GardenUI.button("Back to the garden", show_home))
 	else:
 		body.add_child(GardenUI.button("Next table  →", func(): start_level(int(level.number) + 1)))
-	body.add_child(GardenUI.button("Replay this level", func(): start_level(int(level.number)), GardenUI.CREAM))
+	body.add_child(GardenUI.button("Replay this level", restart_current, GardenUI.CREAM))
 	body.add_child(GardenUI.button("Home", show_home, GardenUI.CREAM))
 
 func show_recovery() -> void:
@@ -503,7 +692,7 @@ func show_recovery() -> void:
 	var undo := GardenUI.button("Undo last move", func(): close_modal(); undo_move())
 	undo.disabled = model.history.is_empty()
 	body.add_child(undo)
-	body.add_child(GardenUI.button("Restart level", func(): start_level(int(level.number)), GardenUI.GOLD))
+	body.add_child(GardenUI.button("Restart level", restart_current, GardenUI.GOLD))
 
 func open_modal(title: String, description: String) -> VBoxContainer:
 	close_modal()
@@ -533,9 +722,18 @@ func open_modal(title: String, description: String) -> VBoxContainer:
 	body.add_child(centered(description, 24, GardenUI.INK))
 	scroll.add_child(body)
 	# Cap tall menus to the safe viewport and allow their contents to scroll.
+	var owner_ref : WeakRef = weakref(self)
+	var scroll_ref : WeakRef = weakref(scroll)
+	var body_ref : WeakRef = weakref(body)
+	var panel_ref : WeakRef = weakref(panel)
 	get_tree().process_frame.connect(func():
-		if is_instance_valid(scroll) and is_instance_valid(body):
-			scroll.custom_minimum_size.y = minf(body.get_combined_minimum_size().y, size.y - safe_top() - safe_bottom() - 130), CONNECT_ONE_SHOT)
+		var controller: Variant = owner_ref.get_ref()
+		var active_scroll: ScrollContainer = scroll_ref.get_ref()
+		var active_body: VBoxContainer = body_ref.get_ref()
+		var active_panel: PanelContainer = panel_ref.get_ref()
+		if is_instance_valid(controller) and is_instance_valid(active_scroll) and is_instance_valid(active_body) and is_instance_valid(active_panel):
+			active_scroll.custom_minimum_size.y = minf(active_body.get_combined_minimum_size().y, controller.size.y - controller.safe_top() - controller.safe_bottom() - 130)
+			GardenMotion.enter(active_panel, controller.settings().reduced_motion), CONNECT_ONE_SHOT)
 	audio.play_cue("click")
 	return body
 
@@ -562,8 +760,9 @@ func show_toast(message: String) -> void:
 	toast_node.add_child(text)
 	add_child(toast_node)
 	toast_node.position = Vector2((size.x - text.custom_minimum_size.x - 44) / 2, size.y - 260)
-	var current := toast_node
+	var toast_ref : WeakRef = weakref(toast_node)
 	get_tree().create_timer(3.5).timeout.connect(func():
+		var current: Node = toast_ref.get_ref()
 		if is_instance_valid(current): current.queue_free())
 
 func show_tutorial_hint() -> void:
@@ -582,34 +781,19 @@ func undo_move() -> void:
 		audio.play_cue("move")
 		refresh_game()
 		status_label.text = "One move back. Reveals and recipe progress restored."
+		if tutorial_mode: update_tutorial_guidance()
 	else: show_toast("You're at the beginning of this table.")
 
 func request_hint() -> void:
 	if busy or not model or model.is_won(): return
 	cancel_pointer()
-	var proof := BoardModel.new()
-	proof.setup(level)
-	var solution: Array = level.get("solution", [])
-	var next: Array = []
-	for command in solution:
-		if proof.search_key() == model.search_key():
-			next = command.duplicate()
-			var expected_food: Variant = proof.state.trays[int(command[0])].front[int(command[1])]
-			next[1] = model.state.trays[int(command[0])].front.find(expected_food)
-			next[3] = model.state.trays[int(command[2])].front.find(null)
-			break
-		proof.apply_move(command[0], command[1], command[2], command[3])
-	if next.is_empty():
-		var result := PuzzleSolver.solve(model, tuning.hint_budget_ms)
-		if result.status == "SOLVED" and not result.moves.is_empty(): next = result.moves[0]
-	if next.is_empty():
-		show_toast("No verified hint found within the search budget. Try undo or restart.")
+	if tutorial_mode:
+		update_tutorial_guidance()
 		return
-	selected = Vector2i(next[0], next[1])
-	hint_cell = Vector2i(next[2], next[3])
-	refresh_game()
-	status_label.text = "Verified hint: move %s to the outlined space." % FoodArt.title(str(model.state.trays[selected.x].front[selected.y]))
-	audio.play_cue("select")
+	var body := open_modal("A thoughtful hint", "Highlight a verified step for 10 Chef Coins. If no solution is found, no coins are spent. Rechecking the same board in this attempt is free.")
+	body.add_child(centered("Your balance: %d Chef Coins" % economy.balance(), 23, GardenUI.TEAL, true))
+	body.add_child(GardenUI.button("Show a hint · ◉ 10", purchase_hint, GardenUI.GOLD))
+	body.add_child(GardenUI.button("Keep thinking", close_modal, GardenUI.CREAM))
 
 func _input(event: InputEvent) -> void:
 	# Once a board gesture owns a pointer, GUI controls cannot steal its release
@@ -735,10 +919,12 @@ func submit_move(source: Vector2i, target: Vector2i) -> void:
 		refresh_game()
 		return
 	busy = true
+	var earned_before: int = economy.balance()
 	selected = NONE
 	hint_cell = NONE
 	# Persist the final stable board before its presentation begins.
 	commit_current_session()
+	first_clear_reward = economy.balance() - earned_before
 	audio.play_cue("move")
 	if bool(settings().haptics) and OS.get_name() == "Android": Input.vibrate_handheld(20)
 	var serial := generation
@@ -746,13 +932,20 @@ func submit_move(source: Vector2i, target: Vector2i) -> void:
 		var flight := FoodArt.icon(food, 115)
 		flight.size = Vector2(115, 115)
 		flight.position = from_pos - flight.size * 0.5
+		flight.set_meta("page_effect", true)
 		add_child(flight)
-		var tween := create_tween()
-		tween.tween_property(flight, "position", to_pos - flight.size * 0.5, tuning.snap_seconds).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		var start := flight.position
+		var destination := to_pos - flight.size * 0.5
+		var flight_ref : WeakRef = weakref(flight)
+		var tween := flight.create_tween()
+		tween.tween_method(func(amount: float):
+			var current: TextureRect = flight_ref.get_ref()
+			if current: current.position = start.lerp(destination, amount) - Vector2(0, sin(amount * PI) * 22), 0.0, 1.0, tuning.snap_seconds).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		await tween.finished
 		flight.queue_free()
 	if generation != serial: return
 	refresh_game()
+	if tutorial_mode and not model.is_won(): update_tutorial_guidance()
 	var matched := false
 	for event in model.last_events:
 		if event.type == "cleared":
@@ -760,9 +953,12 @@ func submit_move(source: Vector2i, target: Vector2i) -> void:
 			if application_active: audio.play_cue("match")
 			var tray_i := int(event.tray)
 			pop_text("%s +1 batch" % FoodArt.title(str(event.food)), board.center_of(Vector2i(tray_i, 1)))
-		elif event.type == "revealed" and application_active: audio.play_cue("reveal")
+			GardenMotion.match_burst(self, board.center_of(Vector2i(tray_i, 1)), settings().reduced_motion)
+		elif event.type == "revealed":
+			if application_active: audio.play_cue("reveal")
+			GardenMotion.enter(board.trays[int(event.tray)], settings().reduced_motion)
 		elif event.type == "served" and application_active: audio.play_cue("serve")
-	status_label.text = "Lovely! One triple makes one batch." if matched else "A little space makes all the difference."
+	if not tutorial_mode: status_label.text = "Lovely! One triple makes one batch." if matched else "A little space makes all the difference."
 	if not bool(settings().reduced_motion): await get_tree().create_timer(tuning.match_seconds).timeout
 	if generation != serial: return
 	busy = false
@@ -773,13 +969,15 @@ func pop_text(message: String, position_on_board: Vector2) -> void:
 	label.add_theme_color_override("font_outline_color", GardenUI.TEAL)
 	label.add_theme_constant_override("outline_size", 7)
 	label.position = position_on_board - Vector2(125, 22)
+	label.set_meta("page_effect", true)
 	add_child(label)
-	var tween := create_tween().set_parallel(true)
+	var tween := label.create_tween().set_parallel(true)
 	if not bool(settings().reduced_motion): tween.tween_property(label, "position:y", label.position.y - 55, 0.8)
 	tween.tween_property(label, "modulate:a", 0.0, 0.8).set_delay(0.2)
 	tween.finished.connect(label.queue_free)
 
 func commit_current_session() -> void:
+	if tutorial_mode: return
 	save.commit_session(model, level)
 	if not save.last_error.is_empty():
 		show_toast("Your move works, but progress could not be saved. Check available storage.")

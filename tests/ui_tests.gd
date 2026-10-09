@@ -10,7 +10,7 @@ var screenshot_dir: String = ""
 
 
 func _initialize() -> void:
-	if OS.get_environment("GARDEN_UI_TEST") != "1":
+	if OS.get_environment("GARDEN_UI_TEST") != "1" or OS.get_environment("XDG_DATA_HOME").is_empty():
 		push_error("UI tests write progress. Set GARDEN_UI_TEST=1 and an isolated XDG_DATA_HOME.")
 		quit(2)
 		return
@@ -35,7 +35,15 @@ func run() -> void:
 	game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
 	await settle()
-	check(game.screen == "game" and int(game.level.number) == 1, "fresh launch enters tutorial")
+	check(game.screen == "splash", "fresh launch starts at splash")
+	await click_ui_button("Skip intro  →")
+	check(game.screen == "title", "skip intro opens title")
+	await click_ui_button("Enter the cafe  →")
+	check(game.screen == "home", "title opens main menu")
+	check(game.economy.balance() == EconomyService.WELCOME_COINS, "fresh profile receives one welcome gift")
+	game.start_level(1)
+	await settle()
+	check(game.screen == "game" and int(game.level.number) == 1, "first campaign can be started explicitly")
 	check(game.selected != Vector2i(-1, -1), "tutorial preselects a food")
 	check(game.hint_cell != Vector2i(-1, -1), "tutorial highlights destination")
 	check_layout("level_01")
@@ -182,7 +190,7 @@ func test_toolbar_pointer_capture() -> void:
 	check(game.model.state_hash() == before, "toolbar drop does not move food")
 	await mouse_button(source, true)
 	var motion := InputEventMouseMotion.new()
-	motion.position = button_with_text("✦\nHint").get_global_rect().get_center()
+	motion.position = button_with_text("✦\nHint · 10").get_global_rect().get_center()
 	motion.button_mask = MOUSE_BUTTON_MASK_LEFT
 	root.push_input(motion, true)
 	await process_frame
@@ -281,6 +289,17 @@ func check_modal_scroll(label: String) -> void:
 		check(scroll.scroll_vertical > 0, label + " tall modal scrolls to final button")
 
 
+func click_ui_button(text: String) -> void:
+	var button: Button = button_with_text(text)
+	check(button != null, "button exists: " + text)
+	if button == null:
+		return
+	var center := button.get_global_rect().get_center()
+	await mouse_button(center, true)
+	await mouse_button(center, false)
+	await settle()
+
+
 func button_with_text(text: String) -> Button:
 	for node in game.find_children("*", "Button", true, false):
 		if node.text == text:
@@ -329,6 +348,8 @@ func test_reload_and_incompatible_content() -> void:
 	await settle()
 	game.save = SaveService.new()
 	check(game.save.load_save(), "UI session can be reloaded from disk")
+	game.economy = EconomyService.new(game.save)
+	game.economy.initialize()
 	game.continue_game()
 	await settle()
 	check(game.model.state_hash() == expected_hash, "Continue restores exact saved board")
@@ -356,6 +377,8 @@ func test_hints_after_slot_permutation() -> void:
 	game.refresh_game()
 	game.request_hint()
 	await settle()
+	check(modal_has_text("A thoughtful hint"), "hint requires price confirmation")
+	await click_ui_button("Show a hint · ◉ 10")
 	check(game.selected != Vector2i(-1, -1) and game.hint_cell != Vector2i(-1, -1), "hint resolves after equivalent slot permutation")
 	if game.selected != Vector2i(-1, -1) and game.hint_cell != Vector2i(-1, -1):
 		check(game.model.state.trays[game.selected.x].front[game.selected.y] != null, "hint source contains food")

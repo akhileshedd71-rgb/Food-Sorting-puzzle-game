@@ -9,6 +9,8 @@ var valid_targets: bool = false
 var hint_slot: int = -1
 var high_readability: bool = false
 var food_nodes: Array[Control] = []
+var rim_color: Color = Color("24637b")
+var accent_color: Color = Color("d3d9d5")
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -85,9 +87,9 @@ func _draw() -> void:
 	var width := size.x
 	# Ceramic foot, blue enamel rim and inset steel surface.
 	draw_style_box(GardenUI.box(Color("493b30"), 13), Rect2(14, 112, width - 28, 32))
-	draw_style_box(GardenUI.box(Color("24637b"), 17, Color("154256"), 2, 4), Rect2(0, 15, width, 125))
+	draw_style_box(GardenUI.box(rim_color, 17, rim_color.darkened(0.3), 2, 4), Rect2(0, 15, width, 125))
 	draw_string(GardenUI.BODY, Vector2(17, 134), str(tray_index + 1), HORIZONTAL_ALIGNMENT_LEFT, -1, 13, Color("cde2e2"))
-	draw_style_box(GardenUI.box(Color("d3d9d5"), 17, Color("fffbed"), 4), Rect2(0, 0, width, 123))
+	draw_style_box(GardenUI.box(accent_color, 17, Color("fffbed"), 4), Rect2(0, 0, width, 123))
 	draw_style_box(GardenUI.box(Color("a7b4b0"), 12, Color("899b97"), 2), Rect2(9, 9, width - 18, 105))
 	for i in range(slot_rects.size()):
 		var r := slot_rects[i].grow(-4)

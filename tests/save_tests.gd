@@ -2,6 +2,10 @@ extends SceneTree
 ## Focused persistence regression suite. Uses a separate directory, never player saves.
 ## Run: godot --headless --path . --script tests/save_tests.gd
 
+class ArchiveFailureStore extends SaveService:
+	func _archive_file(_source: String, _target: String) -> bool:
+		return false
+
 var failures: int = 0
 var checks: int = 0
 var test_directory: String
@@ -17,6 +21,7 @@ func _initialize() -> void:
 	_test_profile_and_rewards()
 	_test_recipe_undo_roundtrip()
 	_test_recovery_boundaries()
+	_test_corruption_archives()
 	_test_validation_and_reset()
 	_cleanup()
 	_test_audio.call_deferred()
@@ -112,6 +117,44 @@ func _test_recovery_boundaries() -> void:
 	_check(not damaged.load_save() and not damaged.recovery_notice.is_empty(), "All-copy corruption produces an explicit recovery notice")
 	_check(FileAccess.get_file_as_string(save_path) == "corrupt main", "Failed load preserves damaged files for inspection")
 
+func _test_corruption_archives() -> void:
+	_cleanup()
+	var original_hashes: Array = []
+	for suffix in ["", ".tmp", ".bak", ".bak.tmp"]:
+		var path: String = save_path + suffix
+		_write_text(path, "damaged bytes " + suffix)
+		original_hashes.append(FileAccess.get_sha256(path))
+	var damaged := SaveService.new(save_path)
+	_check(not damaged.load_save(), "All-copy damage is detected before automatic initialization")
+	_check(EconomyService.new(damaged).initialize().status == "ok", "Fresh initialization succeeds after preserving every damaged copy")
+	var archives := _archive_files()
+	_check(archives.size() == 4 and damaged.recovery_notice.contains(".corrupt"), "Every original has a separate archive and the notice identifies them")
+	var archived_hashes: Array = []
+	for archive in archives:
+		archived_hashes.append(FileAccess.get_sha256(archive))
+	for original_hash in original_hashes:
+		_check(archived_hashes.has(original_hash), "Archived damaged bytes exactly match their original")
+	var loaded := SaveService.new(save_path)
+	_check(loaded.load_save() and loaded.data.profile.coins == 100, "Fresh profile is valid without losing damaged originals")
+	_check(EconomyService.new(loaded).initialize().awarded == 0 and _archive_files().size() == 4, "Later normal saves neither overwrite archives nor duplicate welcome reward")
+	_cleanup()
+	_write_text(save_path, "keep this original if archive fails")
+	var blocked := ArchiveFailureStore.new(save_path)
+	blocked.load_save()
+	_check(EconomyService.new(blocked).initialize().status == "save_failed", "Archive failure prevents replacement by automatic initialization")
+	_check(FileAccess.get_file_as_string(save_path) == "keep this original if archive fails" and blocked.data.profile.coins == 0, "Archive failure retains original bytes and rolls back welcome reward")
+	_cleanup()
+
+func _archive_files() -> Array:
+	var result: Array = []
+	var directory := DirAccess.open(save_path.get_base_dir())
+	if directory == null:
+		return result
+	for filename in directory.get_files():
+		if filename.begins_with(save_path.get_file()) and filename.contains(".corrupt."):
+			result.append(save_path.get_base_dir().path_join(filename))
+	return result
+
 func _test_validation_and_reset() -> void:
 	_cleanup()
 	var service := SaveService.new(save_path)
@@ -189,6 +232,8 @@ func _write_text(path: String, text: String) -> void:
 	file.close()
 
 func _cleanup() -> void:
+	for archive in _archive_files():
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(archive))
 	for suffix in ["", ".tmp", ".bak", ".bak.tmp"]:
 		var path: String = save_path + suffix
 		if FileAccess.file_exists(path):

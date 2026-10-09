@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "content_version": 1,
+  "level_id": "cooking_school_002",
+  "number": 2,
+  "tutorial_step": 2,
+  "title": "Another helping is waiting",
+  "lesson": "A whole new row arrives when its front row is completely empty.",
+  "mode": "campaign",
+  "active_ticket_limit": 1,
+  "timer_seconds": 0,
+  "trays": [
+    {
+      "id": "school_tray_1",
+      "front": [
+        "tomato",
+        "button_mushroom",
+        null
+      ],
+      "queue": [
+        [
+          "corn_cob",
+          "corn_cob",
+          "corn_cob"
+        ]
+      ]
+    },
+    {
+      "id": "school_tray_2",
+      "front": [
+        "tomato",
+        "tomato",
+        null
+      ],
+      "queue": []
+    },
+    {
+      "id": "school_tray_3",
+      "front": [
+        "button_mushroom",
+        "button_mushroom",
+        null
+      ],
+      "queue": []
+    }
+  ],
+  "tickets": [],
+  "solution": [
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      2
+    ]
+  ],
+  "tutorial_guide": [
+    {
+      "title": "Make a little room",
+      "body": "Move the tomato to its matching pair. Watch the first tray: its waiting corn stays hidden while a mushroom remains."
+    },
+    {
+      "title": "Move the very last piece",
+      "body": "Move the last mushroom out. The whole waiting row will slide forward, and its three corn pieces will match by themselves."
+    }
+  ],
+  "tutorial_complete": "An empty front brings the whole next row forward. A waiting triple clears automatically, so one move can make several matches.",
+  "human_playtest_status": "pending",
+  "content_hash": "2afb207565c9684efd959596ab665ff30cc946213532297769d7d7769039edd7"
+}

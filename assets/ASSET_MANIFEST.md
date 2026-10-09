@@ -21,3 +21,5 @@ Atlas indices are zero based, read left to right:
 Crop with `Rect2(column * 512, row * 512, 512, 512)` using `AtlasTexture`. Retain alpha and use linear filtering when drawing food at small sizes. The six silhouettes and interior patterns distinguish ingredients beyond hue alone. Food names and additional markers are supplied by the high-readability UI.
 
 Audio is synthesized by the project's audio service from original waveforms. No sampled commercial recordings are included.
+
+Version 0.2 adds original vector UI artwork in `scenes/ui/coin_icon.gd` (an embossed leaf Chef Coin) and `scenes/ui/brand_mark.gd` (a plate and garden sprig). They are drawn from code, with no external images or attribution requirements. Enamel finishes recolor the existing tray view; all food identities retain their original art and readability.

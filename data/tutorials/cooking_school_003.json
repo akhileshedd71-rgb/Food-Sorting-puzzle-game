@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "content_version": 1,
+  "level_id": "cooking_school_003",
+  "number": 3,
+  "tutorial_step": 3,
+  "title": "A table for two orders",
+  "lesson": "Three matching pieces make one batch. Future orders keep their prepared food.",
+  "mode": "campaign_orders",
+  "active_ticket_limit": 1,
+  "timer_seconds": 0,
+  "trays": [
+    {
+      "id": "school_tray_1",
+      "front": [
+        "corn_cob",
+        "corn_cob",
+        null
+      ],
+      "queue": []
+    },
+    {
+      "id": "school_tray_2",
+      "front": [
+        "corn_cob",
+        "button_mushroom",
+        "button_mushroom"
+      ],
+      "queue": []
+    },
+    {
+      "id": "school_tray_3",
+      "front": [
+        "bell_pepper_ring",
+        "bell_pepper_ring",
+        null
+      ],
+      "queue": []
+    },
+    {
+      "id": "school_tray_4",
+      "front": [
+        "bell_pepper_ring",
+        "button_mushroom",
+        null
+      ],
+      "queue": []
+    }
+  ],
+  "tickets": [
+    {
+      "id": "first_plate",
+      "name": "First plate",
+      "requirements": {
+        "corn_cob": 1,
+        "button_mushroom": 1
+      }
+    },
+    {
+      "id": "next_plate",
+      "name": "Next plate",
+      "requirements": {
+        "bell_pepper_ring": 1
+      }
+    }
+  ],
+  "solution": [
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      3,
+      0,
+      2,
+      2
+    ],
+    [
+      3,
+      1,
+      1,
+      0
+    ]
+  ],
+  "tutorial_guide": [
+    {
+      "title": "Prepare one corn batch",
+      "body": "Orders ask for batches. Match these three corn pieces to prepare one corn batch for the first plate."
+    },
+    {
+      "title": "Prepare something for later",
+      "body": "Corn is ready! The first plate still needs mushrooms. Match the peppers now; the next plate will keep that batch as Prepared."
+    },
+    {
+      "title": "Prepared food waits for you",
+      "body": "The next plate has its pepper batch safely Prepared. Match the mushrooms to serve the first plate, then the next one can follow."
+    }
+  ],
+  "tutorial_complete": "Both plates are served and every tray is clear! Each triple made one batch, and the next order kept its Prepared pepper batch.",
+  "human_playtest_status": "pending",
+  "content_hash": "b331e005f495d92e0a7fb4d6844e974374c1ac4f2dbb5c78bc31b3b9b924f090"
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "content_version": 1,
+  "level_id": "cooking_school_001",
+  "number": 1,
+  "tutorial_step": 1,
+  "title": "Your first little match",
+  "lesson": "Bring three of the same food together on one tray.",
+  "mode": "campaign",
+  "active_ticket_limit": 1,
+  "timer_seconds": 0,
+  "trays": [
+    {
+      "id": "school_tray_1",
+      "front": [
+        "tomato",
+        "tomato",
+        null
+      ],
+      "queue": []
+    },
+    {
+      "id": "school_tray_2",
+      "front": [
+        "tomato",
+        "corn_cob",
+        "corn_cob"
+      ],
+      "queue": []
+    },
+    {
+      "id": "school_tray_3",
+      "front": [
+        "corn_cob",
+        null,
+        null
+      ],
+      "queue": []
+    }
+  ],
+  "tickets": [],
+  "solution": [
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      0
+    ]
+  ],
+  "tutorial_guide": [
+    {
+      "title": "Three is the magic number",
+      "body": "Tap the highlighted tomato, then the empty space beside the other two. You can drag it there, too."
+    },
+    {
+      "title": "Lovely! Now try the corn",
+      "body": "Three tomatoes matched and cleared. Bring the last corn beside its two friends for another match."
+    }
+  ],
+  "tutorial_complete": "Two lovely matches! Only three identical foods clear. Mixed food can share a tray while you make room.",
+  "human_playtest_status": "pending",
+  "content_hash": "93257cbd72467ba7bf4c395951ac344515241f67636f8735076ff8f7976d00e7"
+}

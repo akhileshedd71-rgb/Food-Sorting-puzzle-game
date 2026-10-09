@@ -3,7 +3,8 @@ extends RefCounted
 ## Profile and stable board are one checksummed, recoverable transaction.
 ## Never resume an animation or credit a reward from a presentation callback.
 
-const SCHEMA_VERSION := 1
+const SCHEMA_VERSION := 2
+const BOARD_SCHEMA_VERSION := 1
 const RULES_VERSION := 1
 const LEVEL_COUNT := 30
 const FIRST_CLEAR_COINS := 30
@@ -15,6 +16,7 @@ var last_error: String = ""
 var recovery_notice: String = ""
 var save_path: String
 var _revision: int = 0
+var write_blocked: bool = false
 
 func _init(path: String = "user://garden_table.save.json") -> void:
 	save_path = path
@@ -24,6 +26,9 @@ static func default_data() -> Dictionary:
 		"schema_version": SCHEMA_VERSION,
 		"profile": {
 			"unlocked": 1, "completed": {}, "coins": 0,
+			"tutorial": {"step": 0, "completed": false},
+			"economy": {"version": 1, "ledger": {}},
+			"owned_themes": ["classic"], "active_theme": "classic",
 			"settings": {"sound": true, "music": true, "haptics": false,
 				"reduced_motion": false, "high_readability": false}
 		},
@@ -37,6 +42,10 @@ func load_save() -> bool:
 	last_error = ""
 	recovery_notice = ""
 	var best := _latest_valid()
+	if write_blocked:
+		last_error = "This save uses a newer version. Update the game before continuing."
+		recovery_notice = last_error + " Your files have been preserved."
+		return false
 	if best.is_empty():
 		data = default_data()
 		_revision = 0
@@ -46,7 +55,7 @@ func load_save() -> bool:
 				recovery_notice = "Saved progress could not be read. Damaged files have been retained; a new game can be started."
 				break
 		return false
-	data = best.payload.duplicate(true)
+	data = _migrate_payload(best.payload)
 	_revision = int(best.revision)
 	if best.path != save_path:
 		recovery_notice = "Your latest valid progress was recovered from a safety copy."
@@ -54,6 +63,9 @@ func load_save() -> bool:
 
 func save_game() -> bool:
 	last_error = ""
+	if write_blocked:
+		last_error = "A newer save version is present; overwriting it is disabled."
+		return false
 	var errors := _validate_payload(data)
 	if not errors.is_empty():
 		last_error = "Save rejected: " + "; ".join(errors)
@@ -63,6 +75,11 @@ func save_game() -> bool:
 		last_error = "Could not create the save directory."
 		return false
 	var previous := _latest_valid()
+	if write_blocked:
+		last_error = "A newer save version is present; overwriting it is disabled."
+		return false
+	if previous.is_empty() and not _archive_invalid_copies():
+		return false
 	if not previous.is_empty():
 		_revision = maxi(_revision, int(previous.revision))
 		# Preserve the newest existing checkpoint BEFORE reusing .tmp. This also
@@ -79,17 +96,40 @@ func save_game() -> bool:
 	var next_revision := _revision + 1
 	var envelope := _make_envelope(data, next_revision)
 	if not _write_checked(save_path + ".tmp", envelope):
-		return false
-	# Same-directory rename is the commit point. Recovery also understands a
-	# complete temp file if the process stops immediately before this rename.
+		# A late write-status error must not refund a recoverable transaction.
+		var pending := _read_valid(save_path + ".tmp")
+		if pending.is_empty() or pending.envelope.checksum != envelope.checksum:
+			return false
+		last_error = ""
+	# A flushed, validated temp is DURABLE: recovery selects its new revision.
+	# Never report failure and refund a purchase after reaching this point.
 	if not _replace(save_path + ".tmp", save_path):
-		return false
+		recovery_notice = "Progress was recorded in a safety copy and will recover on restart."
+		last_error = ""
 	_revision = next_revision
 	return true
 
 func commit_session(model: BoardModel, level: Dictionary) -> void:
+	if not is_campaign_level(level):
+		last_error = "Tutorial boards cannot replace the campaign session."
+		return
+	stage_session(model, level)
+	save_game()
+
+## Update the pending envelope without writing, for atomic economy transactions.
+func stage_session(model: BoardModel, level: Dictionary) -> void:
+	if not is_campaign_level(level):
+		last_error = "Only authored campaign sessions can be saved."
+		return
+	var previous: Dictionary = data.get("session", {})
+	if model.run_id.is_empty():
+		model.run_id = str(previous.get("run_id", Crypto.new().generate_random_bytes(16).hex_encode()))
+	var same_run: bool = previous.get("run_id", "") == model.run_id
 	var number := int(level.get("number", 0))
 	data.session = {
+		"run_id": model.run_id,
+		"hint_receipts": previous.get("hint_receipts", {}).duplicate(true) if same_run else {},
+		"extra_tray_granted": model.extra_tray_granted,
 		"level_number": number,
 		"level_id": str(level.get("level_id", "")),
 		"content_version": int(level.get("content_version", 1)),
@@ -113,7 +153,14 @@ func commit_session(model: BoardModel, level: Dictionary) -> void:
 		else:
 			completed[level_id].best_moves = mini(int(completed[level_id].best_moves), int(model.state.moves))
 		data.profile.unlocked = clampi(maxi(int(data.profile.unlocked), number + 1), 1, LEVEL_COUNT)
-	save_game()
+
+func restore_session(model: BoardModel) -> bool:
+	if data.session.is_empty():
+		return false
+	model.restore(data.session.state)
+	model.history = data.session.history.duplicate(true)
+	model.run_id = str(data.session.run_id)
+	return true
 
 func clear_session() -> void:
 	data.session = {}
@@ -152,10 +199,12 @@ func validate_session(level: Dictionary) -> Array:
 		var state: Dictionary = state_value
 		if int(state.initial_total) != authored_total or int(state.content_version) != int(level.get("content_version", 1)):
 			errors.append("Saved initial inventory or content version does not match the level.")
-		if state.trays.size() != level.trays.size():
-			errors.append("Saved tray count does not match the level.")
+		var has_grant := bool(state.get("extra_tray_granted", false))
+		var expected_trays: int = level.trays.size() + (1 if has_grant else 0)
+		if state.trays.size() != expected_trays:
+			errors.append("Saved tray count does not match its authored layout and grant.")
 			break
-		for index in range(state.trays.size()):
+		for index in range(level.trays.size()):
 			if str(state.trays[index].id) != str(level.trays[index].id):
 				errors.append("Saved tray IDs do not match the level.")
 			var saved_queue: Array = state.trays[index].queue
@@ -192,6 +241,32 @@ static func _served_recipes(state: Dictionary) -> Array:
 func _candidate_paths() -> Array:
 	return [save_path, save_path + ".tmp", save_path + ".bak", save_path + ".bak.tmp"]
 
+## Preserve unreadable originals before creating a fresh profile automatically.
+## Archives are adjacent immutable byte copies, excluded from recovery candidates.
+func _archive_invalid_copies() -> bool:
+	var archived: bool = false
+	for path in _candidate_paths():
+		if not FileAccess.file_exists(path):
+			continue
+		var archive: String = path + ".corrupt." + str(int(Time.get_unix_time_from_system())) + "." + str(Time.get_ticks_usec())
+		var suffix: int = 0
+		while FileAccess.file_exists(archive) or DirAccess.dir_exists_absolute(ProjectSettings.globalize_path(archive)):
+			suffix += 1
+			archive = path + ".corrupt." + str(int(Time.get_unix_time_from_system())) + "." + str(Time.get_ticks_usec()) + "." + str(suffix)
+		if not _archive_file(path, archive):
+			last_error = "Unreadable progress could not be archived. The original files have been left untouched."
+			return false
+		archived = true
+	if archived:
+		recovery_notice = "Saved progress could not be read. Original damaged files were preserved in adjacent .corrupt archives before starting fresh."
+	return true
+
+func _archive_file(source: String, target: String) -> bool:
+	if DirAccess.copy_absolute(ProjectSettings.globalize_path(source), ProjectSettings.globalize_path(target)) != OK:
+		return false
+	var source_hash := FileAccess.get_sha256(source)
+	return not source_hash.is_empty() and source_hash == FileAccess.get_sha256(target)
+
 func _latest_valid() -> Dictionary:
 	var best: Dictionary = {}
 	for path in _candidate_paths():
@@ -215,14 +290,28 @@ func _read_valid(path: String) -> Dictionary:
 	if not parsed is Dictionary:
 		return {}
 	var envelope: Dictionary = parsed
-	if envelope.get("format") != "garden-table-save" or envelope.get("envelope_version") != 1:
+	if envelope.get("format") != "garden-table-save":
+		return {}
+	if not _integer(envelope.get("envelope_version"), 1, 2147483647):
+		return {}
+	if int(envelope.envelope_version) > 1:
+		write_blocked = true
+		return {}
+	if envelope.get("envelope_version") != 1:
 		return {}
 	if not _integer(envelope.get("revision"), 1, 2147483647):
 		return {}
 	if not envelope.get("payload") is Dictionary or not envelope.get("checksum") is String:
 		return {}
 	var digest := _canonical({"revision": envelope.revision, "payload": envelope.payload}).sha256_text()
-	if digest != envelope.checksum or not _validate_payload(envelope.payload).is_empty():
+	if digest != envelope.checksum:
+		return {}
+	if not _integer(envelope.payload.get("schema_version"), 1, 2147483647):
+		return {}
+	if int(envelope.payload.schema_version) > SCHEMA_VERSION:
+		write_blocked = true
+		return {}
+	if not _validate_payload(envelope.payload).is_empty():
 		return {}
 	return {"path": path, "revision": int(envelope.revision), "payload": envelope.payload, "envelope": envelope}
 
@@ -256,7 +345,7 @@ func _replace(source: String, target: String) -> bool:
 
 static func _validate_payload(payload: Dictionary) -> Array:
 	var errors: Array = []
-	if payload.get("schema_version") != SCHEMA_VERSION:
+	if payload.get("schema_version") not in [1, SCHEMA_VERSION]:
 		return ["Unsupported save version."]
 	if not payload.get("profile") is Dictionary or not payload.get("session") is Dictionary:
 		return ["Profile or session is missing."]
@@ -284,8 +373,12 @@ static func _validate_payload(payload: Dictionary) -> Array:
 				errors.append("Invalid completion identity.")
 			if record.get("reward") != FIRST_CLEAR_COINS or not record.get("recipes") is Array:
 				errors.append("Invalid completion reward.")
+	if int(payload.schema_version) >= 2:
+		errors.append_array(_validate_economy_profile(profile))
 	if not payload.session.is_empty():
 		errors.append_array(_validate_session_shape(payload.session))
+		if int(payload.schema_version) >= 2:
+			errors.append_array(_validate_session_extensions(payload.session))
 	return errors
 
 static func _validate_session_shape(session: Dictionary) -> Array:
@@ -316,7 +409,7 @@ static func _validate_session_shape(session: Dictionary) -> Array:
 
 static func _validate_state(state: Dictionary) -> Array:
 	var errors: Array = []
-	if state.get("schema_version") != SCHEMA_VERSION or state.get("rules_version") != RULES_VERSION or not _integer(state.get("content_version"), 1, 1000000):
+	if state.get("schema_version") != BOARD_SCHEMA_VERSION or state.get("rules_version") != RULES_VERSION or not _integer(state.get("content_version"), 1, 1000000):
 		return ["Unsupported saved board version."]
 	if state.get("mode") not in ["campaign", "campaign_orders"]:
 		return ["Unsupported saved mode."]
@@ -327,6 +420,12 @@ static func _validate_state(state: Dictionary) -> Array:
 		return ["Invalid stable board identity or outcome."]
 	if not state.get("trays") is Array or state.trays.size() < 2 or state.trays.size() > 32:
 		return ["Invalid saved trays."]
+	if state.has("extra_tray_granted"):
+		if state.extra_tray_granted != true or state.get("extra_tray_id") != BoardModel.EXTRA_TRAY_ID or state.trays.size() > BoardModel.MAX_TRAYS:
+			return ["Invalid extra-tray entitlement."]
+		var extra: Variant = state.trays.back()
+		if not extra is Dictionary or extra.get("id") != BoardModel.EXTRA_TRAY_ID or extra.get("queue") != []:
+			return ["Invalid granted tray."]
 	var ids: Array = []
 	var remaining: int = 0
 	for tray in state.trays:
@@ -434,3 +533,69 @@ static func _normalize_numbers(value: Variant) -> Variant:
 	if value is float and is_finite(value) and value == floor(value):
 		return int(value)
 	return value
+
+static func _migrate_payload(payload: Dictionary) -> Dictionary:
+	var result: Dictionary = payload.duplicate(true)
+	if int(result.schema_version) == 1:
+		result.schema_version = SCHEMA_VERSION
+		result.profile["tutorial"] = {"step": 0, "completed": false}
+		result.profile["economy"] = {"version": 1, "ledger": {}}
+		result.profile["owned_themes"] = ["classic"]
+		result.profile["active_theme"] = "classic"
+		if not result.session.is_empty():
+			result.session["run_id"] = "legacy_" + _canonical(result.session).sha256_text().substr(0, 32)
+			result.session["hint_receipts"] = {}
+			result.session["extra_tray_granted"] = false
+	return result
+
+static func _validate_economy_profile(profile: Dictionary) -> Array:
+	if not profile.get("tutorial") is Dictionary or not _integer(profile.tutorial.get("step"), 0, 3) or not profile.tutorial.get("completed") is bool:
+		return ["Invalid cooking-school progress."]
+	if profile.tutorial.completed and profile.tutorial.step != 3:
+		return ["Completed cooking school is missing its final step."]
+	if not profile.get("economy") is Dictionary or profile.economy.get("version") != 1 or not profile.economy.get("ledger") is Dictionary:
+		return ["Unsupported economy version or ledger."]
+	for receipt_id in profile.economy.ledger:
+		var receipt: Variant = profile.economy.ledger[receipt_id]
+		if not receipt is Dictionary or not receipt.get("kind") is String or not _integer(receipt.get("amount"), -100000000, 100000000):
+			return ["Invalid coin transaction receipt."]
+	if not profile.get("owned_themes") is Array or not profile.owned_themes.has("classic") or not profile.get("active_theme") is String or not profile.owned_themes.has(profile.active_theme):
+		return ["Invalid owned or active tray theme."]
+	var seen: Array = []
+	for theme in profile.owned_themes:
+		if theme not in ["classic", "sage", "berry"] or seen.has(theme):
+			return ["Invalid tray theme ownership."]
+		seen.append(theme)
+	return []
+
+static func _validate_session_extensions(session: Dictionary) -> Array:
+	if not session.get("run_id") is String or session.run_id.is_empty() or session.run_id.length() > 100:
+		return ["Invalid session run identity."]
+	if not session.get("hint_receipts") is Dictionary or not session.get("extra_tray_granted") is bool:
+		return ["Invalid session purchases."]
+	if session.extra_tray_granted != bool(session.state.get("extra_tray_granted", false)):
+		return ["Saved grant does not match the board."]
+	for snapshot in session.history:
+		if bool(snapshot.get("extra_tray_granted", false)) and not session.extra_tray_granted:
+			return ["Undo history contains an unowned extra tray."]
+	for key in session.hint_receipts:
+		var receipt: Variant = session.hint_receipts[key]
+		if not key is String or key.length() != 64 or not receipt is Dictionary or not receipt.get("solution") is Array or receipt.solution.is_empty() or not receipt.get("state") is Dictionary:
+			return ["Invalid hint receipt."]
+		if not _validate_state(receipt.state).is_empty() or receipt.state.level_id != session.state.level_id:
+			return ["Invalid saved hint proof state."]
+		var proof := BoardModel.new()
+		proof.restore(receipt.state)
+		if proof.search_key() != key:
+			return ["Hint receipt does not match its puzzle identity."]
+		for command in receipt.solution:
+			if not command is Array or command.size() != 4:
+				return ["Invalid saved hint command."]
+			for index in range(4):
+				if not _integer(command[index], 0, 7 if index % 2 == 0 else 2):
+					return ["Invalid saved hint coordinates."]
+	return []
+
+static func is_campaign_level(level: Dictionary) -> bool:
+	var number := int(level.get("number", 0))
+	return not level.has("tutorial_step") and number >= 1 and number <= LEVEL_COUNT and level.get("level_id", "") == "garden_%03d" % number

@@ -2,16 +2,18 @@
 
 A cozy, original food sorting puzzle made in **Godot 4.7.2 stable** (standard GDScript edition). Arrange three identical foods on a tray, uncover the next row, and prepare garden recipes. The game is offline and untimed.
 
-This delivery is the development brief's **30-level Garden Grill vertical slice**: six illustrated foods, four recipe bundles, an original restaurant setting, music, sound effects, saved progress and a complete playable interface. The 150-level launch and 600-level expansion are future content stages.
+Version **0.2 — Welcome to the Garden** expands the development brief's **30-level Garden Grill vertical slice** with a branded splash/title flow, a proper main menu, three interactive Cooking School lessons, smoother animation, and Chef Coins for optional helpers and permanent tray finishes. The 150-level launch and 600-level expansion are future content stages.
 
-<img src="docs/screenshots/garden-grill.png" alt="Garden Table gameplay with illustrated food, queued trays and a Garden Banquet recipe" width="320">
+<img src="docs/screenshots/title.png" alt="Garden Table title screen" width="240"> <img src="docs/screenshots/home.png" alt="Main menu with Cooking School, level map and Chef Coins" width="240"> <img src="docs/screenshots/garden-grill.png" alt="Gameplay with illustrated food, queued trays and the Sage enamel finish" width="240">
+
+[Cooking School preview](docs/screenshots/cooking-school.png) · [Coin shop preview](docs/screenshots/coin-shop.png) · [Extra tray preview](docs/screenshots/extra-tray.png)
 
 ## Open and play
 
 1. Download or clone this repository.
 2. Install [Godot 4.7.2 standard](https://godotengine.org/download/archive/4.7.2-stable/).
 3. In Godot's project manager, choose **Import**, select **project.godot**, and open the project. Let the textures/audio import.
-4. Press **F5**. A fresh profile starts in the one-move tutorial.
+4. Press **F5**. The splash leads to the title screen. Choose **Enter the cafe**, then **Start cooking** for three guided lessons, or choose a level from the map.
 
 No plugin, package manager, account, API key, or Android SDK is needed to play in the desktop editor. The main scene is `scenes/main.tscn`. The Compatibility renderer is configured for the 2D project. The tested engine identifies as `4.7.2.stable.official.ed1daf0bf`.
 
@@ -23,11 +25,14 @@ No plugin, package manager, account, API key, or Android SDK is needed to play i
 - A tray reveals its next queued row only when **all three** active positions are empty. Moving the last food away also reveals a row.
 - Recipe orders count completed batches. Future tickets retain prepared ingredients; each batch is allocated once. Clear the entire board as well as the orders to win.
 - **Undo** restores the whole previous transaction, including cascades, queues and orders. Up to 40 snapshots are retained.
-- **Hint** highlights a move from a verified complete solution. If a bounded search cannot prove a solution, it says so and suggests undo/restart.
-- **Queues** shows the full remaining rows. **Restart** asks before discarding the current board.
+- **Hint** costs 10 Chef Coins only when it finds a verified solution. Rechecking the same board during the same attempt is free. If search cannot prove a solution, no coins are spent.
+- **Tray** adds one empty tray for 40 coins. It stays through undo and Continue; restarting begins a new attempt. Every level is still solvable without helpers.
+- The **≡** beside the level title shows the full queued rows. **Restart** asks before discarding the current board.
 - **Pause** or **Escape** opens the pause menu. Home → Continue resumes the saved table.
 
-Settings include independent music and sound, optional Android haptics, reduced motion and food-name labels. The level map supports replay of unlocked levels. First completion earns 30 cosmetic coins; replaying does not duplicate rewards. There are no purchases or advertisements.
+Settings include independent music and sound, optional Android haptics, reduced motion and food-name labels. Cooking School can be replayed from the main menu or settings without replacing a campaign save. School guidance, undo and restart are free. Menus ease in, buttons respond with a small spring, food arcs into place, matches sparkle and earned coins celebrate briefly; reduced motion removes movement while retaining clear feedback.
+
+Chef Coins are earned with a one-time 100-coin welcome gift, 30 coins per first campaign clear, and a one-time 30-coin graduation gift. Spend them on hints, an extra tray, or permanent Sage/Berry tray finishes. The shop previews coin packs, but real-money purchases and ads are **not connected yet**. Existing 0.1 profiles migrate with their earned coins and saved board intact. See [economy rules and future integration](docs/ECONOMY.md).
 
 ## What is verified
 
@@ -41,11 +46,11 @@ The runner uses an isolated save directory, imports the project, checks Godot's 
 
 - Rule tests cover both Appendix E replays, prepared future ticket credits, deterministic cascades, whole-row reveals, invalid moves, token conservation, undo, typed data and strict validation.
 - Every one of the 30 frozen levels has a stored no-tool winning replay, stable-state hashes and a content hash. All 225 recorded moves are replayed; every move is also undone and replayed in the content tests.
-- Save tests cover checksum verification, temporary/backup recovery, content mismatch, once-only rewards, board/queue/order history and audio preferences.
+- Save and economy tests cover old-profile migration, checksum/backup recovery, content mismatch, once-only rewards, transactional spending, repeat hint receipts, persistent extra trays, theme ownership and audio preferences.
 - Scene integration tests feed actual Godot mouse and touch events, including multiple fingers, canceled drags, paused gestures, scaled pointer coordinates, reload, hints and layout bounds.
 - An **Android debug APK was exported and its signature/manifest verified**. A physical phone and listening session are still needed to assess real touch comfort, audio mixing, safe areas, Android lifecycle behavior and sustained performance. Machine solution proofs do not substitute for human pacing/playtesting.
 
-See [QA notes](docs/QA.md), [level authoring and replay reports](docs/LEVELS.md), and [Android export instructions](docs/ANDROID.md).
+See [expansion QA](docs/EXPANSION_QA.md), [original QA notes](docs/QA.md), [Cooking School](docs/TUTORIAL.md), [level authoring](docs/LEVELS.md), and [Android export instructions](docs/ANDROID.md).
 
 ## Project structure
 
@@ -73,6 +78,6 @@ Saved progress is under Godot's `user://` folder for **Garden Table**. In the ed
 
 The food and restaurant artwork were generated for this project in the rounded, warmly lit style of the supplied references. The original reference sprites, interface assets and level layouts were not extracted. [Asset provenance](assets/ASSET_MANIFEST.md) and font/audio licenses are included.
 
-Later chapters, sealed/chilled/category trays, Rush, extra-tray/rearrange tools, cloud sync, ads, purchases, localization beyond English, and Play Store release signing are outside this first slice. Unsupported gameplay flags are rejected by the validator. The shipped English UI is translatable through Godot's translation APIs; reviewed translations and device testing are still future work.
+Later chapters, sealed/chilled/category trays, Rush, rearrange tools, cloud sync, ads, real-money purchases, localization beyond English, and Play Store release signing remain future work. Unsupported gameplay flags are rejected by the validator. The shipped English UI is translatable through Godot's translation APIs; reviewed translations and device testing are still future work.
 
 For cloud development, use the existing checkout; each task already has an isolated environment. Run `bash tools/setup_environment.sh` to provision the pinned editor on Linux, or add `--android` for matching export templates and SDK tools. The helper verifies official artifact checksums and writes tools outside the repository. See the generated `environment.sh` and [Android documentation](docs/ANDROID.md).
